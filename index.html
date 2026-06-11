@@ -23,11 +23,11 @@
     --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   }
   *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body{ margin:0; padding:0; }
+  html,body{ margin:0; padding:0; overflow-x:hidden; }
   body{
     background:var(--ink); color:var(--paper); font-family:var(--font); line-height:1.5;
     padding:calc(env(safe-area-inset-top) + 8px) max(env(safe-area-inset-right),16px) calc(env(safe-area-inset-bottom) + 24px) max(env(safe-area-inset-left),16px);
-    max-width:520px; margin:0 auto; min-height:100vh; -webkit-text-size-adjust:100%;
+    width:100%; max-width:520px; margin:0 auto; min-height:100vh; -webkit-text-size-adjust:100%;
   }
 
   /* 顶部 + 标签切换 */
@@ -46,13 +46,14 @@
 
   /* 圆环 */
   .ring-wrap{ display:flex; flex-direction:column; align-items:center; margin-bottom:8px; }
-  .ring{ position:relative; width:190px; height:190px; }
-  .ring svg{ transform:rotate(-90deg); display:block; }
+  /* 圆环：随屏幕宽度自适应，小屏不顶宽，大屏不过大 */
+  .ring{ position:relative; width:min(190px, 52vw); aspect-ratio:1; }
+  .ring svg{ transform:rotate(-90deg); display:block; width:100%; height:100%; }
   .ring-track{ fill:none; stroke:var(--ink-3); stroke-width:13; }
   .ring-fill{ fill:none; stroke:var(--glow); stroke-width:13; stroke-linecap:round; transition:stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1), stroke .4s; }
   .ring-fill.complete{ stroke:var(--done); }
   .ring-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
-  .streak-num{ font-size:60px; font-weight:800; line-height:1; letter-spacing:-2px; }
+  .streak-num{ font-size:clamp(40px, 14vw, 60px); font-weight:800; line-height:1; letter-spacing:-2px; }
   .streak-num.complete{ color:var(--done); }
   .streak-label{ font-size:13px; color:var(--paper-dim); margin-top:6px; letter-spacing:1px; }
   .streak-sub{ font-size:12px; color:var(--paper-faint); margin-top:2px; }
@@ -84,8 +85,9 @@
   .task.open .chev{ transform:rotate(180deg); }
 
   /* 任务展开详情 */
-  .detail{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
-  .task.open .detail{ max-height:600px; }
+  .detail{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  /* 展开上限取「足够大」：用 200vh 兜底，任何屏幕/字体缩放下都装得下完整内容，绝不截断 */
+  .task.open .detail{ max-height:200vh; }
   .detail-inner{ padding:0 16px 16px; border-top:1px solid var(--ink-3); margin-top:0; padding-top:14px; }
   .d-block{ margin-bottom:14px; }
   .d-block:last-child{ margin-bottom:0; }
@@ -104,11 +106,12 @@
   .metric.required{ border-color:var(--glow); border-style:solid; background:var(--glow-soft); }
   .metric.required .metric-h{ color:var(--glow); }
   .metric-h{ font-size:12px; color:var(--paper); font-weight:600; margin-bottom:8px; }
-  .metric-row{ display:flex; align-items:center; gap:10px; }
-  .metric-row label{ font-size:13px; color:var(--paper-dim); flex:1; }
-  .metric-row input{ width:74px; background:var(--ink-2); border:1px solid var(--ink-3); color:var(--paper); border-radius:8px; padding:8px; font-size:14px; text-align:center; font-family:var(--font); }
+  .metric-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .metric-row label{ font-size:13px; color:var(--paper-dim); flex:1 1 auto; min-width:0; }
+  /* 输入框：固定够用宽度，font-size 16px 防止 iOS 聚焦时自动放大页面 */
+  .metric-row input{ width:72px; flex:none; background:var(--ink-2); border:1px solid var(--ink-3); color:var(--paper); border-radius:8px; padding:8px; font-size:16px; text-align:center; font-family:var(--font); }
   .metric-row input:focus{ outline:none; border-color:var(--glow); }
-  .metric-unit{ font-size:12px; color:var(--paper-faint); width:28px; }
+  .metric-unit{ font-size:12px; color:var(--paper-faint); flex:none; width:24px; }
   .metric-hint{ font-size:11px; color:var(--paper-faint); margin-top:8px; line-height:1.5; }
 
   /* 周进度 */
