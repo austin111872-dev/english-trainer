@@ -17,7 +17,6 @@
 <link rel="apple-touch-icon" sizes="167x167" href="icon-167.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icon-152.png">
 <link rel="apple-touch-icon" sizes="120x120" href="icon-120.png">
-
 <link rel="manifest" href="manifest.json">
 
 <style>
@@ -29,7 +28,6 @@
   --blue:#6db3e8;
   --radius:18px; --radius-sm:12px;
   --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  --tab-h:44px;
 }
 *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 html,body{ margin:0; padding:0; overflow-x:hidden; }
@@ -54,9 +52,49 @@ body{
 .milestone-banner.show{display:flex;}
 .milestone-banner .emoji{font-size:24px;}
 
-/* 标签切换 */
+/* ========== 阶段路线图 ========== */
+.phase-roadmap{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:16px; padding-bottom:4px; }
+.phase-roadmap::-webkit-scrollbar{ height:3px; }
+.phase-roadmap::-webkit-scrollbar-track{ background:transparent; }
+.phase-roadmap::-webkit-scrollbar-thumb{ background:var(--ink-4); border-radius:2px; }
+.phase-track{ display:flex; gap:8px; min-width:max-content; padding:4px 2px; }
+.phase-node{
+  display:flex; align-items:center; gap:8px; padding:8px 14px; border-radius:var(--radius-sm);
+  background:var(--ink-2); border:1px solid var(--ink-3); cursor:pointer;
+  transition:all .25s; white-space:nowrap; user-select:none;
+}
+.phase-node:active{ transform:scale(.97); }
+.phase-node.active{ background:var(--glow-soft); border-color:var(--glow); }
+.phase-node.past{ background:var(--done-soft); border-color:var(--done); opacity:.75; }
+.phase-node.future{ opacity:.4; cursor:default; }
+.phase-node.future:active{ transform:none; }
+.phase-node .num{ font-size:12px; font-weight:700; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:none; }
+.phase-node.active .num{ background:var(--glow); color:var(--ink); }
+.phase-node.past .num{ background:var(--done); color:var(--ink); }
+.phase-node.future .num{ background:var(--ink-3); color:var(--paper-faint); }
+.phase-node .label{ font-size:13px; font-weight:600; }
+.phase-node .check{ font-size:11px; }
+.phase-node.future .label{ color:var(--paper-faint); }
+.phase-node .phase-week{ font-size:10px; color:var(--paper-faint); margin-left:4px; }
+
+/* 阶段详情卡片 */
+.phase-detail-card{
+  background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius);
+  padding:16px; margin-bottom:16px; display:none; animation:fade .3s ease;
+}
+.phase-detail-card.show{ display:block; }
+.phase-detail-card .pd-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.phase-detail-card .pd-title{ font-size:16px; font-weight:700; }
+.phase-detail-card .pd-badge{ font-size:11px; background:var(--ink-4); color:var(--paper-dim); padding:2px 10px; border-radius:20px; }
+.phase-detail-card .pd-desc{ font-size:13px; color:var(--paper-dim); line-height:1.6; }
+.phase-detail-card .pd-status{ font-size:12px; margin-top:8px; padding:8px 12px; border-radius:8px; }
+.phase-detail-card .pd-status.done{ background:var(--done-soft); color:var(--done); }
+.phase-detail-card .pd-status.locked{ background:var(--ink-3); color:var(--paper-faint); }
+.phase-detail-card .pd-status.current{ background:var(--glow-soft); color:var(--glow); }
+
+/* tab 切换 */
 .tabs{display:flex;gap:6px;background:var(--ink-2);padding:4px;border-radius:var(--radius-sm);margin-bottom:20px;position:sticky;top:0;z-index:50;}
-.tab{flex:1;text-align:center;padding:9px;font-size:13px;font-weight:600;color:var(--paper-dim);border-radius:9px;cursor:pointer;transition:all .2s;position:relative;}
+.tab{flex:1;text-align:center;padding:9px;font-size:13px;font-weight:600;color:var(--paper-dim);border-radius:9px;cursor:pointer;transition:all .2s;}
 .tab.active{background:var(--ink-4);color:var(--paper);}
 .tab .badge{position:absolute;top:-4px;right:-4px;background:var(--glow);color:var(--ink);font-size:9px;font-weight:700;padding:1px 5px;border-radius:10px;line-height:1.4;}
 .tab.active .badge{background:var(--done);}
@@ -70,11 +108,10 @@ body{
 @keyframes pop{0%{transform:scale(.8);opacity:0}50%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
 @keyframes ringPop{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
 @keyframes checkPop{0%{transform:scale(.5)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
-@keyframes glowPulse{0%{box-shadow:0 0 0 0 var(--glow-soft)}50%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
 
 /* 圆环 */
 .ring-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:8px;}
-.ring{position:relative;width:min(190px,52vw);aspect-ratio:1;cursor:pointer;}
+.ring{position:relative;width:min(190px,52vw);aspect-ratio:1;}
 .ring svg{transform:rotate(-90deg);display:block;width:100%;height:100%;}
 .ring-track{fill:none;stroke:var(--ink-3);stroke-width:13;}
 .ring-fill{fill:none;stroke:var(--glow);stroke-width:13;stroke-linecap:round;transition:stroke-dashoffset .7s cubic-bezier(.2,.8,.2,1),stroke .5s;}
@@ -85,21 +122,19 @@ body{
 .streak-label{font-size:13px;color:var(--paper-dim);margin-top:6px;letter-spacing:1px;}
 .streak-sub{font-size:12px;color:var(--paper-faint);margin-top:2px;}
 
-/* 阶段 */
-.phase{background:var(--glow-soft);border:1px solid #f4c95d33;border-radius:var(--radius-sm);padding:12px 14px;margin:18px 0;animation:fade .4s ease;}
-.phase-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
-.phase-badge{background:var(--glow);color:var(--ink);font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;}
-.phase-title{font-size:14px;font-weight:600;}
-.phase-desc{font-size:13px;color:var(--paper-dim);line-height:1.55;}
 .section-label{font-size:12px;color:var(--paper-faint);letter-spacing:2px;margin:24px 2px 12px;}
 
 /* 任务卡 */
 .task{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;transition:border-color .25s,background .25s,transform .15s;}
 .task:active{transform:scale(.99);}
 .task.done{border-color:#5fd0a055;background:var(--done-soft);}
+.task.locked{opacity:.65;border-color:var(--ink-3);}
+.task.locked:active{transform:none;}
 .task-main{display:flex;align-items:center;gap:14px;padding:16px;cursor:pointer;user-select:none;}
+.task.locked .task-main{cursor:default;}
 .check{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--ink-3);display:flex;align-items:center;justify-content:center;transition:all .25s;}
 .task.done .check{border-color:var(--done);background:var(--done);}
+.task.locked .check{border-color:var(--ink-4);background:var(--ink-3);}
 .check svg{width:15px;height:15px;opacity:0;transform:scale(.5);transition:all .25s;}
 .task.done .check svg{opacity:1;transform:scale(1);}
 .task.just-checked .check svg{animation:checkPop .35s ease;}
@@ -114,6 +149,7 @@ body{
 .task.open .chev{transform:rotate(180deg);}
 .edit-btn{width:24px;height:24px;border:none;background:transparent;color:var(--paper-faint);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:13px;transition:background .15s;}
 .edit-btn:active{background:var(--ink-3);}
+.lock-icon{font-size:14px;color:var(--paper-faint);}
 
 /* 编辑弹窗 */
 .edit-dialog-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center;animation:fadeIn .2s;}
@@ -122,7 +158,7 @@ body{
 .edit-dialog h3{margin:0 0 16px;font-size:16px;}
 .edit-dialog label{display:block;font-size:12px;color:var(--paper-dim);margin-bottom:4px;}
 .edit-dialog input{width:100%;background:var(--ink);border:1px solid var(--ink-3);color:var(--paper);border-radius:8px;padding:10px;font-size:14px;margin-bottom:14px;font-family:var(--font);transition:border-color .2s;}
-.edit-dialog input:focus{outline:none;border-color:var(--glow);box-shadow:0 0 0 3px var(--glow-soft);}
+.edit-dialog input:focus{outline:none;border-color:var(--glow);}
 .edit-dialog .btns{display:flex;gap:10px;}
 .edit-dialog .btns button{flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);border:none;transition:opacity .15s;}
 .edit-dialog .btns button:active{opacity:.7;}
@@ -147,15 +183,16 @@ body{
 
 /* 指标 */
 .metric{background:var(--ink);border:1px dashed var(--ink-4);border-radius:var(--radius-sm);padding:12px;margin-top:10px;transition:border-color .3s,background .3s;}
-.metric.required{border-color:var(--glow);border-style:solid;background:var(--glow-soft);animation:glowPulse 2s infinite;}
+.metric.required{border-color:var(--glow);border-style:solid;background:var(--glow-soft);}
 .metric.required .metric-h{color:var(--glow);}
 .metric-h{font-size:12px;color:var(--paper);font-weight:600;margin-bottom:8px;}
 .metric-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .metric-row label{font-size:13px;color:var(--paper-dim);flex:1 1 auto;min-width:0;}
-.metric-row input{width:72px;flex:none;background:var(--ink-2);border:1px solid var(--ink-3);color:var(--paper);border-radius:8px;padding:8px;font-size:16px;text-align:center;font-family:var(--font);transition:border-color .2s,box-shadow .2s;}
-.metric-row input:focus{outline:none;border-color:var(--glow);box-shadow:0 0 0 3px var(--glow-soft);}
+.metric-row input{width:72px;flex:none;background:var(--ink-2);border:1px solid var(--ink-3);color:var(--paper);border-radius:8px;padding:8px;font-size:16px;text-align:center;font-family:var(--font);transition:border-color .2s;}
+.metric-row input:focus{outline:none;border-color:var(--glow);}
 .metric-unit{font-size:12px;color:var(--paper-faint);flex:none;width:24px;}
 .metric-hint{font-size:11px;color:var(--paper-faint);margin-top:8px;line-height:1.5;}
+.metric .lock-overlay{font-size:12px;color:var(--paper-faint);padding:4px 0;}
 
 /* 周进度 */
 .week{margin-top:28px;}
@@ -174,15 +211,15 @@ body{
 
 /* 统计 */
 .stats{display:flex;gap:10px;margin-top:24px;}
-.stat{flex:1;background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius-sm);padding:14px;text-align:center;transition:border-color .3s;}
+.stat{flex:1;background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius-sm);padding:14px;text-align:center;}
 .stat .n{font-size:24px;font-weight:800;}
 .stat .n.glow{color:var(--glow);}
 .stat .l{font-size:11px;color:var(--paper-faint);margin-top:3px;}
 
-/* ===== 进步页 ===== */
+/* 进步页 */
 .intro{font-size:13px;color:var(--paper-dim);line-height:1.65;background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius-sm);padding:14px;margin-bottom:20px;}
 .intro b{color:var(--paper);}
-.chart-card{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:16px;margin-bottom:14px;transition:border-color .2s;}
+.chart-card{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius);padding:16px;margin-bottom:14px;}
 .chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
 .chart-title{font-size:14px;font-weight:600;}
 .chart-dir{font-size:11px;padding:2px 7px;border-radius:20px;font-weight:600;}
@@ -203,41 +240,11 @@ body{
 .goal-v{color:var(--paper);flex:1;line-height:1.5;}
 .goal-v b{color:var(--done);}
 
-/* ===== 复盘页 ===== */
-.review-section{margin-bottom:20px;}
-.review-section h3{font-size:14px;font-weight:600;margin:0 0 4px;}
-.review-section .sub{font-size:12px;color:var(--paper-faint);margin-bottom:12px;}
-
-.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px;}
-.cal-head{text-align:center;font-size:10px;color:var(--paper-faint);padding:4px 0;font-weight:600;}
-.cal-day{aspect-ratio:1;border-radius:8px;background:var(--ink-3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--paper-faint);position:relative;transition:background .2s,transform .15s;cursor:pointer;}
-.cal-day.today{outline:2px solid var(--glow);outline-offset:1px;}
-.cal-day.done{background:var(--done-soft);color:var(--done);font-weight:600;}
-.cal-day.partial{background:var(--glow-soft);color:var(--glow);}
-.cal-day.future{opacity:.3;}
-.cal-day:active{transform:scale(.9);}
-.cal-day .streak-indicator{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--glow);}
-
-/* 月度统计卡 */
-.month-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
-.month-stat{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius-sm);padding:10px;text-align:center;}
-.month-stat .v{font-size:18px;font-weight:700;color:var(--glow);}
-.month-stat .l{font-size:10px;color:var(--paper-faint);margin-top:2px;}
-
-/* 时间轴切换 */
-.view-switch{display:flex;gap:6px;margin-bottom:16px;}
-.view-btn{flex:1;text-align:center;padding:8px;font-size:12px;font-weight:600;color:var(--paper-dim);border-radius:8px;cursor:pointer;transition:all .2s;background:transparent;border:none;font-family:var(--font);}
-.view-btn.active{background:var(--ink-4);color:var(--paper);}
-.view-btn:active{opacity:.6;}
-
-/* 打卡反馈动画 */
-.ring.just-completed{animation:ringPop .5s ease;}
-
-/* 番茄钟页 */
+/* 番茄钟 */
 .timer-wrap{display:flex;flex-direction:column;align-items:center;padding:24px 0;}
-.timer-display{font-size:clamp(64px,22vw,96px);font-weight:800;letter-spacing:-3px;font-variant-numeric:tabular-nums;margin-bottom:8px;transition:color .3s;}
+.timer-display{font-size:clamp(64px,22vw,96px);font-weight:800;letter-spacing:-3px;font-variant-numeric:tabular-nums;margin-bottom:8px;}
 .timer-label{font-size:14px;color:var(--paper-dim);margin-bottom:4px;letter-spacing:2px;}
-.timer-phase{font-size:13px;color:var(--glow);font-weight:600;margin-bottom:24px;transition:color .3s;}
+.timer-phase{font-size:13px;color:var(--glow);font-weight:600;margin-bottom:24px;}
 .timer-controls{display:flex;gap:12px;margin-bottom:20px;}
 .timer-btn{padding:12px 28px;border-radius:var(--radius-sm);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font);border:none;transition:all .2s;}
 .timer-btn:active{opacity:.7;transform:scale(.97);}
@@ -250,6 +257,27 @@ body{
 .timer-task-select label{display:block;font-size:12px;color:var(--paper-dim);margin-bottom:6px;}
 .timer-task-select select{width:100%;background:var(--ink-2);border:1px solid var(--ink-3);color:var(--paper);border-radius:8px;padding:10px;font-size:13px;font-family:var(--font);}
 .timer-task-select select:focus{outline:none;border-color:var(--glow);}
+
+/* 复盘页 */
+.view-switch{display:flex;gap:6px;margin-bottom:16px;}
+.view-btn{flex:1;text-align:center;padding:8px;font-size:12px;font-weight:600;color:var(--paper-dim);border-radius:8px;cursor:pointer;transition:all .2s;background:transparent;border:none;font-family:var(--font);}
+.view-btn.active{background:var(--ink-4);color:var(--paper);}
+.view-btn:active{opacity:.6;}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px;}
+.cal-head{text-align:center;font-size:10px;color:var(--paper-faint);padding:4px 0;font-weight:600;}
+.cal-day{aspect-ratio:1;border-radius:8px;background:var(--ink-3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--paper-faint);cursor:pointer;transition:background .2s,transform .15s;}
+.cal-day:active{transform:scale(.9);}
+.cal-day.today{outline:2px solid var(--glow);outline-offset:1px;}
+.cal-day.done{background:var(--done-soft);color:var(--done);font-weight:600;}
+.cal-day.partial{background:var(--glow-soft);color:var(--glow);}
+.cal-day.future{opacity:.3;}
+.month-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+.month-stat{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--radius-sm);padding:10px;text-align:center;}
+.month-stat .v{font-size:18px;font-weight:700;color:var(--glow);}
+.month-stat .l{font-size:10px;color:var(--paper-faint);margin-top:2px;}
+.review-section{margin-bottom:20px;}
+.review-section h3{font-size:14px;font-weight:600;margin:0 0 4px;}
+.review-section .sub{font-size:12px;color:var(--paper-faint);margin-bottom:12px;}
 
 /* 新手引导 */
 .onboard-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;animation:fadeIn .3s;}
@@ -270,15 +298,13 @@ body{
 .notify-prompt.show{display:flex;}
 .notify-prompt .notify-btn{flex:none;background:var(--glow);color:var(--ink);border:none;border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);}
 
-/* 备份区 */
+.celebrate{text-align:center;font-size:14px;color:var(--done);font-weight:600;margin-top:12px;opacity:0;height:0;transition:opacity .5s ease,height .3s;}
+.celebrate.show{opacity:1;height:auto;animation:pop .4s ease;}
+
 .backup{display:flex;gap:10px;margin-top:24px;}
 .btn{flex:1;background:var(--ink-2);border:1px solid var(--ink-3);color:var(--paper-dim);border-radius:var(--radius-sm);padding:13px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .2s;}
 .btn:active{border-color:var(--glow);color:var(--paper);}
 .footnote{text-align:center;font-size:11px;color:var(--paper-faint);margin-top:18px;line-height:1.6;}
-
-/* 完成庆祝 */
-.celebrate{text-align:center;font-size:14px;color:var(--done);font-weight:600;margin-top:12px;opacity:0;height:0;transition:opacity .5s ease,height .3s;}
-.celebrate.show{opacity:1;height:auto;animation:pop .4s ease;}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -290,19 +316,14 @@ body{
   <div class="today" id="todayDate"></div>
 </div>
 
-<!-- 通知权限提示 -->
 <div class="notify-prompt" id="notifyPrompt">
   <span style="flex:1">🔔 开启每日训练提醒</span>
   <button class="notify-btn" id="notifyBtn">开启</button>
 </div>
-
-<!-- 提醒横幅 -->
 <div class="reminder-banner" id="reminderBanner" onclick="switchTab(0)">
   <span>⏰ 今天还没打卡</span>
   <span style="font-size:11px;color:var(--paper-faint)">去训练 →</span>
 </div>
-
-<!-- 里程碑横幅 -->
 <div class="milestone-banner" id="milestoneBanner"></div>
 
 <div class="tabs" id="mainTabs">
@@ -315,7 +336,7 @@ body{
 <!-- ============ 今日训练页 ============ -->
 <div class="page active" id="page-train">
   <div class="ring-wrap">
-    <div class="ring" id="ringContainer">
+    <div class="ring">
       <svg width="190" height="190" viewBox="0 0 190 190">
         <circle class="ring-track" cx="95" cy="95" r="82"></circle>
         <circle class="ring-fill" id="ringFill" cx="95" cy="95" r="82"></circle>
@@ -327,18 +348,24 @@ body{
       </div>
     </div>
   </div>
-
   <div class="celebrate" id="celebrate">✓ 今日三项到位。明天见。</div>
 
-  <div class="phase">
-    <div class="phase-head">
-      <span class="phase-badge" id="phaseBadge">第 1 周</span>
-      <span class="phase-title" id="phaseTitle">找回手感</span>
-    </div>
-    <div class="phase-desc" id="phaseDesc"></div>
+  <!-- 阶段路线图 -->
+  <div class="phase-roadmap" id="phaseRoadmap">
+    <div class="phase-track" id="phaseTrack"></div>
   </div>
 
-  <div class="section-label">展开任务看详情；填完指标才能打卡完成</div>
+  <!-- 选中阶段的详情 -->
+  <div class="phase-detail-card" id="phaseDetailCard">
+    <div class="pd-head">
+      <span class="pd-title" id="pdTitle"></span>
+      <span class="pd-badge" id="pdBadge"></span>
+    </div>
+    <div class="pd-desc" id="pdDesc"></div>
+    <div class="pd-status" id="pdStatus"></div>
+  </div>
+
+  <div class="section-label" id="taskSectionLabel">展开任务看详情；填完指标才能打卡完成</div>
   <div id="taskList"></div>
 
   <div class="week">
@@ -348,13 +375,11 @@ body{
     </div>
     <div class="dots" id="weekDots"></div>
   </div>
-
   <div class="stats">
     <div class="stat"><div class="n glow" id="statStreak">0</div><div class="l">当前连续</div></div>
     <div class="stat"><div class="n" id="statBest">0</div><div class="l">最长连续</div></div>
     <div class="stat"><div class="n" id="statTotal">0</div><div class="l">累计天数</div></div>
   </div>
-
   <div class="backup">
     <button class="btn" id="exportBtn">导出备份</button>
     <button class="btn" id="importBtn">导入备份</button>
@@ -365,9 +390,7 @@ body{
 
 <!-- ============ 进步曲线页 ============ -->
 <div class="page" id="page-progress">
-  <div class="intro">
-    判断有没有白练，不看打了几天卡，看这些<b>数字在不在变好</b>。每天打卡时填的那几个数，会自动画成趋势：复习正确率要稳住，精听遍数和口语延迟要往下走。
-  </div>
+  <div class="intro">判断有没有白练，不看打了几天卡，看这些<b>数字在不在变好</b>。每天打卡时填的那几个数，会自动画成趋势。</div>
   <div id="charts"></div>
   <div class="section-label">阶段验收硬指标</div>
   <div id="goals"></div>
@@ -398,56 +421,23 @@ body{
     <div class="view-btn" data-view="monthly">月度</div>
     <div class="view-btn" data-view="yearly">年度</div>
   </div>
-
-  <!-- 日历视图 -->
   <div class="review-section" id="reviewCalendar">
     <h3 id="calMonthLabel">2026 年 6 月</h3>
     <div class="sub">点击日期查看详情</div>
-    <div class="calendar-grid" id="calGrid">
-      <div class="cal-head">一</div><div class="cal-head">二</div><div class="cal-head">三</div>
-      <div class="cal-head">四</div><div class="cal-head">五</div><div class="cal-head">六</div><div class="cal-head">日</div>
-    </div>
-    <div class="month-stats" id="monthStats">
-      <div class="month-stat"><div class="v" id="msDays">0</div><div class="l">打卡天数</div></div>
-      <div class="month-stat"><div class="v" id="msStreak">0</div><div class="l">本月连续</div></div>
-      <div class="month-stat"><div class="v" id="msRate">0%</div><div class="l">打卡率</div></div>
-      <div class="month-stat"><div class="v" id="msScore">0</div><div class="l">完成度</div></div>
-    </div>
+    <div class="calendar-grid" id="calGrid"><div class="cal-head">一</div><div class="cal-head">二</div><div class="cal-head">三</div><div class="cal-head">四</div><div class="cal-head">五</div><div class="cal-head">六</div><div class="cal-head">日</div></div>
+    <div class="month-stats"><div class="month-stat"><div class="v" id="msDays">0</div><div class="l">打卡天数</div></div><div class="month-stat"><div class="v" id="msStreak">0</div><div class="l">本月连续</div></div><div class="month-stat"><div class="v" id="msRate">0%</div><div class="l">打卡率</div></div><div class="month-stat"><div class="v" id="msScore">0</div><div class="l">完成度</div></div></div>
   </div>
-
-  <!-- 月度视图 -->
-  <div class="review-section" id="reviewMonthly" style="display:none">
-    <h3>月度对比</h3>
-    <div class="sub">每月打卡天数趋势</div>
-    <div id="monthlyChart"></div>
-  </div>
-
-  <!-- 年度视图 -->
-  <div class="review-section" id="reviewYearly" style="display:none">
-    <h3>年度总览</h3>
-    <div class="sub">今年到现在</div>
-    <div class="month-stats" id="yearStats">
-      <div class="month-stat"><div class="v" id="yrDays">0</div><div class="l">总天数</div></div>
-      <div class="month-stat"><div class="v" id="yrStreak">0</div><div class="l">最长连续</div></div>
-      <div class="month-stat"><div class="v" id="yrCurrent">0</div><div class="l">当前连续</div></div>
-      <div class="month-stat"><div class="v" id="yrRate">0%</div><div class="l">打卡率</div></div>
-    </div>
-    <div id="yearChart"></div>
-  </div>
+  <div class="review-section" id="reviewMonthly" style="display:none"><h3>月度对比</h3><div class="sub">每月打卡天数趋势</div><div id="monthlyChart"></div></div>
+  <div class="review-section" id="reviewYearly" style="display:none"><h3>年度总览</h3><div class="sub">今年到现在</div><div class="month-stats"><div class="month-stat"><div class="v" id="yrDays">0</div><div class="l">总天数</div></div><div class="month-stat"><div class="v" id="yrStreak">0</div><div class="l">最长连续</div></div><div class="month-stat"><div class="v" id="yrCurrent">0</div><div class="l">当前连续</div></div><div class="month-stat"><div class="v" id="yrRate">0%</div><div class="l">打卡率</div></div></div><div id="yearChart"></div></div>
 </div>
 
-<!-- ============ 编辑任务弹窗 ============ -->
+<!-- ============ 编辑弹窗 ============ -->
 <div class="edit-dialog-overlay" id="editDialog" onclick="if(event.target===this)closeEdit()">
   <div class="edit-dialog">
     <h3>编辑任务</h3>
-    <label>任务名称</label>
-    <input type="text" id="editName" maxlength="20" placeholder="如：背单词">
-    <label>建议时长（分钟）</label>
-    <input type="number" id="editMin" min="1" max="120" placeholder="如：15">
-    <div class="btns">
-      <button class="edit-btn-cancel" onclick="closeEdit()">取消</button>
-      <button class="edit-btn-save" onclick="saveEdit()">保存</button>
-    </div>
+    <label>任务名称</label><input type="text" id="editName" maxlength="20" placeholder="如：背单词">
+    <label>建议时长（分钟）</label><input type="number" id="editMin" min="1" max="120" placeholder="如：15">
+    <div class="btns"><button class="edit-btn-cancel" onclick="closeEdit()">取消</button><button class="edit-btn-save" onclick="saveEdit()">保存</button></div>
   </div>
 </div>
 
@@ -464,12 +454,7 @@ body{
 </div>
 
 <script>
-/* ===================== 数据 ===================== */
-const STORE_KEY='english_train_v2';
-const ONBOARD_KEY='yinghe_onboard_v1';
-const MILESTONE_KEY='yinghe_milestones_v1';
-const TASK_CUSTOM_KEY='yinghe_task_custom_v1';
-const TIMER_KEY='yinghe_timer_v1';
+const STORE_KEY='english_train_v2',ONBOARD_KEY='yinghe_onboard_v1',MILESTONE_KEY='yinghe_milestones_v1',TASK_CUSTOM_KEY='yinghe_task_custom_v1',TIMER_KEY='yinghe_timer_v1';
 
 const DEFAULT_TASKS = [
   {id:'vocab',name:'背单词',meta:'高频词 + 复习',min:15,tool:'不背单词 App（真实语境例句，发音顺带练耳；选「高频核心词」或「新概念2」，别上来背六级/考研）',how:['新词 15–20 个','软件按遗忘曲线安排的复习全部做完（复习比新词更重要）','「认识」= 看到英文 1 秒内反应出意思 + 听懂发音，不要求拼写'],target:'次日复习正确率 ≥ 80%。低于这个数说明新词贪多了，降到每天 10–15 个。',verify:['每天的数怎么来：不背单词每轮复习结束有「学习报告」结算页，直接显示本次正确率，照抄那个数填进下面。','每周日做一次「秒认测试」：打开本周学过的词，遮住中文逐个过，能 1 秒内说出意思算过，卡壳超 1 秒算不过，数出过的占比。','达标线：周日秒认 ≥ 80% 过 = 这周真记住了；低于 70%，下周把每日新词降到 10–15 个，复习量别动。'],metricKey:'recall',metricLabel:'今日复习正确率',metricUnit:'%',metricHint:'抄不背单词复习结算页上的正确率。',metricMin:0,metricMax:100},
@@ -477,11 +462,20 @@ const DEFAULT_TASKS = [
   {id:'speak',name:'开口练习',meta:'跟读 + AI 对话',min:20,tool:'跟读用「每日英语听力」的影子跟读模式；对话用 Claude / ChatGPT 语音模式',how:['影子跟读 10 分：听一句模仿一句，贴原声节奏重音；每周录一次自查','AI 对话 10 分：定一个具体话题（讲你的工作 / 一个产品逻辑 / 今天做了啥）','开口前告诉 AI「我在练口语，说完请指出语法错误和更地道说法」','说错、卡壳、中英混说都没关系，开口本身就是练习'],target:'同一个意思，从前要憋 10 秒，练到能 2–3 秒说出来。反应延迟在缩短 = 流利度在涨。',verify:['固定测法：每次 AI 对话用同一个开场任务（如「用英文介绍我的工作」），这样不同天才可比。','怎么估延迟：说每句话前，心里从「想好要说什么」到「真正出口」默数几秒，一次对话取个大概平均值填下面。','更硬的验证：每周日让 AI 给你出 3 个固定问题（如 What do you do? / 描述今天做了什么），录音；对比上周录音，看停顿、卡壳是否变少。','达标线：1 个月能就「自我介绍」不长时间卡壳；3 个月熟悉话题能连续说 2–3 分钟。'],metricKey:'delay',metricLabel:'今天说一句平均卡顿',metricUnit:'秒',metricHint:'想说一句话平均卡顿几秒才出口，估个数。越来越小=进步。',metricMin:0,metricMax:60}
 ];
 
-const PHASES = [{title:'找回手感',desc:'用最简单的材料（VOA 慢速、初级听力）。单词从最高频开始。AI 对话聊「自我介绍、今天做了什么」。目标：不抵触、能坚持。'},{title:'加入你的领域',desc:'听力换成带中英字幕的 AI/科技视频。开始记工作里反复出现的技术词。AI 对话聊「我的工作、在学的 AI 项目」。'},{title:'提高开口比重',desc:'精听去掉中文字幕，只看英文。跟读换科技类短句。AI 对话尝试多轮，让它追问你。'},{title:'复盘 + 实战',desc:'回看第 1 周材料（会变简单，这是进步信号）。读一篇工作英文文档抓大意。AI 模拟真实场景，用英文讲清一个 AI Agent 方案。'},{title:'进阶阶段',desc:'基础已牢，进入循环巩固。保持每天输入+开口，逐步提高材料难度，多用真实工作场景练习。坚持就是最大复利。'}];
+const PHASES = [
+  {title:'找回手感',desc:'用最简单的材料（VOA 慢速、初级听力）。单词从最高频开始。AI 对话聊「自我介绍、今天做了什么」。目标：不抵触、能坚持。'},
+  {title:'加入你的领域',desc:'听力换成带中英字幕的 AI/科技视频。开始记工作里反复出现的技术词。AI 对话聊「我的工作、在学的 AI 项目」。'},
+  {title:'提高开口比重',desc:'精听去掉中文字幕，只看英文。跟读换科技类短句。AI 对话尝试多轮，让它追问你。'},
+  {title:'复盘 + 实战',desc:'回看第 1 周材料（会变简单，这是进步信号）。读一篇工作英文文档抓大意。AI 模拟真实场景，用英文讲清一个 AI Agent 方案。'},
+  {title:'进阶阶段',desc:'基础已牢，进入循环巩固。保持每天输入+开口，逐步提高材料难度，多用真实工作场景练习。坚持就是最大复利。'}
+];
+// 每个阶段覆盖的周数: 阶段 1 = 第 1-2 周, 阶段 2 = 第 3-4 周, ...
+// 实际应用中让每个阶段持续 4 周，总共 20 周
+const PHASE_WEEKS = [4,4,4,4,4]; // 每阶段周数
+
 const METRICS = [{key:'recall',title:'复习正确率',unit:'%',goalText:'稳定 <b>≥ 80%</b>，说明记得牢；偏低就减少每天新词',better:'up'},{key:'passes',title:'精听所需遍数',unit:'遍',goalText:'目标 <b>越来越少</b>，从听4遍才懂 → 1遍就懂',better:'down'},{key:'delay',title:'口语反应延迟',unit:'秒',goalText:'目标 <b>越来越短</b>，从憋10秒 → 2–3秒说出口',better:'down'}];
 const GOALS = [{tag:'1 个月',rows:[['词汇','稳定保有 <b>400–500</b> 个秒认的词'],['听力','VOA 慢速/初级裸听一遍懂 <b>7 成</b>以上'],['口语','能用英文做 <b>1 分钟</b>自我介绍，不长时间卡壳']]},{tag:'3 个月',rows:[['词汇','累计掌握 <b>1200–1500</b> 词，日常内容大部分眼熟'],['听力','正常语速简单对话/科技视频懂 <b>6–7 成</b>，关键信息不漏'],['口语','熟悉话题能连续说 <b>2–3 分钟</b>，有错但能被听懂']]},{tag:'半年',rows:[['听力','大部分日常和工作场景能应付'],['口语','能进行<b>多轮来回对话</b>，听懂追问并回应'],['信号','回看旧材料明显变简单，反应延迟持续缩短']]}];
 
-/* ===================== 工具函数 ===================== */
 function fmt(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+day;}
 function todayKey(){return fmt(new Date());}
 function parseKey(k){const[y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d);}
@@ -489,99 +483,116 @@ function daysBetween(a,b){return Math.round((parseKey(b)-parseKey(a))/86400000);
 function isDone(key){const r=data.records[key];return r&&r.length>=TASKS.length;}
 function getMonthDays(y,m){return new Date(y,m,0).getDate();}
 
-function currentStreak(){
-  let s=0,d=new Date();
-  if(!isDone(fmt(d))) d.setDate(d.getDate()-1);
-  while(isDone(fmt(d))){s++;d.setDate(d.getDate()-1);}
-  return s;
-}
-function bestStreak(){
-  const ks=Object.keys(data.records).filter(isDone).sort();
-  let best=0,cur=0,prev=null;
-  for(const k of ks){if(prev&&daysBetween(prev,k)===1)cur++;else cur=1;best=Math.max(best,cur);prev=k;}
-  return best;
-}
+function currentStreak(){let s=0,d=new Date();if(!isDone(fmt(d)))d.setDate(d.getDate()-1);while(isDone(fmt(d))){s++;d.setDate(d.getDate()-1);}return s;}
+function bestStreak(){const ks=Object.keys(data.records).filter(isDone).sort();let best=0,cur=0,prev=null;for(const k of ks){if(prev&&daysBetween(prev,k)===1)cur++;else cur=1;best=Math.max(best,cur);prev=k;}return best;}
 function totalDays(){return Object.keys(data.records).filter(isDone).length;}
-function currentWeek(){if(!data.startDate)return 1;return Math.floor(daysBetween(data.startDate,todayKey())/7)+1;}
 
-/* ===================== 数据管理 ===================== */
-function loadData(){
-  try{const r=localStorage.getItem(STORE_KEY);if(r)return JSON.parse(r);}catch(e){}
-  try{const old=localStorage.getItem('english_checkin_v1');if(old){const o=JSON.parse(old);return{startDate:o.startDate,records:o.records||{},metrics:{}};}}catch(e){}
-  return{startDate:null,records:{},metrics:{}};
+// 当前是第几周（从用户第一次打卡开始）
+function currentPhaseIndex(){
+  if(!data.startDate)return 0;
+  const wk=Math.floor(daysBetween(data.startDate,todayKey())/7)+1;
+  let acc=0;
+  for(let i=0;i<PHASE_WEEKS.length;i++){
+    acc+=PHASE_WEEKS[i];
+    if(wk<=acc)return i;
+  }
+  return PHASE_WEEKS.length-1;
 }
-function saveData(d){try{localStorage.setItem(STORE_KEY,JSON.stringify(d));}catch(e){alert('保存失败，存储空间可能已满。');}}
+function phaseWeekRange(idx){
+  let start=1;
+  for(let i=0;i<idx;i++)start+=PHASE_WEEKS[i];
+  return {start, end:start+PHASE_WEEKS[idx]-1};
+}
+function getWeekInPhase(){
+  if(!data.startDate)return 1;
+  const wk=Math.floor(daysBetween(data.startDate,todayKey())/7)+1;
+  let acc=0;
+  for(let i=0;i<PHASE_WEEKS.length;i++){
+    acc+=PHASE_WEEKS[i];
+    if(wk<=acc)return wk-(acc-PHASE_WEEKS[i]);
+  }
+  return PHASE_WEEKS[PHASE_WEEKS.length-1];
+}
 
+/* ===== 数据管理 ===== */
+function loadData(){try{const r=localStorage.getItem(STORE_KEY);if(r)return JSON.parse(r);}catch(e){}try{const old=localStorage.getItem('english_checkin_v1');if(old){const o=JSON.parse(old);return{startDate:o.startDate,records:o.records||{},metrics:{}};}}catch(e){}return{startDate:null,records:{},metrics:{}};}
+function saveData(d){try{localStorage.setItem(STORE_KEY,JSON.stringify(d));}catch(e){alert('保存失败');}}
 function loadCustomTasks(){try{const r=localStorage.getItem(TASK_CUSTOM_KEY);return r?JSON.parse(r):{};}catch(e){return{};}}
 function saveCustomTasks(c){localStorage.setItem(TASK_CUSTOM_KEY,JSON.stringify(c));}
 function getTasks(){const c=loadCustomTasks();return DEFAULT_TASKS.map(t=>({...t,name:c[t.id]?.name||t.name,min:c[t.id]?.min||t.min}));}
+
 let TASKS=getTasks();
 let data=loadData();
 if(!data.metrics)data.metrics={};
+let openTask=null;
+let selectedPhase=currentPhaseIndex(); // 当前选中的阶段索引
 
-/* ===================== 感受反馈 ===================== */
+/* ===== 反馈 ===== */
 function playCheckFeedback(){
   if(navigator.vibrate)navigator.vibrate(15);
-  try{
-    const ctx=new(window.AudioContext||window.webkitAudioContext)();
-    const osc=ctx.createOscillator();const gain=ctx.createGain();
-    osc.connect(gain);gain.connect(ctx.destination);
-    osc.frequency.value=880;osc.type='sine';
-    gain.gain.setValueAtTime(0.15,ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.25);
-    osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.25);
-  }catch(e){}
+  try{const ctx=new(window.AudioContext||window.webkitAudioContext)(),o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=880;o.type='sine';g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.25);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.25);}catch(e){}
 }
 
-/* ===================== 里程碑 ===================== */
-function checkMilestone(){
-  const streak=currentStreak();
-  const milestones=[7,30,100,365];
-  const shown=loadMilestones();
-  for(const m of milestones){
-    if(streak>=m&&!shown.includes(m)){showMilestone(m);shown.push(m);saveMilestones(shown);return;}
-  }
-}
+/* ===== 里程碑 ===== */
+function checkMilestone(){const s=currentStreak(),ms=[7,30,100,365],shown=loadMilestones();for(const m of ms){if(s>=m&&!shown.includes(m)){showMilestone(m);shown.push(m);saveMilestones(shown);return;}}}
 function loadMilestones(){try{const r=localStorage.getItem(MILESTONE_KEY);return r?JSON.parse(r):[];}catch(e){return[];}}
 function saveMilestones(m){localStorage.setItem(MILESTONE_KEY,JSON.stringify(m));}
-function showMilestone(day){
-  const emojis={7:'🎉',30:'🔥',100:'💪',365:'👑'};
-  const msgs={7:'坚持一周！习惯正在形成',30:'一个月了！你已经超过了大多数人',100:'百日英雄！了不起的毅力',365:'一年！英语已经成为生活的一部分'};
-  const b=document.getElementById('milestoneBanner');
-  b.className='milestone-banner show';
-  b.innerHTML='<span class="emoji">'+(emojis[day]||'🎯')+'</span> 连续 '+day+' 天！'+(msgs[day]||'继续加油！');
-  setTimeout(()=>{b.className='milestone-banner';},5000);
-}
+function showMilestone(day){const e={7:'🎉',30:'🔥',100:'💪',365:'👑'},t={7:'坚持一周！习惯正在形成',30:'一个月了！你已经超过了大多数人',100:'百日英雄！了不起的毅力',365:'一年！英语已经成为生活的一部分'};const b=document.getElementById('milestoneBanner');b.className='milestone-banner show';b.innerHTML='<span class="emoji">'+(e[day]||'🎯')+'</span> 连续 '+day+' 天！'+(t[day]||'继续加油！');setTimeout(()=>b.className='milestone-banner',5000);}
 
-/* ===================== 通知 ===================== */
-function showReminder(){
-  document.getElementById('reminderBanner').classList.toggle('show',(data.records[todayKey()]||[]).length<TASKS.length);
-}
-function initNotifications(){
-  if(!('Notification' in window)||Notification.permission!=='default')return;
-  document.getElementById('notifyPrompt').classList.add('show');
-}
-document.getElementById('notifyBtn').addEventListener('click',()=>{
-  Notification.requestPermission().then(p=>{
-    if(p==='granted'){document.getElementById('notifyPrompt').classList.remove('show');scheduleDailyReminder();}
+/* ===== 通知 ===== */
+function showReminder(){document.getElementById('reminderBanner').classList.toggle('show',(data.records[todayKey()]||[]).length<TASKS.length);}
+function initNotifications(){if(!('Notification'in window)||Notification.permission!=='default')return;document.getElementById('notifyPrompt').classList.add('show');}
+document.getElementById('notifyBtn').addEventListener('click',()=>{Notification.requestPermission().then(p=>{if(p==='granted'){document.getElementById('notifyPrompt').classList.remove('show');scheduleDailyReminder();}});});
+function scheduleDailyReminder(){const t=new Date();t.setHours(20,0,0,0);if(t<=new Date())t.setDate(t.getDate()+1);setTimeout(()=>{if('Notification'in window&&Notification.permission==='granted')new Notification('英核',{body:'今天打卡了吗？三项训练等你完成',icon:'icon-180.png'});scheduleDailyReminder();},Math.min(t-new Date(),86400000));}
+(function(){const h=new Date().getHours();if(h>=20&&h<21)setTimeout(()=>{if('Notification'in window&&Notification.permission==='granted')new Notification('英核',{body:'今天打卡了吗？三项训练等你完成',icon:'icon-180.png'});},3000);})();
+
+/* ===== 渲染阶段路线图 ===== */
+function renderPhaseRoadmap(){
+  const currentIdx=currentPhaseIndex();
+  // 如果选中的阶段比当前还大，回退到当前
+  if(selectedPhase>currentIdx)selectedPhase=currentIdx;
+  const track=document.getElementById('phaseTrack');track.innerHTML='';
+  PHASES.forEach((p,i)=>{
+    const r=phaseWeekRange(i);
+    const node=document.createElement('div');
+    let cls='phase-node';
+    if(i===currentIdx)cls+=' active';
+    else if(i<currentIdx)cls+=' past';
+    else cls+=' future';
+    if(i===selectedPhase)cls+=' active'; // highlight selected
+    node.className=cls;
+    const icon=i<currentIdx?'✓':(i===currentIdx?'▶':'');
+    node.innerHTML='<span class="num'>'+(i+1)+'</span><span class="label">'+p.title+'</span><span class="phase-week">第'+(r.start==r.end?r.start:r.start+'-'+r.end)+'周</span>'+(icon?' <span class="check">'+icon+'</span>':'');
+    if(i<=currentIdx){ // 过去和当前可点
+      node.addEventListener('click',()=>{selectedPhase=i;render();});
+    }
+    track.appendChild(node);
   });
-});
-function scheduleDailyReminder(){
-  const t=new Date();t.setHours(20,0,0,0);
-  if(t<=new Date())t.setDate(t.getDate()+1);
-  setTimeout(()=>{
-    if('Notification' in window&&Notification.permission==='granted')
-      new Notification('英核',{body:'今天打卡了吗？三项训练等你完成 💪',icon:'icon-180.png'});
-    scheduleDailyReminder();
-  },Math.min(t-new Date(),86400000));
+  // 滚动到当前选中
+  requestAnimationFrame(()=>{
+    const active=track.querySelector('.phase-node.active');
+    if(active)active.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+  });
 }
-(function(){
-  const h=new Date().getHours();
-  if(h>=20&&h<21)setTimeout(()=>{if('Notification' in window&&Notification.permission==='granted')new Notification('英核',{body:'今天打卡了吗？三项训练等你完成 💪',icon:'icon-180.png'});},3000);
-})();
 
-/* ===================== 渲染：今日训练 ===================== */
-let openTask=null;
+/* ===== 渲染阶段详情 ===== */
+function renderPhaseDetail(){
+  const card=document.getElementById('phaseDetailCard');
+  const i=selectedPhase;
+  const p=PHASES[i];
+  const curr=currentPhaseIndex();
+  document.getElementById('pdTitle').textContent='阶段 '+(i+1)+'：'+p.title;
+  const r=phaseWeekRange(i);
+  document.getElementById('pdBadge').textContent='第'+r.start+'-'+r.end+'周';
+  document.getElementById('pdDesc').textContent=p.desc;
+  const status=document.getElementById('pdStatus');
+  if(i<curr){status.className='pd-status done';status.textContent='✓ 已通过 · 可查看复习';}
+  else if(i===curr){status.className='pd-status current';status.textContent='▶ 当前阶段 · 正在进行';}
+  else{status.className='pd-status locked';status.textContent='🔒 第'+r.start+'周解锁 · 先专注当前阶段';}
+  card.className='phase-detail-card show';
+}
+
+/* ===== 渲染 ===== */
 function render(){
   const tk=todayKey(),rec=data.records[tk]||[],doneCount=rec.length,allDone=doneCount>=TASKS.length;
   const now=new Date();
@@ -595,11 +606,15 @@ function render(){
   sNum.textContent=streak;sNum.classList.toggle('complete',allDone);
   document.getElementById('ringSub').textContent='今天完成 '+doneCount+'/'+TASKS.length;
   document.getElementById('celebrate').classList.toggle('show',allDone);
-  const wk=currentWeek(),pi=Math.min(wk-1,PHASES.length-1);
-  document.getElementById('phaseBadge').textContent='第 '+wk+' 周';
-  document.getElementById('phaseTitle').textContent=PHASES[pi].title;
-  document.getElementById('phaseDesc').textContent=PHASES[pi].desc;
-  renderTasks(rec);renderWeek();
+
+  renderPhaseRoadmap();
+  renderPhaseDetail();
+
+  const currIdx=currentPhaseIndex();
+  const isCurrentPhase=selectedPhase===currIdx;
+  document.getElementById('taskSectionLabel').textContent=isCurrentPhase?'展开任务看详情；填完指标才能打卡完成':'阶段 '+(selectedPhase+1)+' 任务内容（查看模式）';
+  renderTasks(rec);
+  renderWeek();
   document.getElementById('statStreak').textContent=streak;
   document.getElementById('statBest').textContent=bestStreak();
   document.getElementById('statTotal').textContent=totalDays();
@@ -610,21 +625,44 @@ function render(){
 function renderTasks(rec){
   const tk=todayKey(),todayMetric=data.metrics[tk]||{};
   const list=document.getElementById('taskList');list.innerHTML='';
+  const currIdx=currentPhaseIndex();
+  const canCheck=selectedPhase===currIdx; // 只有当前阶段可以打卡
+
   TASKS.forEach(t=>{
     const done=rec.includes(t.id),open=openTask===t.id;
     const el=document.createElement('div');
-    el.className='task'+(done?' done':'')+(open?' open':'');
+    el.className='task'+(done?' done':'')+(open?' open':'')+(canCheck?'':' locked');
     const mVal=(todayMetric[t.metricKey]!=null)?todayMetric[t.metricKey]:'',hasMetric=(todayMetric[t.metricKey]!=null);
-    el.innerHTML='<div class="task-main" data-act="toggleopen"><div class="check" data-act="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0f1419" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="task-body"><div class="task-name">'+t.name+'</div><div class="task-meta">'+t.meta+' · '+t.min+'′</div></div><div class="task-right"><button class="edit-btn" data-act="edit" title="编辑任务">✎</button><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="detail"><div class="detail-inner"><div class="d-block"><div class="d-h tool">▸ 用什么</div><div class="d-p">'+t.tool+'</div></div><div class="d-block"><div class="d-h">▸ 怎么练</div><ul class="d-list">'+t.how.map(h=>'<li>'+h+'</li>').join('')+'</ul></div><div class="d-block"><div class="d-h target">▸ 验收线</div><div class="d-p">'+t.target+'</div></div><div class="d-block"><div class="d-h verify">▸ 怎么自测验证</div><ul class="d-list">'+(t.verify||[]).map(v=>'<li>'+v+'</li>').join('')+'</ul></div><div class="metric'+(hasMetric?'':' required')+'"><div class="metric-h">'+(hasMetric?'今日记录':'⚠ 先填这个数，才能打卡完成')+'</div><div class="metric-row"><label>'+t.metricLabel+'</label><input type="number" inputmode="decimal" data-metric="'+t.metricKey+'" value="'+mVal+'" placeholder="必填"><span class="metric-unit">'+t.metricUnit+'</span></div><div class="metric-hint">'+t.metricHint+'</div></div></div></div>';
-    el.querySelector('[data-act="check"]').addEventListener('click',(e)=>{e.stopPropagation();tryCheck(t,el);});
+
+    let metricHtml;
+    if(canCheck){
+      metricHtml='<div class="metric'+(hasMetric?'':' required')+'"><div class="metric-h">'+(hasMetric?'今日记录':'⚠ 先填这个数，才能打卡完成')+'</div><div class="metric-row"><label>'+t.metricLabel+'</label><input type="number" inputmode="decimal" data-metric="'+t.metricKey+'" value="'+mVal+'" placeholder="必填"><span class="metric-unit">'+t.metricUnit+'</span></div><div class="metric-hint">'+t.metricHint+'</div></div>';
+    }else{
+      metricHtml='<div class="metric"><div class="metric-h">📖 查看模式</div><div class="lock-overlay">'+t.metricLabel+'：'+t.metricUnit+'</div><div class="metric-hint">'+t.metricHint+'</div></div>';
+    }
+
+    el.innerHTML='<div class="task-main" data-act="toggleopen"><div class="check'+(canCheck?'':'')+'">'+
+      (canCheck?'<svg viewBox="0 0 24 24" fill="none" stroke="#0f1419" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>':'<span class="lock-icon">🔒</span>')+
+      '</div><div class="task-body"><div class="task-name">'+t.name+'</div><div class="task-meta">'+t.meta+' · '+t.min+'′</div></div>'+
+      '<div class="task-right">'+(canCheck?'<button class="edit-btn" data-act="edit" title="编辑任务">✎</button>':'')+
+      '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div>'+
+      '<div class="detail"><div class="detail-inner"><div class="d-block"><div class="d-h tool">▸ 用什么</div><div class="d-p">'+t.tool+'</div></div>'+
+      '<div class="d-block"><div class="d-h">▸ 怎么练</div><ul class="d-list">'+t.how.map(h=>'<li>'+h+'</li>').join('')+'</ul></div>'+
+      '<div class="d-block"><div class="d-h target">▸ 验收线</div><div class="d-p">'+t.target+'</div></div>'+
+      '<div class="d-block"><div class="d-h verify">▸ 怎么自测验证</div><ul class="d-list">'+(t.verify||[]).map(v=>'<li>'+v+'</li>').join('')+'</ul></div>'+
+      metricHtml+'</div></div>';
+
+    if(canCheck){
+      el.querySelector('[data-act="check"]').addEventListener('click',(e)=>{e.stopPropagation();tryCheck(t,el);});
+      el.querySelector('[data-act="edit"]').addEventListener('click',(e)=>{e.stopPropagation();openEdit(t.id);});
+    }
     el.querySelector('[data-act="toggleopen"]').addEventListener('click',()=>{openTask=(openTask===t.id?null:t.id);render();});
-    el.querySelector('[data-act="edit"]').addEventListener('click',(e)=>{e.stopPropagation();openEdit(t.id);});
     const inp=el.querySelector('input[data-metric]');
-    inp.addEventListener('click',e=>e.stopPropagation());
-    inp.addEventListener('change',e=>saveMetric(t.metricKey,e.target.value));
-    // Auto-save on input (with debounce)
-    let debounceTimer;
-    inp.addEventListener('input',e=>{clearTimeout(debounceTimer);debounceTimer=setTimeout(()=>saveMetric(t.metricKey,e.target.value),600);});
+    if(inp){
+      inp.addEventListener('click',e=>e.stopPropagation());
+      inp.addEventListener('change',e=>saveMetric(t.metricKey,e.target.value));
+      let dt;inp.addEventListener('input',e=>{clearTimeout(dt);dt=setTimeout(()=>saveMetric(t.metricKey,e.target.value),600);});
+    }
     list.appendChild(el);
   });
 }
@@ -633,356 +671,71 @@ function saveMetric(key,val){
   const tk=todayKey();
   if(!data.metrics[tk])data.metrics[tk]={};
   if(val===''||val==null){delete data.metrics[tk][key];}
-  else{
-    let n=Number(val);
-    if(isNaN(n))n=0;
-    const t=TASKS.find(t=>t.metricKey===key);
-    if(t){if(t.metricMin!=null)n=Math.max(t.metricMin,n);if(t.metricMax!=null)n=Math.min(t.metricMax,n);}
-    data.metrics[tk][key]=n;
-  }
+  else{let n=Number(val);if(isNaN(n))n=0;const t=TASKS.find(t=>t.metricKey===key);if(t){if(t.metricMin!=null)n=Math.max(t.metricMin,n);if(t.metricMax!=null)n=Math.min(t.metricMax,n);}data.metrics[tk][key]=n;}
   if(Object.keys(data.metrics[tk]).length===0)delete data.metrics[tk];
   saveData(data);render();
   if(document.getElementById('page-progress').classList.contains('active'))renderProgress();
 }
 
-function weekDoneCount(){
-  const now=new Date(),day=(now.getDay()+6)%7,mon=new Date(now);mon.setDate(now.getDate()-day);
-  let c=0;for(let i=0;i<7;i++){const d=new Date(mon);d.setDate(mon.getDate()+i);if(isDone(fmt(d)))c++;}return c;
-}
-function renderWeek(){
-  const now=new Date(),day=(now.getDay()+6)%7,mon=new Date(now);mon.setDate(now.getDate()-day);
-  const labels=['一','二','三','四','五','六','日'];
-  const box=document.getElementById('weekDots');box.innerHTML='';
-  for(let i=0;i<7;i++){
-    const d=new Date(mon);d.setDate(mon.getDate()+i);
-    const key=fmt(d),rec=data.records[key]||[],ratio=Math.min(rec.length/TASKS.length,1);
-    const isToday=key===todayKey(),future=parseKey(key)>parseKey(todayKey());
-    const el=document.createElement('div');
-    el.className='day-dot'+(isToday?' today':'')+(future?' future':'');
-    el.innerHTML='<div class="bar"><div class="fill" style="height:'+(ratio*100)+'%"></div></div><div class="lab">'+labels[i]+'</div>';
-    box.appendChild(el);
-  }
-}
+function weekDoneCount(){const n=new Date(),d=(n.getDay()+6)%7,m=new Date(n);m.setDate(n.getDate()-d);let c=0;for(let i=0;i<7;i++){const x=new Date(m);x.setDate(m.getDate()+i);if(isDone(fmt(x)))c++;}return c;}
+function renderWeek(){const n=new Date(),d=(n.getDay()+6)%7,m=new Date(n);m.setDate(n.getDate()-d);const ls=['一','二','三','四','五','六','日'];const box=document.getElementById('weekDots');box.innerHTML='';for(let i=0;i<7;i++){const x=new Date(m);x.setDate(m.getDate()+i);const key=fmt(x),rec=data.records[key]||[],ratio=Math.min(rec.length/TASKS.length,1),isToday=key===todayKey(),f=parseKey(key)>parseKey(todayKey());const el=document.createElement('div');el.className='day-dot'+(isToday?' today':'')+(f?' future':'');el.innerHTML='<div class="bar"><div class="fill" style="height:'+(ratio*100)+'%"></div></div><div class="lab">'+ls[i]+'</div>';box.appendChild(el);}}
+function tryCheck(t,el){const tk=todayKey(),arr=data.records[tk]||[];if(arr.includes(t.id)){toggleTask(t.id);return;}const m=data.metrics[tk]||{};if(m[t.metricKey]==null){openTask=t.id;render();return;}toggleTask(t.id);playCheckFeedback();el.classList.add('just-checked');setTimeout(()=>el.classList.remove('just-checked'),400);}
+function toggleTask(id){const tk=todayKey();if(!data.startDate)data.startDate=tk;if(!data.records[tk])data.records[tk]=[];const arr=data.records[tk],i=arr.indexOf(id);if(i>=0)arr.splice(i,1);else arr.push(id);if(arr.length===0&&(!data.metrics[tk]||Object.keys(data.metrics[tk]).length===0))delete data.records[tk];saveData(data);render();}
 
-function tryCheck(t,el){
-  const tk=todayKey(),arr=data.records[tk]||[];
-  if(arr.includes(t.id)){toggleTask(t.id);return;}
-  const m=data.metrics[tk]||{};
-  if(m[t.metricKey]==null){openTask=t.id;render();return;}
-  toggleTask(t.id);
-  playCheckFeedback();
-  el.classList.add('just-checked');
-  setTimeout(()=>el.classList.remove('just-checked'),400);
-  // Ring pop
-  document.getElementById('ringContainer').classList.add('just-completed');
-  setTimeout(()=>document.getElementById('ringContainer').classList.remove('just-completed'),500);
-}
-
-function toggleTask(id){
-  const tk=todayKey();
-  if(!data.startDate)data.startDate=tk;
-  if(!data.records[tk])data.records[tk]=[];
-  const arr=data.records[tk],i=arr.indexOf(id);
-  if(i>=0)arr.splice(i,1);else arr.push(id);
-  if(arr.length===0&&(!data.metrics[tk]||Object.keys(data.metrics[tk]).length===0))delete data.records[tk];
-  saveData(data);render();
-}
-
-/* ===================== 编辑任务 ===================== */
+/* ===== 编辑 ===== */
 let editingTaskId=null;
-function openEdit(id){
-  editingTaskId=id;const t=TASKS.find(t=>t.id===id);
-  if(!t)return;
-  document.getElementById('editName').value=t.name;document.getElementById('editMin').value=t.min;
-  document.getElementById('editDialog').classList.add('show');
-}
+function openEdit(id){editingTaskId=id;const t=TASKS.find(t=>t.id===id);if(!t)return;document.getElementById('editName').value=t.name;document.getElementById('editMin').value=t.min;document.getElementById('editDialog').classList.add('show');}
 function closeEdit(){editingTaskId=null;document.getElementById('editDialog').classList.remove('show');}
-function saveEdit(){
-  if(!editingTaskId)return;
-  const name=document.getElementById('editName').value.trim(),min=parseInt(document.getElementById('editMin').value);
-  if(!name){alert('请输入任务名称');return;}
-  if(!min||min<1){alert('请输入有效的时长');return;}
-  const c=loadCustomTasks();c[editingTaskId]={name,min};saveCustomTasks(c);TASKS=getTasks();closeEdit();render();
-}
+function saveEdit(){if(!editingTaskId)return;const name=document.getElementById('editName').value.trim(),min=parseInt(document.getElementById('editMin').value);if(!name){alert('请输入任务名称');return;}if(!min||min<1){alert('请输入有效的时长');return;}const c=loadCustomTasks();c[editingTaskId]={name,min};saveCustomTasks(c);TASKS=getTasks();closeEdit();render();}
 
-/* ===================== 标签切换 ===================== */
-function switchTab(idx){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab')[idx].classList.add('active');
-  const pg=document.querySelectorAll('.tab')[idx].dataset.page;
-  document.getElementById('page-'+pg).classList.add('active');
-  if(pg==='progress')renderProgress();
-  if(pg==='review')renderReview();
-}
+/* ===== Tab ===== */
+function switchTab(idx){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tab')[idx].classList.add('active');const pg=document.querySelectorAll('.tab')[idx].dataset.page;document.getElementById('page-'+pg).classList.add('active');if(pg==='progress')renderProgress();if(pg==='review')renderReview();}
 document.querySelectorAll('.tab').forEach((tab,i)=>{tab.addEventListener('click',()=>switchTab(i));});
 
-/* ===================== 进步曲线 ===================== */
-function renderProgress(){
-  const box=document.getElementById('charts');box.innerHTML='';
-  METRICS.forEach(m=>{
-    const pts=Object.keys(data.metrics).filter(k=>data.metrics[k][m.key]!=null).sort().map(k=>({date:k,v:data.metrics[k][m.key]}));
-    const recent=pts.slice(-14);
-    const card=document.createElement('div');card.className='chart-card';
-    let dirHtml='';
-    if(recent.length>=2){const first=recent[0].v,last=recent[recent.length-1].v,improving=m.better==='down'?last<first:last>first;dirHtml=improving?'<span class="chart-dir good">↗ 在变好</span>':'<span class="chart-dir flat">观察中</span>';}
-    let body;
-    if(recent.length===0){body='<div class="chart-empty">还没有数据。<br>去「今日训练」展开任务，填一个数就会出现在这里。</div>';}
-    else{body=lineChart(recent,m)+'<div class="latest"><span>最近一次</span><b>'+recent[recent.length-1].v+m.unit+'</b></div>';}
-    card.innerHTML='<div class="chart-head"><div class="chart-title">'+m.title+'</div>'+dirHtml+'</div><div class="chart-goal">'+m.goalText+'</div>'+body;
-    box.appendChild(card);
-  });
-  const g=document.getElementById('goals');g.innerHTML='';
-  GOALS.forEach(go=>{
-    const c=document.createElement('div');c.className='goal-card';
-    c.innerHTML='<h3>目标 <span class="goal-tag">'+go.tag+'</span></h3>'+go.rows.map(r=>'<div class="goal-row"><div class="goal-k">'+r[0]+'</div><div class="goal-v">'+r[1]+'</div></div>').join('');
-    g.appendChild(c);
-  });
-}
-function lineChart(pts,m){
-  const W=300,H=120,padL=8,padR=8,padT=14,padB=20;
-  const vals=pts.map(p=>p.v);let min=Math.min(...vals),max=Math.max(...vals);
-  if(min===max){min=min-1;max=max+1;}
-  const iW=W-padL-padR,iH=H-padT-padB,x=i=>padL+(pts.length===1?iW/2:iW*i/(pts.length-1)),y=v=>padT+iH*(1-(v-min)/(max-min));
-  const color=(m.better==='down')?'var(--done)':'var(--glow)';
-  let path='',dots='',area='';
-  pts.forEach((p,i)=>{const px=x(i),py=y(p.v);path+=(i===0?'M':'L')+px+' '+py+' ';dots+='<circle cx="'+px+'" cy="'+py+'" r="3" fill="'+color+'"/>';});
-  area='M '+x(0)+' '+(padT+iH)+' '+pts.map((p,i)=>'L '+x(i)+' '+y(p.v)).join(' ')+' L '+x(pts.length-1)+' '+(padT+iH)+' Z';
-  return '<svg class="chart-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><path d="'+area+'" fill="'+color+'" opacity="0.08"/><path d="'+path+'" fill="none" stroke="'+color+'" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'+dots+'<text x="'+x(0)+'" y="'+(H-6)+'" font-size="10" fill="#5b6772" text-anchor="start">'+pts[0].date.slice(5)+'</text><text x="'+x(pts.length-1)+'" y="'+(H-6)+'" font-size="10" fill="#5b6772" text-anchor="end">'+pts[pts.length-1].date.slice(5)+'</text></svg>';
-}
+/* ===== 进步 ===== */
+function renderProgress(){const box=document.getElementById('charts');box.innerHTML='';METRICS.forEach(m=>{const pts=Object.keys(data.metrics).filter(k=>data.metrics[k][m.key]!=null).sort().map(k=>({date:k,v:data.metrics[k][m.key]}));const recent=pts.slice(-14);const card=document.createElement('div');card.className='chart-card';let dirHtml='';if(recent.length>=2){const first=recent[0].v,last=recent[recent.length-1].v,improving=m.better==='down'?last<first:last>first;dirHtml=improving?'<span class="chart-dir good">↗ 在变好</span>':'<span class="chart-dir flat">观察中</span>';}let body;if(recent.length===0){body='<div class="chart-empty">还没有数据。</div>';}else{const W=300,H=120,padL=8,padR=8,padT=14,padB=20;const vals=recent.map(p=>p.v);let min=Math.min(...vals),max=Math.max(...vals);if(min===max){min=min-1;max=max+1;}const iW=W-padL-padR,iH=H-padT-padB,x=i=>padL+(recent.length===1?iW/2:iW*i/(recent.length-1)),y=v=>padT+iH*(1-(v-min)/(max-min));const color=(m.better==='down')?'var(--done)':'var(--glow)';let path='',dots='',area='';recent.forEach((p,i)=>{const px=x(i),py=y(p.v);path+=(i===0?'M':'L')+px+' '+py+' ';dots+='<circle cx="'+px+'" cy="'+py+'" r="3" fill="'+color+'"/>';});area='M '+x(0)+' '+(padT+iH)+' '+recent.map((p,i)=>'L '+x(i)+' '+y(p.v)).join(' ')+' L '+x(recent.length-1)+' '+(padT+iH)+' Z';body='<svg class="chart-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><path d="'+area+'" fill="'+color+'" opacity="0.08"/><path d="'+path+'" fill="none" stroke="'+color+'" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'+dots+'<text x="'+x(0)+'" y="'+(H-6)+'" font-size="10" fill="#5b6772" text-anchor="start">'+recent[0].date.slice(5)+'</text><text x="'+x(recent.length-1)+'" y="'+(H-6)+'" font-size="10" fill="#5b6772" text-anchor="end">'+recent[recent.length-1].date.slice(5)+'</text></svg><div class="latest"><span>最近一次</span><b>'+recent[recent.length-1].v+m.unit+'</b></div>';}
+card.innerHTML='<div class="chart-head"><div class="chart-title">'+m.title+'</div>'+dirHtml+'</div><div class="chart-goal">'+m.goalText+'</div>'+body;box.appendChild(card);});
+const g=document.getElementById('goals');g.innerHTML='';GOALS.forEach(go=>{const c=document.createElement('div');c.className='goal-card';c.innerHTML='<h3>目标 <span class="goal-tag">'+go.tag+'</span></h3>'+go.rows.map(r=>'<div class="goal-row"><div class="goal-k">'+r[0]+'</div><div class="goal-v">'+r[1]+'</div></div>').join('');g.appendChild(c);});}
 
-/* ===================== 备份 ===================== */
-document.getElementById('exportBtn').addEventListener('click',()=>{
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);const a=document.createElement('a');
-  a.href=url;a.download='英核备份_'+todayKey()+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
-});
+/* ===== 备份 ===== */
+document.getElementById('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='英核备份_'+todayKey()+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);});
 document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
-document.getElementById('importFile').addEventListener('change',(e)=>{
-  const file=e.target.files[0];if(!file)return;
-  const reader=new FileReader();
-  reader.onload=()=>{
-    try{
-      const obj=JSON.parse(reader.result);
-      if(typeof obj!=='object'||!('records'in obj))throw 0;
-      if(!confirm('导入将覆盖当前所有数据，确定继续？'))return;
-      if(!obj.metrics)obj.metrics={};
-      data=obj;saveData(data);render();
-      if(document.getElementById('page-progress').classList.contains('active'))renderProgress();
-      alert('导入成功。');
-    }catch(err){alert('导入失败：文件格式不正确。');}
-    e.target.value='';
-  };
-  reader.readAsText(file);
-});
+document.getElementById('importFile').addEventListener('change',(e)=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const obj=JSON.parse(reader.result);if(typeof obj!=='object'||!('records'in obj))throw 0;if(!confirm('导入将覆盖当前所有数据，确定继续？'))return;if(!obj.metrics)obj.metrics={};data=obj;saveData(data);render();if(document.getElementById('page-progress').classList.contains('active'))renderProgress();alert('导入成功。');}catch(err){alert('导入失败');}e.target.value='';};reader.readAsText(file);});
 
-/* ===================== 番茄钟 ===================== */
-const TIMER_STATES={IDLE:'idle',RUNNING:'running',PAUSED:'paused',BREAK:'break'};
-let timerState=TIMER_STATES.IDLE,timerSeconds=25*60,timerInterval=null,timerSessionCount=0,timerTotalMinutes=0;
+/* ===== 番茄钟 ===== */
+const TIMER_STATES={IDLE:'idle',RUNNING:'running',PAUSED:'paused',BREAK:'break'};let timerState=TIMER_STATES.IDLE,timerSeconds=25*60,timerInterval=null,timerSessionCount=0,timerTotalMinutes=0;
 function loadTimerStats(){try{const r=localStorage.getItem(TIMER_KEY);if(r){const o=JSON.parse(r);timerSessionCount=o.count||0;timerTotalMinutes=o.total||0;}}catch(e){}}
 function saveTimerStats(){localStorage.setItem(TIMER_KEY,JSON.stringify({count:timerSessionCount,total:timerTotalMinutes}));}
-function updateTimerDisplay(){
-  document.getElementById('timerDisplay').textContent=String(Math.floor(timerSeconds/60)).padStart(2,'0')+':'+String(timerSeconds%60).padStart(2,'0');
-  document.getElementById('timerSessions').innerHTML='今日完成 <b>'+timerSessionCount+'</b> 个番茄钟 · 累计 <b>'+timerTotalMinutes+'</b> 分钟';
-}
-function updateTimerPhase(){
-  const work=timerState!==TIMER_STATES.BREAK;
-  document.getElementById('timerModeLabel').textContent=work?'FOCUS':'BREAK';
-  document.getElementById('timerPhase').textContent=work?'专注时间':'休息时间 🎉';
-  document.getElementById('timerPhase').style.color=work?'var(--glow)':'var(--done)';
-}
-function playTimerDone(){
-  try{const ctx=new(window.AudioContext||window.webkitAudioContext)();for(let i=0;i<3;i++){const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=660+(i*110);o.type='sine';g.gain.setValueAtTime(0.12,ctx.currentTime+i*0.2);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.2+0.2);o.start(ctx.currentTime+i*0.2);o.stop(ctx.currentTime+i*0.2+0.2);}}catch(e){}
-  if('Notification'in window&&Notification.permission==='granted')new Notification('英核·番茄钟',{body:timerState===TIMER_STATES.BREAK?'休息结束，继续专注！':'🍅 番茄钟完成！休息一下吧'});
-}
-function timerTick(){
-  timerSeconds--;
-  if(timerSeconds<=0){
-    clearInterval(timerInterval);timerInterval=null;playTimerDone();
-    if(timerState===TIMER_STATES.BREAK){timerState=TIMER_STATES.RUNNING;timerSeconds=25*60;document.getElementById('timerStartBtn').textContent='暂停';document.getElementById('timerStartBtn').className='timer-btn pause';timerInterval=setInterval(timerTick,1000);}
-    else{timerSessionCount++;timerTotalMinutes+=25;saveTimerStats();timerState=TIMER_STATES.BREAK;timerSeconds=5*60;document.getElementById('timerStartBtn').textContent='开始休息';document.getElementById('timerStartBtn').className='timer-btn start';}
-    updateTimerDisplay();updateTimerPhase();return;
-  }
-  updateTimerDisplay();
-}
-// Use a hidden worker-like approach for timer: update display via requestAnimationFrame when visible
-// But main interval still works, just won't tick when tab hidden (browser throttling)
-// Solution: track real elapsed time
-let timerStartTime=null;
-document.getElementById('timerStartBtn').addEventListener('click',()=>{
-  if(timerState===TIMER_STATES.IDLE||timerState===TIMER_STATES.PAUSED||timerState===TIMER_STATES.BREAK){
-    if(timerState===TIMER_STATES.IDLE||timerState===TIMER_STATES.BREAK){} // fresh start
-    timerState=TIMER_STATES.RUNNING;
-    timerStartTime=Date.now();
-    document.getElementById('timerStartBtn').textContent='暂停';
-    document.getElementById('timerStartBtn').className='timer-btn pause';
-    clearInterval(timerInterval);
-    timerInterval=setInterval(timerTick,200); // Check more frequently
-  }else if(timerState===TIMER_STATES.RUNNING){
-    timerState=TIMER_STATES.PAUSED;clearInterval(timerInterval);timerInterval=null;
-    document.getElementById('timerStartBtn').textContent='继续';
-    document.getElementById('timerStartBtn').className='timer-btn start';
-  }
-  updateTimerPhase();
-});
-document.getElementById('timerResetBtn').addEventListener('click',()=>{
-  clearInterval(timerInterval);timerInterval=null;timerState=TIMER_STATES.IDLE;timerSeconds=25*60;
-  document.getElementById('timerStartBtn').textContent='开始';document.getElementById('timerStartBtn').className='timer-btn start';
-  updateTimerDisplay();updateTimerPhase();
-});
+function updateTimerDisplay(){document.getElementById('timerDisplay').textContent=String(Math.floor(timerSeconds/60)).padStart(2,'0')+':'+String(timerSeconds%60).padStart(2,'0');document.getElementById('timerSessions').innerHTML='今日完成 <b>'+timerSessionCount+'</b> 个番茄钟 · 累计 <b>'+timerTotalMinutes+'</b> 分钟';}
+function updateTimerPhase(){const w=timerState!==TIMER_STATES.BREAK;document.getElementById('timerModeLabel').textContent=w?'FOCUS':'BREAK';document.getElementById('timerPhase').textContent=w?'专注时间':'休息时间 🎉';document.getElementById('timerPhase').style.color=w?'var(--glow)':'var(--done)';}
+function playTimerDone(){try{const ctx=new(window.AudioContext||window.webkitAudioContext)();for(let i=0;i<3;i++){const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=660+(i*110);o.type='sine';g.gain.setValueAtTime(0.12,ctx.currentTime+i*0.2);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.2+0.2);o.start(ctx.currentTime+i*0.2);o.stop(ctx.currentTime+i*0.2+0.2);}}catch(e){}if('Notification'in window&&Notification.permission==='granted')new Notification('英核·番茄钟',{body:timerState===TIMER_STATES.BREAK?'休息结束，继续专注！':'🍅 番茄钟完成！休息一下吧'});}
+function timerTick(){timerSeconds--;if(timerSeconds<=0){clearInterval(timerInterval);timerInterval=null;playTimerDone();if(timerState===TIMER_STATES.BREAK){timerState=TIMER_STATES.RUNNING;timerSeconds=25*60;document.getElementById('timerStartBtn').textContent='暂停';document.getElementById('timerStartBtn').className='timer-btn pause';timerInterval=setInterval(timerTick,200);}else{timerSessionCount++;timerTotalMinutes+=25;saveTimerStats();timerState=TIMER_STATES.BREAK;timerSeconds=5*60;document.getElementById('timerStartBtn').textContent='开始休息';document.getElementById('timerStartBtn').className='timer-btn start';}updateTimerDisplay();updateTimerPhase();return;}updateTimerDisplay();}
+document.getElementById('timerStartBtn').addEventListener('click',()=>{if(timerState===TIMER_STATES.IDLE||timerState===TIMER_STATES.PAUSED||timerState===TIMER_STATES.BREAK){timerState=TIMER_STATES.RUNNING;document.getElementById('timerStartBtn').textContent='暂停';document.getElementById('timerStartBtn').className='timer-btn pause';clearInterval(timerInterval);timerInterval=setInterval(timerTick,200);}else if(timerState===TIMER_STATES.RUNNING){timerState=TIMER_STATES.PAUSED;clearInterval(timerInterval);timerInterval=null;document.getElementById('timerStartBtn').textContent='继续';document.getElementById('timerStartBtn').className='timer-btn start';}updateTimerPhase();});
+document.getElementById('timerResetBtn').addEventListener('click',()=>{clearInterval(timerInterval);timerInterval=null;timerState=TIMER_STATES.IDLE;timerSeconds=25*60;document.getElementById('timerStartBtn').textContent='开始';document.getElementById('timerStartBtn').className='timer-btn start';updateTimerDisplay();updateTimerPhase();});
 loadTimerStats();updateTimerDisplay();updateTimerPhase();
 
-/* ===================== 复盘 ===================== */
-let reviewView='calendar'; // calendar | monthly | yearly
-function renderReview(){
-  const now=new Date();
-  renderCalendar(now.getFullYear(),now.getMonth());
-  renderMonthlyStats(now.getFullYear());
-  renderYearlyStats(now.getFullYear());
-}
-document.querySelectorAll('.view-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    reviewView=btn.dataset.view;
-    ['reviewCalendar','reviewMonthly','reviewYearly'].forEach(id=>document.getElementById(id).style.display='none');
-    document.getElementById('review'+reviewView.charAt(0).toUpperCase()+reviewView.slice(1)).style.display='block';
-  });
-});
+/* ===== 复盘 ===== */
+function renderReview(){const n=new Date();renderCalendar(n.getFullYear(),n.getMonth());renderMonthlyChart(n.getFullYear());renderYearly(n.getFullYear());}
+document.querySelectorAll('.view-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const v=btn.dataset.view;['reviewCalendar','reviewMonthly','reviewYearly'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('review'+v.charAt(0).toUpperCase()+v.slice(1)).style.display='block';});});
+function renderCalendar(y,m){document.getElementById('calMonthLabel').textContent=y+' 年 '+(m+1)+' 月';const grid=document.getElementById('calGrid');while(grid.children.length>7)grid.removeChild(grid.lastChild);const first=new Date(y,m,1).getDay(),offset=(first===0?6:first-1);const days=getMonthDays(y,m+1),tk=todayKey();let calDays=0,calDone=0;for(let i=0;i<offset;i++){const d=document.createElement('div');d.className='cal-day future';d.textContent='';grid.appendChild(d);}for(let d=1;d<=days;d++){const date=new Date(y,m,d),key=fmt(date);const cell=document.createElement('div');const done=isDone(key),partial=data.records[key]&&data.records[key].length>0;cell.className='cal-day'+(key===tk?' today':'')+(done?' done':'')+(partial&&!done?' partial':'')+(key>tk?' future':'');cell.textContent=d;if(done)calDone;if(key<=tk)calDays++;cell.addEventListener('click',()=>{const rec=data.records[key];if(rec&&rec.length>0)alert('📅 '+key+'\n已完成 '+rec.length+'/'+TASKS.length+' 项\n'+(data.metrics[key]?Object.entries(data.metrics[key]).map(([k,v])=>'  '+(TASKS.find(t=>t.metricKey===k)?.name||k)+': '+v).join('\n'):''));else alert('📅 '+key+'\n未打卡');});grid.appendChild(cell);}
+document.getElementById('msDays').textContent=calDone;let msStreak=0,msCur=0;for(let d=1;d<=days;d++){if(isDone(fmt(new Date(y,m,d)))){msCur++;msStreak=Math.max(msStreak,msCur);}else msCur=0;}let score=0;for(let d=1;d<=days;d++){const key=fmt(new Date(y,m,d));if(data.records[key])score+=data.records[key].length;}
+document.getElementById('msStreak').textContent=msStreak;document.getElementById('msRate').textContent=calDays>0?Math.round(calDone/calDays*100)+'%':'0%';document.getElementById('msScore').textContent=score;}
+function renderMonthlyChart(y){const box=document.getElementById('monthlyChart');const dp=[];for(let m=0;m<12;m++){let c=0,t=0;const days=getMonthDays(y,m+1);for(let d=1;d<=days;d++){const key=fmt(new Date(y,m,d));if(key<=todayKey()){t++;if(isDone(key))c++;}}dp.push({m:m+1,c,t});}const mx=Math.max(...dp.map(p=>p.c),1);box.innerHTML='<div style="display:flex;gap:4px;align-items:flex-end;height:120px;padding:8px 0">'+dp.map(p=>{const h=Math.max(4,Math.round(p.c/mx*100));const a=p.m===new Date().getMonth()+1;return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-size:10px;color:var(--paper-faint)">'+p.c+'</div><div style="width:100%;height:'+h+'px;border-radius:6px;background:'+(a?'var(--glow)':'var(--ink-3)')+';transition:height .4s;min-height:4px"></div><div style="font-size:9px;color:var(--paper-faint)">'+p.m+'月</div></div>';}).join('')+'</div>';}
+function renderYearly(y){let td=0,dd=0;for(let m=0;m<12;m++){const days=getMonthDays(y,m+1);for(let d=1;d<=days;d++){const key=fmt(new Date(y,m,d));if(key<=todayKey()){td++;if(isDone(key))dd++;}}}document.getElementById('yrDays').textContent=dd;document.getElementById('yrStreak').textContent=bestStreak();document.getElementById('yrCurrent').textContent=currentStreak();document.getElementById('yrRate').textContent=td>0?Math.round(dd/td*100)+'%':'0%';const mD=[];for(let m=0;m<12;m++){let c=0;const days=getMonthDays(y,m+1);for(let d=1;d<=days;d++){if(isDone(fmt(new Date(y,m,d))))c++;}mD.push(c);}const mx=Math.max(...mD,1);document.getElementById('yearChart').innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:100px;padding:8px 0">'+mD.map((c,i)=>{const h=Math.max(4,Math.round(c/mx*100));return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="width:100%;height:'+h+'px;border-radius:6px;background:var(--ink-3);overflow:hidden"><div style="width:100%;height:'+h+'px;border-radius:6px;background:var(--done);transition:height .4s"></div></div><div style="font-size:9px;color:var(--paper-faint)">'+(i+1)+'月</div></div>';}).join('')+'</div>';}
 
-function renderCalendar(year,month){
-  document.getElementById('calMonthLabel').textContent=year+' 年 '+(month+1)+' 月';
-  const grid=document.getElementById('calGrid');
-  // Remove old day cells (keep headers)
-  while(grid.children.length>7)grid.removeChild(grid.lastChild);
-  const first=new Date(year,month,1).getDay(); // 0=Sun
-  // first day offset (Mon first)
-  const offset=(first===0?6:first-1);
-  const days=getMonthDays(year,month+1);
-  const today=todayKey();
-  let calDays=0,calDone=0;
-  for(let i=0;i<offset;i++){const d=document.createElement('div');d.className='cal-day future';d.textContent='';grid.appendChild(d);}
-  for(let d=1;d<=days;d++){
-    const date=new Date(year,month,d);
-    const key=fmt(date);
-    const cell=document.createElement('div');
-    const done=isDone(key),partial=data.records[key]&&data.records[key].length>0;
-    const classes=['cal-day'];
-    if(key===today)classes.push('today');
-    if(done)classes.push('done');
-    else if(partial)classes.push('partial');
-    if(key>today)classes.push('future');
-    cell.className=classes.join(' ');
-    cell.textContent=d;
-    if(done)calDone++;
-    if(key<=today)calDays++;
-    cell.addEventListener('click',()=>{
-      const rec=data.records[key];
-      if(rec&&rec.length>0)alert('📅 '+key+'\n已完成 '+rec.length+'/'+TASKS.length+' 项任务\n'+(data.metrics[key]?Object.entries(data.metrics[key]).map(([k,v])=>'  '+(TASKS.find(t=>t.metricKey===k)?.name||k)+': '+v).join('\n'):''));
-      else alert('📅 '+key+'\n未打卡');
-    });
-    grid.appendChild(cell);
-  }
-  document.getElementById('msDays').textContent=calDone;
-  // Calculate streak within this month
-  let msStreak=0,msCur=0;
-  for(let d=1;d<=days;d++){
-    const key=fmt(new Date(year,month,d));
-    if(isDone(key)){msCur++;msStreak=Math.max(msStreak,msCur);}else msCur=0;
-  }
-  document.getElementById('msStreak').textContent=msStreak;
-  document.getElementById('msRate').textContent=calDays>0?Math.round(calDone/calDays*100)+'%':'0%';
-  // Score: sum of all task completions this month
-  let score=0;
-  for(let d=1;d<=days;d++){
-    const key=fmt(new Date(year,month,d));
-    if(data.records[key])score+=data.records[key].length;
-  }
-  document.getElementById('msScore').textContent=score;
-}
-
-function renderMonthlyStats(year){
-  const box=document.getElementById('monthlyChart');
-  const data_points=[];
-  for(let m=0;m<12;m++){
-    let count=0,total=0;
-    const days=getMonthDays(year,m+1);
-    for(let d=1;d<=days;d++){
-      const key=fmt(new Date(year,m,d));
-      if(key<=todayKey()){total++;if(isDone(key))count++;}
-    }
-    data_points.push({month:m+1,count,total});
-  }
-  // Bar chart
-  const maxCount=Math.max(...data_points.map(p=>p.count),1);
-  box.innerHTML='<div style="display:flex;gap:4px;align-items:flex-end;height:120px;padding:8px 0">'+
-    data_points.map(p=>{
-      const h=Math.max(4,Math.round(p.count/maxCount*100));
-      const active=p.month===new Date().getMonth()+1;
-      return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">'+
-        '<div style="font-size:10px;color:var(--paper-faint)">'+p.count+'</div>'+
-        '<div style="width:100%;height:'+h+'px;border-radius:6px;background:'+(active?'var(--glow)':'var(--ink-3)')+';transition:height .4s;min-height:4px"></div>'+
-        '<div style="font-size:9px;color:var(--paper-faint)">'+(p.month)+'月</div></div>';
-    }).join('')+'</div>';
-}
-
-function renderYearlyStats(year){
-  let totalDays=0,doneDays=0;
-  for(let m=0;m<12;m++){
-    const days=getMonthDays(year,m+1);
-    for(let d=1;d<=days;d++){
-      const key=fmt(new Date(year,m,d));
-      if(key<=todayKey()){totalDays++;if(isDone(key))doneDays++;}
-    }
-  }
-  document.getElementById('yrDays').textContent=doneDays;
-  document.getElementById('yrStreak').textContent=bestStreak();
-  document.getElementById('yrCurrent').textContent=currentStreak();
-  document.getElementById('yrRate').textContent=totalDays>0?Math.round(doneDays/totalDays*100)+'%':'0%';
-  // Year bar chart by month
-  const box=document.getElementById('yearChart');
-  const mData=[];
-  for(let m=0;m<12;m++){
-    let c=0;const days=getMonthDays(year,m+1);
-    for(let d=1;d<=days;d++){if(isDone(fmt(new Date(year,m,d))))c++;}
-    mData.push(c);
-  }
-  const maxC=Math.max(...mData,1);
-  box.innerHTML='<div style="display:flex;gap:6px;align-items:flex-end;height:100px;padding:8px 0">'+
-    mData.map((c,i)=>{
-      const h=Math.max(4,Math.round(c/maxC*100));
-      return '<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">'+
-        '<div style="width:100%;height:'+h+'px;border-radius:6px;background:var(--ink-3);overflow:hidden">'+
-        '<div style="width:100%;height:'+h+'px;border-radius:6px;background:var(--done);transition:height .4s"></div></div>'+
-        '<div style="font-size:9px;color:var(--paper-faint)">'+(i+1)+'月</div></div>';
-    }).join('')+'</div>';
-}
-
-/* ===================== 新手引导 ===================== */
+/* ===== 引导 ===== */
 function shouldShowOnboard(){try{return!localStorage.getItem(ONBOARD_KEY);}catch(e){return true;}}
-const ONBOARD_STEPS=[
-  {icon:'🎯',title:'欢迎来到英核',desc:'每天三项英语训练：背单词、精听、开口练。打卡记录你的成长，用数据看进步。'},
-  {icon:'📝',title:'展开任务看详情',desc:'每个任务配有「怎么练」「验收线」「自测方法」。点任务卡展开，一步步跟着做。'},
-  {icon:'📊',title:'填入数字才能打卡',desc:'每项任务展开后，填今天的指标数（正确率/遍数/延迟），再点圆圈打卡。'},
-  {icon:'📈',title:'数据自己会说话',desc:'填的数自动画成折线图，还有日历热力图、月度对比、年度总览——去「复盘」页看看。'}
-];
+const ONBOARD_STEPS=[{icon:'🎯',title:'欢迎来到英核',desc:'每天三项英语训练：背单词、精听、开口练。打卡记录你的成长，用数据看进步。'},{icon:'🗺️',title:'阶段路线图',desc:'顶部显示完整训练路线。当前阶段可打卡，过去阶段可回顾，未来阶段锁定。一步步来。'},{icon:'📊',title:'填入数字才能打卡',desc:'每项任务展开填今天的指标数（正确率/遍数/延迟），再点圆圈打卡。'},{icon:'📈',title:'数据自己会说话',desc:'填的数自动画成折线图，还有日历热力图、月度对比、年度总览。'}];
 let onboardStep=0;
 function showOnboard(){document.getElementById('onboardOverlay').classList.add('show');onboardStep=0;renderOnboardStep();}
-function renderOnboardStep(){
-  const step=ONBOARD_STEPS[onboardStep];
-  document.getElementById('onboardIcon').textContent=step.icon;
-  document.getElementById('onboardTitle').textContent=step.title;
-  document.getElementById('onboardDesc').textContent=step.desc;
-  document.getElementById('onboardBtn').textContent=onboardStep<ONBOARD_STEPS.length-1?'下一步':'开始训练';
-  document.getElementById('onboardDots').innerHTML=ONBOARD_STEPS.map((_,i)=>'<div class="onboard-dot'+(i===onboardStep?' active':'')+'"></div>').join('');
-}
+function renderOnboardStep(){const s=ONBOARD_STEPS[onboardStep];document.getElementById('onboardIcon').textContent=s.icon;document.getElementById('onboardTitle').textContent=s.title;document.getElementById('onboardDesc').textContent=s.desc;document.getElementById('onboardBtn').textContent=onboardStep<ONBOARD_STEPS.length-1?'下一步':'开始训练';document.getElementById('onboardDots').innerHTML=ONBOARD_STEPS.map((_,i)=>'<div class="onboard-dot'+(i===onboardStep?' active':'')+'"></div>').join('');}
 function nextOnboard(){if(onboardStep<ONBOARD_STEPS.length-1){onboardStep++;renderOnboardStep();}else finishOnboard();}
 function finishOnboard(){document.getElementById('onboardOverlay').classList.remove('show');try{localStorage.setItem(ONBOARD_KEY,'1');}catch(e){}}
 
-/* ===================== Service Worker ===================== */
+/* ===== SW ===== */
 if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 
-/* ===================== 启动 ===================== */
+/* ===== 启动 ===== */
 render();
 if(shouldShowOnboard())showOnboard();
 initNotifications();
