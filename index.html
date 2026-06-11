@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>英语训练</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="英语训练">
+<meta name="theme-color" content="#0f1419">
+<link rel="manifest" href='data:application/manifest+json,{"name":"英语训练","short_name":"英语训练","display":"standalone","background_color":"%230f1419","theme_color":"%230f1419","start_url":"."}'>
+
+<style>
+  :root{
+    --ink:#0f1419; --ink-2:#1a2129; --ink-3:#232c36; --ink-4:#2e3a46;
+    --paper:#eef2f4; --paper-dim:#8a97a3; --paper-faint:#5b6772;
+    --glow:#f4c95d; --glow-soft:#f4c95d22;
+    --done:#5fd0a0; --done-soft:#5fd0a01a;
+    --blue:#6db3e8;
+    --radius:18px; --radius-sm:12px;
+    --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--ink); color:var(--paper); font-family:var(--font); line-height:1.5;
+    padding:calc(env(safe-area-inset-top) + 8px) max(env(safe-area-inset-right),16px) calc(env(safe-area-inset-bottom) + 24px) max(env(safe-area-inset-left),16px);
+    max-width:520px; margin:0 auto; min-height:100vh; -webkit-text-size-adjust:100%;
+  }
+
+  /* 顶部 + 标签切换 */
+  .top{ display:flex; align-items:flex-end; justify-content:space-between; margin:8px 2px 16px; }
+  .title{ font-size:20px; font-weight:700; letter-spacing:.5px; }
+  .title .dot{ color:var(--glow); }
+  .today{ font-size:13px; color:var(--paper-dim); text-align:right; }
+
+  .tabs{ display:flex; gap:6px; background:var(--ink-2); padding:4px; border-radius:var(--radius-sm); margin-bottom:20px; }
+  .tab{ flex:1; text-align:center; padding:9px; font-size:13px; font-weight:600; color:var(--paper-dim); border-radius:9px; cursor:pointer; transition:all .2s; }
+  .tab.active{ background:var(--ink-4); color:var(--paper); }
+
+  .page{ display:none; }
+  .page.active{ display:block; animation:fade .3s; }
+  @keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+  /* 圆环 */
+  .ring-wrap{ display:flex; flex-direction:column; align-items:center; margin-bottom:8px; }
+  .ring{ position:relative; width:190px; height:190px; }
+  .ring svg{ transform:rotate(-90deg); display:block; }
+  .ring-track{ fill:none; stroke:var(--ink-3); stroke-width:13; }
+  .ring-fill{ fill:none; stroke:var(--glow); stroke-width:13; stroke-linecap:round; transition:stroke-dashoffset .6s cubic-bezier(.2,.8,.2,1), stroke .4s; }
+  .ring-fill.complete{ stroke:var(--done); }
+  .ring-center{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .streak-num{ font-size:60px; font-weight:800; line-height:1; letter-spacing:-2px; }
+  .streak-num.complete{ color:var(--done); }
+  .streak-label{ font-size:13px; color:var(--paper-dim); margin-top:6px; letter-spacing:1px; }
+  .streak-sub{ font-size:12px; color:var(--paper-faint); margin-top:2px; }
+
+  .phase{ background:var(--glow-soft); border:1px solid #f4c95d33; border-radius:var(--radius-sm); padding:12px 14px; margin:18px 0; }
+  .phase-head{ display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+  .phase-badge{ background:var(--glow); color:var(--ink); font-size:11px; font-weight:700; padding:2px 8px; border-radius:20px; }
+  .phase-title{ font-size:14px; font-weight:600; }
+  .phase-desc{ font-size:13px; color:var(--paper-dim); line-height:1.55; }
+
+  .section-label{ font-size:12px; color:var(--paper-faint); letter-spacing:2px; margin:24px 2px 12px; }
+
+  /* 任务卡（可展开） */
+  .task{ background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius); margin-bottom:10px; overflow:hidden; transition:border-color .2s; }
+  .task.done{ border-color:#5fd0a055; background:var(--done-soft); }
+  .task-main{ display:flex; align-items:center; gap:14px; padding:16px; cursor:pointer; user-select:none; }
+  .check{ flex:none; width:28px; height:28px; border-radius:50%; border:2px solid var(--ink-3); display:flex; align-items:center; justify-content:center; transition:all .2s; }
+  .task.done .check{ border-color:var(--done); background:var(--done); }
+  .check svg{ width:15px; height:15px; opacity:0; transform:scale(.5); transition:all .2s; }
+  .task.done .check svg{ opacity:1; transform:scale(1); }
+  .task-body{ flex:1; min-width:0; }
+  .task-name{ font-size:15px; font-weight:600; }
+  .task.done .task-name{ color:var(--paper-dim); }
+  .task-meta{ font-size:12px; color:var(--paper-faint); margin-top:2px; }
+  .task-right{ flex:none; display:flex; align-items:center; gap:8px; }
+  .task-min{ font-size:13px; color:var(--glow); font-weight:600; }
+  .task.done .task-min{ color:var(--done); }
+  .chev{ width:18px; height:18px; color:var(--paper-faint); transition:transform .25s; }
+  .task.open .chev{ transform:rotate(180deg); }
+
+  /* 任务展开详情 */
+  .detail{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+  .task.open .detail{ max-height:600px; }
+  .detail-inner{ padding:0 16px 16px; border-top:1px solid var(--ink-3); margin-top:0; padding-top:14px; }
+  .d-block{ margin-bottom:14px; }
+  .d-block:last-child{ margin-bottom:0; }
+  .d-h{ font-size:12px; color:var(--glow); font-weight:700; letter-spacing:.5px; margin-bottom:5px; display:flex; align-items:center; gap:5px; }
+  .d-h.target{ color:var(--done); }
+  .d-h.tool{ color:var(--blue); }
+  .d-h.verify{ color:var(--done); }
+  .d-p{ font-size:13px; color:var(--paper-dim); line-height:1.6; }
+  .d-p b{ color:var(--paper); font-weight:600; }
+  .d-list{ font-size:13px; color:var(--paper-dim); line-height:1.7; margin:0; padding-left:0; list-style:none; }
+  .d-list li{ position:relative; padding-left:16px; }
+  .d-list li:before{ content:'·'; position:absolute; left:4px; color:var(--glow); font-weight:700; }
+
+  /* 指标输入 */
+  .metric{ background:var(--ink); border:1px dashed var(--ink-4); border-radius:var(--radius-sm); padding:12px; margin-top:10px; }
+  .metric.required{ border-color:var(--glow); border-style:solid; background:var(--glow-soft); }
+  .metric.required .metric-h{ color:var(--glow); }
+  .metric-h{ font-size:12px; color:var(--paper); font-weight:600; margin-bottom:8px; }
+  .metric-row{ display:flex; align-items:center; gap:10px; }
+  .metric-row label{ font-size:13px; color:var(--paper-dim); flex:1; }
+  .metric-row input{ width:74px; background:var(--ink-2); border:1px solid var(--ink-3); color:var(--paper); border-radius:8px; padding:8px; font-size:14px; text-align:center; font-family:var(--font); }
+  .metric-row input:focus{ outline:none; border-color:var(--glow); }
+  .metric-unit{ font-size:12px; color:var(--paper-faint); width:28px; }
+  .metric-hint{ font-size:11px; color:var(--paper-faint); margin-top:8px; line-height:1.5; }
+
+  /* 周进度 */
+  .week{ margin-top:28px; }
+  .week-head{ display:flex; justify-content:space-between; align-items:baseline; margin:0 2px 12px; }
+  .week-title{ font-size:14px; font-weight:600; }
+  .week-count{ font-size:13px; color:var(--paper-dim); }
+  .week-count b{ color:var(--glow); font-size:16px; }
+  .dots{ display:flex; justify-content:space-between; gap:6px; }
+  .day-dot{ flex:1; text-align:center; }
+  .day-dot .bar{ height:40px; border-radius:8px; background:var(--ink-3); margin-bottom:6px; display:flex; align-items:flex-end; overflow:hidden; }
+  .day-dot .bar .fill{ width:100%; background:var(--done); border-radius:8px; transition:height .4s; }
+  .day-dot.future .bar{ opacity:.4; }
+  .day-dot.today .bar{ outline:2px solid var(--glow); outline-offset:1px; }
+  .day-dot .lab{ font-size:11px; color:var(--paper-faint); }
+  .day-dot.today .lab{ color:var(--glow); font-weight:700; }
+
+  /* 统计 */
+  .stats{ display:flex; gap:10px; margin-top:24px; }
+  .stat{ flex:1; background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius-sm); padding:14px; text-align:center; }
+  .stat .n{ font-size:24px; font-weight:800; }
+  .stat .n.glow{ color:var(--glow); }
+  .stat .l{ font-size:11px; color:var(--paper-faint); margin-top:3px; }
+
+  /* ===== 进步页 ===== */
+  .intro{ font-size:13px; color:var(--paper-dim); line-height:1.65; background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius-sm); padding:14px; margin-bottom:20px; }
+  .intro b{ color:var(--paper); }
+  .chart-card{ background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius); padding:16px; margin-bottom:14px; }
+  .chart-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
+  .chart-title{ font-size:14px; font-weight:600; }
+  .chart-dir{ font-size:11px; padding:2px 7px; border-radius:20px; font-weight:600; }
+  .chart-dir.good{ background:var(--done-soft); color:var(--done); }
+  .chart-dir.flat{ background:var(--ink-3); color:var(--paper-dim); }
+  .chart-goal{ font-size:12px; color:var(--paper-faint); margin-bottom:12px; line-height:1.5; }
+  .chart-goal b{ color:var(--glow); }
+  .chart-svg{ width:100%; height:120px; display:block; }
+  .chart-empty{ font-size:12px; color:var(--paper-faint); text-align:center; padding:30px 10px; line-height:1.6; }
+  .latest{ display:flex; justify-content:space-between; align-items:baseline; margin-top:10px; font-size:12px; color:var(--paper-faint); }
+  .latest b{ color:var(--paper); font-size:18px; font-weight:700; }
+
+  /* 阶段目标卡 */
+  .goal-card{ background:var(--ink-2); border:1px solid var(--ink-3); border-radius:var(--radius); padding:16px; margin-bottom:14px; }
+  .goal-card h3{ font-size:14px; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+  .goal-tag{ font-size:11px; background:var(--ink-4); color:var(--paper-dim); padding:2px 8px; border-radius:20px; }
+  .goal-row{ display:flex; gap:10px; padding:8px 0; border-top:1px solid var(--ink-3); font-size:13px; }
+  .goal-row:first-of-type{ border-top:none; }
+  .goal-k{ color:var(--paper-dim); flex:none; width:64px; }
+  .goal-v{ color:var(--paper); flex:1; line-height:1.5; }
+  .goal-v b{ color:var(--done); }
+
+  .backup{ display:flex; gap:10px; margin-top:24px; }
+  .btn{ flex:1; background:var(--ink-2); border:1px solid var(--ink-3); color:var(--paper-dim); border-radius:var(--radius-sm); padding:13px; font-size:13px; font-weight:600; cursor:pointer; font-family:var(--font); transition:border-color .2s; }
+  .btn:active{ border-color:var(--glow); color:var(--paper); }
+  .footnote{ text-align:center; font-size:11px; color:var(--paper-faint); margin-top:18px; line-height:1.6; }
+  .celebrate{ text-align:center; font-size:13px; color:var(--done); font-weight:600; margin-top:14px; opacity:0; height:0; transition:opacity .4s; }
+  .celebrate.show{ opacity:1; height:auto; }
+
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="title">英语训练<span class="dot">.</span></div>
+    <div class="today" id="todayDate"></div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-page="train">今日训练</div>
+    <div class="tab" data-page="progress">进步曲线</div>
+  </div>
+
+  <!-- ============ 今日训练页 ============ -->
+  <div class="page active" id="page-train">
+
+    <div class="ring-wrap">
+      <div class="ring">
+        <svg width="190" height="190" viewBox="0 0 190 190">
+          <circle class="ring-track" cx="95" cy="95" r="82"></circle>
+          <circle class="ring-fill" id="ringFill" cx="95" cy="95" r="82"></circle>
+        </svg>
+        <div class="ring-center">
+          <div class="streak-num" id="streakNum">0</div>
+          <div class="streak-label">连续训练 · 天</div>
+          <div class="streak-sub" id="ringSub">今天完成 0/3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="celebrate" id="celebrate">✓ 今日三项到位。明天见。</div>
+
+    <div class="phase">
+      <div class="phase-head">
+        <span class="phase-badge" id="phaseBadge">第 1 周</span>
+        <span class="phase-title" id="phaseTitle">找回手感</span>
+      </div>
+      <div class="phase-desc" id="phaseDesc"></div>
+    </div>
+
+    <div class="section-label">展开任务看「怎么练 + 怎么自测」；填入当天的数才能打卡完成</div>
+    <div id="taskList"></div>
+
+    <div class="week">
+      <div class="week-head">
+        <div class="week-title">本周</div>
+        <div class="week-count"><b id="weekDone">0</b> / 7 天</div>
+      </div>
+      <div class="dots" id="weekDots"></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n glow" id="statStreak">0</div><div class="l">当前连续</div></div>
+      <div class="stat"><div class="n" id="statBest">0</div><div class="l">最长连续</div></div>
+      <div class="stat"><div class="n" id="statTotal">0</div><div class="l">累计天数</div></div>
+    </div>
+
+    <div class="backup">
+      <button class="btn" id="exportBtn">导出备份</button>
+      <button class="btn" id="importBtn">导入备份</button>
+      <input type="file" id="importFile" accept="application/json,.json" style="display:none">
+    </div>
+    <div class="footnote">
+      数据只存在这台设备，不上传服务器。换机/清缓存前先导出备份。
+    </div>
+  </div>
+
+  <!-- ============ 进步曲线页 ============ -->
+  <div class="page" id="page-progress">
+    <div class="intro">
+      判断有没有白练，不看打了几天卡，看这些<b>数字在不在变好</b>。每天打卡时填的那几个数，会自动画成趋势：复习正确率要稳住，精听遍数和口语延迟要往下走。
+    </div>
+
+    <div id="charts"></div>
+
+    <div class="section-label">阶段验收硬指标</div>
+    <div id="goals"></div>
+  </div>
+
+<script>
+/* ===================== 数据 ===================== */
+const STORE_KEY='english_train_v2';
+
+const TASKS=[
+  {
+    id:'vocab', name:'背单词', meta:'高频词 + 复习', min:15,
+    tool:'不背单词 App（真实语境例句，发音顺带练耳；选「高频核心词」或「新概念2」，别上来背六级/考研）',
+    how:['新词 15–20 个','软件按遗忘曲线安排的复习全部做完（复习比新词更重要）','「认识」= 看到英文 1 秒内反应出意思 + 听懂发音，不要求拼写'],
+    target:'次日复习正确率 ≥ 80%。低于这个数说明新词贪多了，降到每天 10–15 个。',
+    verify:[
+      '每天的数怎么来：不背单词每轮复习结束有「学习报告」结算页，直接显示本次正确率，照抄那个数填进下面。',
+      '每周日做一次「秒认测试」：打开本周学过的词，遮住中文逐个过，能 1 秒内说出意思算过，卡壳超 1 秒算不过，数出过的占比。',
+      '达标线：周日秒认 ≥ 80% 过 = 这周真记住了；低于 70%，下周把每日新词降到 10–15 个，复习量别动。'
+    ],
+    metricKey:'recall', metricLabel:'今日复习正确率', metricUnit:'%', metricHint:'抄不背单词复习结算页上的正确率。', metricMin:0, metricMax:100
+  },
+  {
+    id:'input', name:'可理解输入', meta:'精听 + 泛听/泛看', min:25,
+    tool:'精听用「每日英语听力」App（逐句字幕、单句循环、可变速）；泛听用 YouTube / 播客（第2周起换科技类）',
+    how:['精听 10 分：选 1–2 分钟材料 → 裸听2遍 → 逐句听+消灭生词 → 再裸听到 8–9 成 → 隔天回听','泛听/泛看 15 分：带字幕的科技视频，重在量和耐受，不必每词都懂','同一材料反复用，别天天换新的'],
+    target:'隔天回听昨天那段，第一遍裸听就要 ≥ 90% 听懂。所需「遍数」在下降，就是听力在涨。',
+    verify:[
+      '「懂了」的统一判定：不是感觉懂，而是能不看字幕用中文把这段大意复述出来。记到能复述为止用了几遍，填进下面。',
+      '隔天回听验证：第二天再裸听同一段，如果第一遍就能复述出来，说明真吸收了；还要听 3 遍以上，说明前一天没练透。',
+      '达标线：1 个月时，初级/VOA慢速材料能稳定在 2 遍内复述大意；做不到就把材料难度降一档。'
+    ],
+    metricKey:'passes', metricLabel:'今天这段听几遍能复述大意', metricUnit:'遍', metricHint:'以「能用中文复述大意」为准，记用了几遍。越来越小=进步。', metricMin:1, metricMax:30
+  },
+  {
+    id:'speak', name:'开口练习', meta:'跟读 + AI 对话', min:20,
+    tool:'跟读用「每日英语听力」的影子跟读模式；对话用 Claude / ChatGPT 语音模式',
+    how:['影子跟读 10 分：听一句模仿一句，贴原声节奏重音；每周录一次自查','AI 对话 10 分：定一个具体话题（讲你的工作 / 一个产品逻辑 / 今天做了啥）','开口前告诉 AI「我在练口语，说完请指出语法错误和更地道说法」','说错、卡壳、中英混说都没关系，开口本身就是练习'],
+    target:'同一个意思，从前要憋 10 秒，练到能 2–3 秒说出来。反应延迟在缩短 = 流利度在涨。',
+    verify:[
+      '固定测法：每次 AI 对话用同一个开场任务（如「用英文介绍我的工作」），这样不同天才可比。',
+      '怎么估延迟：说每句话前，心里从「想好要说什么」到「真正出口」默数几秒，一次对话取个大概平均值填下面。',
+      '更硬的验证：每周日让 AI 给你出 3 个固定问题（如 What do you do? / 描述今天做了什么），录音；对比上周录音，看停顿、卡壳是否变少。',
+      '达标线：1 个月能就「自我介绍」不长时间卡壳；3 个月熟悉话题能连续说 2–3 分钟。'
+    ],
+    metricKey:'delay', metricLabel:'今天说一句平均卡顿', metricUnit:'秒', metricHint:'想说一句话平均卡顿几秒才出口，估个数。越来越小=进步。', metricMin:0, metricMax:60
+  },
+];
+
+const PHASES=[
+  {title:'找回手感', desc:'用最简单的材料（VOA 慢速、初级听力）。单词从最高频开始。AI 对话聊「自我介绍、今天做了什么」。目标：不抵触、能坚持。'},
+  {title:'加入你的领域', desc:'听力换成带中英字幕的 AI/科技视频。开始记工作里反复出现的技术词。AI 对话聊「我的工作、在学的 AI 项目」。'},
+  {title:'提高开口比重', desc:'精听去掉中文字幕，只看英文。跟读换科技类短句。AI 对话尝试多轮，让它追问你。'},
+  {title:'复盘 + 实战', desc:'回看第 1 周材料（会变简单，这是进步信号）。读一篇工作英文文档抓大意。AI 模拟真实场景，用英文讲清一个 AI Agent 方案。'},
+  {title:'进阶阶段', desc:'基础已牢，进入循环巩固。保持每天输入+开口，逐步提高材料难度，多用真实工作场景练习。坚持就是最大复利。'},
+];
+
+// 三项指标的趋势配置
+const METRICS=[
+  {key:'recall', title:'复习正确率', unit:'%', goalText:'稳定 <b>≥ 80%</b>，说明记得牢；偏低就减少每天新词', better:'up'},
+  {key:'passes', title:'精听所需遍数', unit:'遍', goalText:'目标 <b>越来越少</b>，从听4遍才懂 → 1遍就懂', better:'down'},
+  {key:'delay',  title:'口语反应延迟', unit:'秒', goalText:'目标 <b>越来越短</b>，从憋10秒 → 2–3秒说出口', better:'down'},
+];
+
+// 阶段验收硬指标
+const GOALS=[
+  {tag:'1 个月', rows:[
+    ['词汇','稳定保有 <b>400–500</b> 个秒认的词'],
+    ['听力','VOA 慢速/初级裸听一遍懂 <b>7 成</b>以上'],
+    ['口语','能用英文做 <b>1 分钟</b>自我介绍，不长时间卡壳'],
+  ]},
+  {tag:'3 个月', rows:[
+    ['词汇','累计掌握 <b>1200–1500</b> 词，日常内容大部分眼熟'],
+    ['听力','正常语速简单对话/科技视频懂 <b>6–7 成</b>，关键信息不漏'],
+    ['口语','熟悉话题能连续说 <b>2–3 分钟</b>，有错但能被听懂'],
+  ]},
+  {tag:'半年', rows:[
+    ['听力','大部分日常和工作场景能应付'],
+    ['口语','能进行<b>多轮来回对话</b>，听懂追问并回应'],
+    ['信号','回看旧材料明显变简单，反应延迟持续缩短'],
+  ]},
+];
+
+function loadData(){
+  try{ const r=localStorage.getItem(STORE_KEY); if(r) return JSON.parse(r); }catch(e){}
+  // 兼容旧版本数据
+  try{ const old=localStorage.getItem('english_checkin_v1'); if(old){ const o=JSON.parse(old); return {startDate:o.startDate, records:o.records||{}, metrics:{}}; } }catch(e){}
+  return { startDate:null, records:{}, metrics:{} }; // metrics: {'YYYY-MM-DD':{recall:80,passes:3,delay:5}}
+}
+function saveData(d){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(d)); }catch(e){ alert('保存失败，存储空间可能已满。'); } }
+let data=loadData();
+if(!data.metrics) data.metrics={};
+
+/* ===== 日期工具 ===== */
+function fmt(d){const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return `${y}-${m}-${day}`;}
+function todayKey(){return fmt(new Date());}
+function parseKey(k){const[y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d);}
+function daysBetween(a,b){return Math.round((parseKey(b)-parseKey(a))/86400000);}
+function isDone(key){const r=data.records[key];return r&&r.length>=TASKS.length;}
+
+function currentStreak(){
+  let s=0,d=new Date();
+  if(!isDone(fmt(d))) d.setDate(d.getDate()-1);
+  while(isDone(fmt(d))){s++; d.setDate(d.getDate()-1);}
+  return s;
+}
+function bestStreak(){
+  const ks=Object.keys(data.records).filter(isDone).sort();
+  let best=0,cur=0,prev=null;
+  for(const k of ks){ if(prev&&daysBetween(prev,k)===1)cur++; else cur=1; best=Math.max(best,cur); prev=k; }
+  return best;
+}
+function totalDays(){return Object.keys(data.records).filter(isDone).length;}
+function currentWeek(){ if(!data.startDate) return 1; return Math.floor(daysBetween(data.startDate,todayKey())/7)+1; }
+
+/* ===================== 状态 ===================== */
+let openTask=null;       // 当前展开的任务 id
+let calView=new Date();
+
+/* ===================== 渲染：今日训练 ===================== */
+function render(){
+  const tk=todayKey();
+  const rec=data.records[tk]||[];
+  const doneCount=rec.length;
+  const allDone=doneCount>=TASKS.length;
+
+  const now=new Date();
+  const wd=['周日','周一','周二','周三','周四','周五','周六'][now.getDay()];
+  document.getElementById('todayDate').textContent=`${now.getMonth()+1}月${now.getDate()}日 ${wd}`;
+
+  const r=82, circ=2*Math.PI*r, ratio=doneCount/TASKS.length;
+  const fill=document.getElementById('ringFill');
+  fill.style.strokeDasharray=circ; fill.style.strokeDashoffset=circ*(1-ratio);
+  fill.classList.toggle('complete',allDone);
+
+  const streak=currentStreak();
+  const sNum=document.getElementById('streakNum');
+  sNum.textContent=streak; sNum.classList.toggle('complete',allDone);
+  document.getElementById('ringSub').textContent=`今天完成 ${doneCount}/${TASKS.length}`;
+  document.getElementById('celebrate').classList.toggle('show',allDone);
+
+  const wk=currentWeek(), pi=Math.min(wk-1,PHASES.length-1);
+  document.getElementById('phaseBadge').textContent=`第 ${wk} 周`;
+  document.getElementById('phaseTitle').textContent=PHASES[pi].title;
+  document.getElementById('phaseDesc').textContent=PHASES[pi].desc;
+
+  renderTasks(rec);
+  renderWeek();
+
+  document.getElementById('statStreak').textContent=streak;
+  document.getElementById('statBest').textContent=bestStreak();
+  document.getElementById('statTotal').textContent=totalDays();
+  document.getElementById('weekDone').textContent=weekDoneCount();
+}
+
+function renderTasks(rec){
+  const tk=todayKey();
+  const todayMetric=data.metrics[tk]||{};
+  const list=document.getElementById('taskList'); list.innerHTML='';
+  TASKS.forEach(t=>{
+    const done=rec.includes(t.id);
+    const open=openTask===t.id;
+    const el=document.createElement('div');
+    el.className='task'+(done?' done':'')+(open?' open':'');
+
+    const howList=t.how.map(h=>`<li>${h}</li>`).join('');
+    const verifyList=(t.verify||[]).map(v=>`<li>${v}</li>`).join('');
+    const mVal=(todayMetric[t.metricKey]!=null)?todayMetric[t.metricKey]:'';
+    const hasMetric=(todayMetric[t.metricKey]!=null);
+
+    el.innerHTML=`
+      <div class="task-main" data-act="toggleopen">
+        <div class="check" data-act="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0f1419" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="task-body">
+          <div class="task-name">${t.name}</div>
+          <div class="task-meta">${t.meta}</div>
+        </div>
+        <div class="task-right">
+          <span class="task-min">${t.min}′</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+      <div class="detail"><div class="detail-inner">
+        <div class="d-block">
+          <div class="d-h tool">▸ 用什么</div>
+          <div class="d-p">${t.tool}</div>
+        </div>
+        <div class="d-block">
+          <div class="d-h">▸ 怎么练</div>
+          <ul class="d-list">${howList}</ul>
+        </div>
+        <div class="d-block">
+          <div class="d-h target">▸ 验收线</div>
+          <div class="d-p">${t.target}</div>
+        </div>
+        <div class="d-block">
+          <div class="d-h verify">▸ 怎么自测验证</div>
+          <ul class="d-list verify-list">${verifyList}</ul>
+        </div>
+        <div class="metric${hasMetric?'':' required'}">
+          <div class="metric-h">${hasMetric?'今日记录':'⚠ 先填这个数，才能打卡完成'}</div>
+          <div class="metric-row">
+            <label>${t.metricLabel}</label>
+            <input type="number" inputmode="decimal" data-metric="${t.metricKey}" value="${mVal}" placeholder="必填">
+            <span class="metric-unit">${t.metricUnit}</span>
+          </div>
+          <div class="metric-hint">${t.metricHint}</div>
+        </div>
+      </div></div>`;
+
+    // 点圆圈 = 打卡（需先填指标）；点别处 = 展开/收起
+    el.querySelector('[data-act="check"]').addEventListener('click',(e)=>{ e.stopPropagation(); tryCheck(t); });
+    el.querySelector('[data-act="toggleopen"]').addEventListener('click',()=>{ openTask=(openTask===t.id?null:t.id); render(); });
+    const inp=el.querySelector('input[data-metric]');
+    inp.addEventListener('click',e=>e.stopPropagation());
+    inp.addEventListener('change',e=>saveMetric(t.metricKey, e.target.value));
+
+    list.appendChild(el);
+  });
+}
+
+function saveMetric(key,val){
+  const tk=todayKey();
+  if(!data.metrics[tk]) data.metrics[tk]={};
+  if(val===''||val==null){ delete data.metrics[tk][key]; }
+  else {
+    let n=Number(val);
+    if(isNaN(n)) n=0;
+    const t=TASKS.find(t=>t.metricKey===key);
+    if(t){ if(t.metricMin!=null) n=Math.max(t.metricMin,n); if(t.metricMax!=null) n=Math.min(t.metricMax,n); }
+    data.metrics[tk][key]=n;
+  }
+  // 注意：不要因 metrics 为空就删掉当天 record（打卡和指标各自独立保存）
+  if(Object.keys(data.metrics[tk]).length===0) delete data.metrics[tk];
+  saveData(data);
+  render();
+  if(document.getElementById('page-progress').classList.contains('active')) renderProgress();
+}
+
+function weekDoneCount(){
+  const now=new Date(), day=(now.getDay()+6)%7;
+  const mon=new Date(now); mon.setDate(now.getDate()-day);
+  let c=0; for(let i=0;i<7;i++){const d=new Date(mon);d.setDate(mon.getDate()+i);if(isDone(fmt(d)))c++;} return c;
+}
+function renderWeek(){
+  const now=new Date(), day=(now.getDay()+6)%7;
+  const mon=new Date(now); mon.setDate(now.getDate()-day);
+  const labels=['一','二','三','四','五','六','日'];
+  const box=document.getElementById('weekDots'); box.innerHTML='';
+  for(let i=0;i<7;i++){
+    const d=new Date(mon); d.setDate(mon.getDate()+i);
+    const key=fmt(d), rec=data.records[key]||[];
+    const ratio=Math.min(rec.length/TASKS.length,1);
+    const isToday=key===todayKey(), future=parseKey(key)>parseKey(todayKey());
+    const el=document.createElement('div');
+    el.className='day-dot'+(isToday?' today':'')+(future?' future':'');
+    el.innerHTML=`<div class="bar"><div class="fill" style="height:${ratio*100}%"></div></div><div class="lab">${labels[i]}</div>`;
+    box.appendChild(el);
+  }
+}
+
+function tryCheck(t){
+  const tk=todayKey();
+  const arr=data.records[tk]||[];
+  const alreadyDone=arr.includes(t.id);
+  // 取消打卡：随时允许
+  if(alreadyDone){ toggleTask(t.id); return; }
+  // 打卡完成：必须先填指标
+  const m=data.metrics[tk]||{};
+  if(m[t.metricKey]==null){
+    openTask=t.id;            // 自动展开，让输入框露出来
+    render();
+    // 轻提示
+    const hint=document.querySelector(`.task.open .metric .metric-h`);
+    if(hint){ hint.style.color='var(--glow)'; }
+    return;
+  }
+  toggleTask(t.id);
+}
+
+function toggleTask(id){
+  const tk=todayKey();
+  if(!data.startDate) data.startDate=tk;
+  if(!data.records[tk]) data.records[tk]=[];
+  const arr=data.records[tk], i=arr.indexOf(id);
+  if(i>=0) arr.splice(i,1); else arr.push(id);
+  if(arr.length===0 && (!data.metrics[tk]||Object.keys(data.metrics[tk]).length===0)) delete data.records[tk];
+  saveData(data);
+  render();
+}
+
+/* ===================== 渲染：进步曲线 ===================== */
+function renderProgress(){
+  const box=document.getElementById('charts'); box.innerHTML='';
+  METRICS.forEach(m=>{
+    // 收集有该指标的日期点（按时间升序，最多取最近 14 个）
+    const pts=Object.keys(data.metrics).filter(k=>data.metrics[k][m.key]!=null).sort()
+      .map(k=>({date:k, v:data.metrics[k][m.key]}));
+    const recent=pts.slice(-14);
+
+    const card=document.createElement('div'); card.className='chart-card';
+
+    let dirHtml='';
+    if(recent.length>=2){
+      const first=recent[0].v, last=recent[recent.length-1].v;
+      let improving=false;
+      if(m.better==='down') improving = last < first;
+      else improving = last > first;
+      dirHtml = improving
+        ? '<span class="chart-dir good">↗ 在变好</span>'
+        : '<span class="chart-dir flat">观察中</span>';
+    }
+
+    let body;
+    if(recent.length===0){
+      body=`<div class="chart-empty">还没有数据。<br>去「今日训练」展开「${labelFor(m.key)}」任务，填一个数就会出现在这里。</div>`;
+    }else{
+      body=lineChart(recent, m) + `<div class="latest"><span>最近一次</span><b>${recent[recent.length-1].v}${m.unit}</b></div>`;
+    }
+
+    card.innerHTML=`
+      <div class="chart-head"><div class="chart-title">${m.title}</div>${dirHtml}</div>
+      <div class="chart-goal">${m.goalText}</div>
+      ${body}`;
+    box.appendChild(card);
+  });
+
+  // 阶段目标
+  const g=document.getElementById('goals'); g.innerHTML='';
+  GOALS.forEach(go=>{
+    const c=document.createElement('div'); c.className='goal-card';
+    const rows=go.rows.map(r=>`<div class="goal-row"><div class="goal-k">${r[0]}</div><div class="goal-v">${r[1]}</div></div>`).join('');
+    c.innerHTML=`<h3>目标 <span class="goal-tag">${go.tag}</span></h3>${rows}`;
+    g.appendChild(c);
+  });
+}
+
+function labelFor(key){ const t=TASKS.find(t=>t.metricKey===key); return t?t.name:key; }
+
+// 生成一个简单的折线图 SVG
+function lineChart(pts, m){
+  const W=300, H=120, padL=8, padR=8, padT=14, padB=20;
+  const vals=pts.map(p=>p.v);
+  let min=Math.min(...vals), max=Math.max(...vals);
+  if(min===max){ min=min-1; max=max+1; } // 防止除零
+  const innerW=W-padL-padR, innerH=H-padT-padB;
+  const x=i=>padL + (pts.length===1?innerW/2:innerW*i/(pts.length-1));
+  const y=v=>padT + innerH*(1-(v-min)/(max-min));
+
+  const color = (m.better==='down') ? 'var(--done)' : 'var(--glow)';
+  let path='', dots='', area='';
+  pts.forEach((p,i)=>{ const px=x(i),py=y(p.v); path+=(i===0?'M':'L')+px+' '+py+' '; dots+=`<circle cx="${px}" cy="${py}" r="3" fill="${color}"/>`; });
+  // 区域填充
+  area=`M ${x(0)} ${padT+innerH} `+pts.map((p,i)=>`L ${x(i)} ${y(p.v)}`).join(' ')+` L ${x(pts.length-1)} ${padT+innerH} Z`;
+
+  // 首末日期标签
+  const d0=pts[0].date.slice(5), d1=pts[pts.length-1].date.slice(5);
+  return `<svg class="chart-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <path d="${area}" fill="${color}" opacity="0.08"/>
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    ${dots}
+    <text x="${x(0)}" y="${H-6}" font-size="10" fill="#5b6772" text-anchor="start">${d0}</text>
+    <text x="${x(pts.length-1)}" y="${H-6}" font-size="10" fill="#5b6772" text-anchor="end">${d1}</text>
+  </svg>`;
+}
+
+/* ===================== 标签切换 ===================== */
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    const pg=tab.dataset.page;
+    document.getElementById('page-'+pg).classList.add('active');
+    if(pg==='progress') renderProgress();
+  });
+});
+
+/* ===================== 备份 ===================== */
+document.getElementById('exportBtn').addEventListener('click',()=>{
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download=`英语训练备份_${todayKey()}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+});
+document.getElementById('importBtn').addEventListener('click',()=>document.getElementById('importFile').click());
+document.getElementById('importFile').addEventListener('change',(e)=>{
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const obj=JSON.parse(reader.result);
+      if(typeof obj!=='object'||!('records' in obj)) throw 0;
+      if(!confirm('导入将覆盖当前所有数据，确定继续？')) return;
+      if(!obj.metrics) obj.metrics={};
+      data=obj; saveData(data); render();
+      if(document.getElementById('page-progress').classList.contains('active')) renderProgress();
+      alert('导入成功。');
+    }catch(err){ alert('导入失败：文件格式不正确。'); }
+    e.target.value='';
+  };
+  reader.readAsText(file);
+});
+
+render();
+</script>
+</body>
+</html>
