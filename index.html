@@ -342,9 +342,9 @@ body{
     <div class="stat"><div class="n" id="statTotal">0</div><div class="l">累计天数</div></div>
   </div>
   <div class="backup">
-    <button class="btn" id="exportBtn">导出备份</button>
-    <button class="btn" id="importBtn">导入备份</button>
-    <input type="file" id="importFile" accept="application/json,.json" style="display:none">
+    <button class="btn" id="exportBtn">导出 Excel</button>
+    <button class="btn" id="importBtn">导入 Excel</button>
+    <input type="file" id="importFile" accept=".csv,.json" style="display:none">
   </div>
   <div class="footnote">数据只存在这台设备，不上传服务器。换机/清缓存前先导出备份。</div>
 </div>
@@ -666,9 +666,82 @@ function renderProgress(){
   for(var gi=0;gi<GOALS.length;gi++){var go=GOALS[gi],c=document.createElement('div');c.className='goal-card';var rows='';for(var ri=0;ri<go.rows.length;ri++)rows+='<div class="goal-row"><div class="goal-k">'+go.rows[ri][0]+'</div><div class="goal-v">'+go.rows[ri][1]+'</div></div>';c.innerHTML='<h3>目标 <span class="goal-tag">'+go.tag+'</span></h3>'+rows;g.appendChild(c);}
 }
 
-document.getElementById('exportBtn').addEventListener('click',function(){var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='英核备份_'+todayKey()+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);});
+/* ===== 备份：CSV（Excel 可编辑） ===== */
+function exportCSV(){
+  var lines=[['日期','背单词','正确率','精听','听几遍','口语','卡顿(秒)']];
+  var allKeys=Object.keys(data.records).sort();
+  // also include keys from metrics that aren't in records
+  var metricKeys=Object.keys(data.metrics);
+  for(var i=0;i<metricKeys.length;i++){if(allKeys.indexOf(metricKeys[i])===-1)allKeys.push(metricKeys[i]);}
+  allKeys.sort();
+  for(var i=0;i<allKeys.length;i++){
+    var k=allKeys[i],rec=data.records[k]||[],m=data.metrics[k]||{};
+    var doneVocab=rec.indexOf('vocab')!==-1?'✓':'';
+    var recall=m.recall!=null?m.recall:'';
+    var doneInput=rec.indexOf('input')!==-1?'✓':'';
+    var passes=m.passes!=null?m.passes:'';
+    var doneSpeak=rec.indexOf('speak')!==-1?'✓':'';
+    var delay=m.delay!=null?m.delay:'';
+    lines.push([k,doneVocab,recall,doneInput,passes,doneSpeak,delay]);
+  }
+  var csv='';
+  for(var i=0;i<lines.length;i++){csv+=lines[i].join(',')+'\n';}
+  var blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8'}); // BOM for Excel
+  var url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='英核数据_'+todayKey()+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+document.getElementById('exportBtn').addEventListener('click',exportCSV);
+
 document.getElementById('importBtn').addEventListener('click',function(){document.getElementById('importFile').click();});
-document.getElementById('importFile').addEventListener('change',function(e){var file=e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var obj=JSON.parse(reader.result);if(typeof obj!=='object'||!('records'in obj))throw 0;if(!confirm('导入将覆盖当前所有数据，确定继续？'))return;if(!obj.metrics)obj.metrics={};data=obj;saveData(data);render();if(document.getElementById('page-progress').className.indexOf('active')!==-1)renderProgress();alert('导入成功。');}catch(err){alert('导入失败');}e.target.value='';};reader.readAsText(file);});
+document.getElementById('importFile').addEventListener('change',function(e){
+  var file=e.target.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(){
+    var content=reader.result;
+    // Try JSON first (backward compat)
+    try{
+      var obj=JSON.parse(content);
+      if(typeof obj==='object'&&('records'in obj)){
+        if(!confirm('导入将覆盖当前所有数据，确定继续？'))return;
+        if(!obj.metrics)obj.metrics={};
+        data=obj;saveData(data);render();
+        if(document.getElementById('page-progress').className.indexOf('active')!==-1)renderProgress();
+        alert('导入成功！');
+        e.target.value='';return;
+      }
+    }catch(e){}
+    // Try CSV
+    try{
+      var lines=content.split('\n').filter(function(l){return l.trim();});
+      if(lines.length<2)throw 0;
+      var newData={startDate:null,records:{},metrics:{}};
+      for(var i=1;i<lines.length;i++){
+        var cols=lines[i].split(',');
+        if(cols.length<2)continue;
+        var key=cols[0].trim();
+        if(!/^\d{4}-\d{2}-\d{2}$/.test(key))continue;
+        var rec=[];
+        if(cols[1].trim()==='✓'||cols[1].trim()==='1'||cols[1].trim().toLowerCase()==='yes')rec.push('vocab');
+        if(cols[3].trim()==='✓'||cols[3].trim()==='1'||cols[3].trim().toLowerCase()==='yes')rec.push('input');
+        if(cols[5].trim()==='✓'||cols[5].trim()==='1'||cols[5].trim().toLowerCase()==='yes')rec.push('speak');
+        if(rec.length>0){newData.records[key]=rec;if(!newData.startDate||key<newData.startDate)newData.startDate=key;}
+        var metrics={};
+        if(cols[2].trim()!=='')metrics.recall=parseFloat(cols[2].trim());
+        if(cols[4].trim()!=='')metrics.passes=parseFloat(cols[4].trim());
+        if(cols[6].trim()!=='')metrics.delay=parseFloat(cols[6].trim());
+        if(Object.keys(metrics).length>0)newData.metrics[key]=metrics;
+      }
+      if(Object.keys(newData.records).length===0)throw 0;
+      if(!confirm('导入 '+(Object.keys(newData.records).length)+' 天数据，将覆盖当前内容，确定继续？'))return;
+      data=newData;saveData(data);render();
+      if(document.getElementById('page-progress').className.indexOf('active')!==-1)renderProgress();
+      alert('CSV 导入成功！可在 Excel 中编辑后重新导入。');
+    }catch(err2){alert('导入失败：文件格式不正确。请使用导出的 CSV 或 JSON 文件。');}
+    e.target.value='';
+  };
+  reader.readAsText(file);
+});
 
 var TIMER_STATES={IDLE:'idle',RUNNING:'running',PAUSED:'paused',BREAK:'break'};var timerState=TIMER_STATES.IDLE,timerSeconds=25*60,timerInterval=null,timerSessionCount=0,timerTotalMinutes=0;
 function loadTimerStats(){try{var r=localStorage.getItem(TIMER_KEY);if(r){var o=JSON.parse(r);timerSessionCount=o.count||0;timerTotalMinutes=o.total||0;}}catch(e){}}
