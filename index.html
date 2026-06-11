@@ -421,30 +421,29 @@ var STORE_KEY='english_train_v2',ONBOARD_KEY='yinghe_onboard_v1',MILESTONE_KEY='
 var DEFAULT_TASKS=[
   {id:'vocab',name:'背单词',meta:'高频词 + 复习',min:15,
     tool:'不背单词 App（真实语境例句，发音顺带练耳；选高频核心词或新概念2，别上来背六级/考研）',
-    how:['新词 15-20 个','软件按遗忘曲线安排的复习全部做完（复习比新词更重要）','认识=看到英文 1 秒内反应出意思 + 听懂发音，不要求拼写'],
-    target:'次日复习正确率 ≥ 80%。低于这个数说明新词贪多了，降到每天 10-15 个。',
-    verify:['每天的数怎么来：不背单词每轮复习结束有学习报告结算页，直接显示本次正确率，照抄那个数填进下面。','每周日做一次秒认测试：打开本周学过的词，遮住中文逐个过，能 1 秒内说出意思算过，卡壳超 1 秒算不过，数出过的占比。','达标线：周日秒认 ≥ 80% 过 = 这周真记住了；低于 70%，下周把每日新词降到 10-15 个，复习量别动。'],
+    how:['新词 15-20 个','软件按遗忘曲线安排的复习全部做完（复习比新词更重要）',"'认识'=看到英文 1 秒内反应出意思 + 听懂发音，不要求拼写"],
+    target:'次日复习正确率 >= 80%。低于这个数说明新词贪多了，降到每天 10-15 个。',
+    verify:['每天的数怎么来：不背单词每轮复习结束有学习报告结算页，直接显示本次正确率，照抄那个数填进下面。','每周日做一次秒认测试：打开本周学过的词，遮住中文逐个过，能 1 秒内说出意思算过，卡壳超 1 秒算不过，数出过的占比。','达标线：周日秒认 >= 80% 过，低于 70% 就减少每日新词量。'],
     metricKey:'recall',metricLabel:'今日复习正确率',metricUnit:'%',metricHint:'抄不背单词复习结算页上的正确率。',metricMin:0,metricMax:100},
   {id:'input',name:'可理解输入',meta:'精听 + 泛听',min:25,
-    tool:'精听用每日英语听力App（逐句字幕、单句循环、可变速）；泛听用 YouTube 或 播客（第2周起换科技类）',
-    how:['精听 10 分：选 1-2 分钟材料 → 裸听2遍 → 逐句听+消灭生词 → 再裸听到 8-9 成 → 隔天回听','泛听 15 分：带字幕的科技视频，重在量和耐受，不必每词都懂','同一材料反复用，别天天换新的'],
-    target:'隔天回听昨天那段，第一遍裸听就要 ≥ 90% 听懂。所需遍数在下降，就是听力在涨。',
-    verify:['懂了的统一判定：不是感觉懂，而是能不看字幕用中文把这段大意复述出来。记到能复述为止用了几遍，填进下面。','隔天回听验证：第二天再裸听同一段，如果第一遍就能复述出来，说明真吸收了；还要听 3 遍以上说明前一天没练透。','达标线：1 个月时，初级或VOA慢速材料能稳定在 2 遍内复述大意；做不到就把材料难度降一档。'],
+    tool:'精听用每日英语听力App（逐句字幕、单句循环、可变速）；泛听用 YouTube 或播客',
+    how:['精听 10 分：选 1-2 分钟材料，裸听2遍，逐句听消灭生词，再裸听到8-9成，隔天回听','泛听 15 分：带字幕的科技视频，重在量和耐受','同一材料反复用，别天天换新的'],
+    target:'隔天回听昨天那段，第一遍裸听就要 >= 90% 听懂。所需遍数在下降，就是听力在涨。',
+    verify:['懂了的统一判定：不是感觉懂，而是能不看字幕用中文把大意复述出来，记用了几遍。','隔天回听验证：第二天再裸听同一段，如果第一遍就能复述说明真吸收了。','达标线：1个月时初级材料能稳定在2遍内复述大意。'],
     metricKey:'passes',metricLabel:'今天这段听几遍能复述大意',metricUnit:'遍',metricHint:'以能用中文复述大意为准，记用了几遍。越来越小=进步。',metricMin:1,metricMax:30},
   {id:'speak',name:'开口练习',meta:'跟读 + AI 对话',min:20,
     tool:'跟读用每日英语听力的影子跟读模式；对话用 Claude 或 ChatGPT 语音模式',
-    how:['影子跟读 10 分：听一句模仿一句，贴原声节奏重音；每周录一次自查','AI 对话 10 分：定一个具体话题（讲你的工作、一个产品逻辑、今天做了啥）','开口前告诉 AI「我在练口语，说完请指出语法错误和更地道说法」','说错、卡壳、中英混说都没关系，开口本身就是练习'],
-    target:'同一个意思，从前要憋 10 秒，练到能 2-3 秒说出来。反应延迟在缩短 = 流利度在涨。',
-    verify:['固定测法：每次 AI 对话用同一个开场任务（如用英文介绍我的工作），这样不同天才可比。','怎么估延迟：说每句话前，心里从想好要说什么到真正出口默数几秒，一次对话取个大概平均值填下面。','更硬的验证：每周日让 AI 给你出 3 个固定问题（如 What do you do?  描述今天做了什么），录音；对比上周录音，看停顿、卡壳是否变少。','达标线：1 个月能就自我介绍不长时间卡壳；3 个月熟悉话题能连续说 2-3 分钟。'],
+    how:['影子跟读10分：听一句模仿一句，贴原声节奏重音','AI 对话10分：定一个具体话题（讲你的工作、一个产品逻辑、今天做了啥）','开口前告诉AI「我在练口语，说完请指出语法错误」','说错卡壳都没关系，开口本身就是练习'],
+    target:'同一个意思，从前要憋10秒，练到能2-3秒说出来。反应延迟在缩短=流利度在涨。',
+    verify:['固定测法：每次AI对话用同一个开场任务，这样不同天才可比。','怎么估延迟：说每句话前心里从想好到出口默数几秒，取个平均值。','更硬的验证：每周日让AI出3个固定问题录音对比看卡壳是否变少。','达标线：1个月能自我介绍不长时间卡壳；3个月熟悉话题能连续说2-3分钟。'],
     metricKey:'delay',metricLabel:'今天说一句平均卡顿',metricUnit:'秒',metricHint:'想说一句话平均卡顿几秒才出口，估个数。越来越小=进步。',metricMin:0,metricMax:60}
-];
-
+];;
 var PHASES=[
-  {title:'找回手感',desc:'用最简单的材料（VOA 慢速、初级听力）。单词从最高频开始。AI 对话聊自我介绍、今天做了什么。目标：不抵触、能坚持。'},
-  {title:'加入你的领域',desc:'听力换成带中英字幕的 AI 科技视频。开始记工作里反复出现的技术词。AI 对话聊我的工作、在学的 AI 项目。'},
-  {title:'提高开口比重',desc:'精听去掉中文字幕，只看英文。跟读换科技类短句。AI 对话尝试多轮，让它追问你。'},
-  {title:'复盘 + 实战',desc:'回看第 1 周材料（会变简单，这是进步信号）。读一篇工作英文文档抓大意。AI 模拟真实场景，用英文讲清一个 AI Agent 方案。'},
-  {title:'进阶阶段',desc:'基础已牢，进入循环巩固。保持每天输入+开口，逐步提高材料难度，多用真实工作场景练习。坚持就是最大复利。'}
+  {title:"找回手感",desc:"用最简单的材料（VOA 慢速、初级听力）。单词从最高频开始。AI 对话聊自我介绍、今天做了什么。目标：不抵触、能坚持。"},
+  {title:"加入你的领域",desc:"听力换成带中英字幕的 AI 科技视频。开始记工作里反复出现的技术词。AI 对话聊我的工作、在学的 AI 项目。"},
+  {title:"提高开口比重",desc:"精听去掉中文字幕，只看英文。跟读换科技类短句。AI 对话尝试多轮，让它追问你。"},
+  {title:"复盘 + 实战",desc:"回看第 1 周材料（会变简单，这是进步信号）。读一篇工作英文文档抓大意。AI 模拟真实场景，用英文讲清一个 AI Agent 方案。"},
+  {title:"进阶阶段",desc:"基础已牢，进入循环巩固。保持每天输入+开口，逐步提高材料难度，多用真实工作场景练习。坚持就是最大复利。"}
 ];
 var PHASE_WEEKS=[4,4,4,4,4];
 
@@ -582,14 +581,14 @@ function renderTasks(rec){
 
     var metricHtml;
     if(canCheck){
-      metricHtml='<div class="metric'+(hasMetric?'':' required')+'"><div class="metric-h">'+(hasMetric?'今日记录':'⚠ 先填这个数，才能打卡完成')+'</div><div class="metric-row"><label>'+t.metricLabel+'</label><input type="number" inputmode="decimal" data-metric="'+t.metricKey+'" value="'+mVal+'" placeholder="必填"><span class="metric-unit">'+t.metricUnit+'</span></div><div class="metric-hint">'+t.metricHint+'</div></div>';
+      metricHtml='<div class="metric'+(hasMetric?'':' required')+'"><div class="metric-h">'+(hasMetric?"今日记录":"⚠ 先填这个数，才能打卡完成")+'</div><div class="metric-row"><label>'+t.metricLabel+'</label><input type="number" inputmode="decimal" data-metric="'+t.metricKey+'" value="'+mVal+'" placeholder="必填"><span class="metric-unit">'+t.metricUnit+'</span></div><div class="metric-hint">'+t.metricHint+'</div></div>';
     }else{
       metricHtml='<div class="metric"><div class="metric-h">📖 查看模式</div><div class="lock-overlay">'+t.metricLabel+'：'+t.metricUnit+'</div><div class="metric-hint">'+t.metricHint+'</div></div>';
     }
 
     var checkHtml=canCheck?'<svg viewBox="0 0 24 24" fill="none" stroke="#0f1419" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>':'<span class="lock-icon">🔒</span>';
 
-    el.innerHTML='<div class="task-main" data-act="toggleopen"><div class="check">'+checkHtml+'</div><div class="task-body"><div class="task-name">'+t.name+'</div><div class="task-meta">'+t.meta+' · '+t.min+'′</div></div><div class="task-right">'+(canCheck?'<button class="edit-btn" data-act="edit" title="编辑任务">✎</button>':'')+'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="detail"><div class="detail-inner"><div class="d-block"><div class="d-h tool">▸ 用什么</div><div class="d-p">'+t.tool+'</div></div><div class="d-block"><div class="d-h">▸ 怎么练</div><ul class="d-list">'+howHtml+'</ul></div><div class="d-block"><div class="d-h target">▸ 验收线</div><div class="d-p">'+t.target+'</div></div><div class="d-block"><div class="d-h verify">▸ 怎么自测验证</div><ul class="d-list">'+verifyHtml+'</ul></div>'+metricHtml+'</div></div>';
+    el.innerHTML='<div class="task-main" data-act="toggleopen"><div class="check" data-act="check">'+checkHtml+'</div><div class="task-body"><div class="task-name">'+t.name+'</div><div class="task-meta">'+t.meta+' · '+t.min+'′</div></div><div class="task-right">'+(canCheck?'<button class="edit-btn" data-act="edit" title="编辑任务">✎</button>':'')+'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="detail"><div class="detail-inner"><div class="d-block"><div class="d-h tool">▸ 用什么</div><div class="d-p">'+t.tool+'</div></div><div class="d-block"><div class="d-h">▸ 怎么练</div><ul class="d-list">'+howHtml+'</ul></div><div class="d-block"><div class="d-h target">▸ 验收线</div><div class="d-p">'+t.target+'</div></div><div class="d-block"><div class="d-h verify">▸ 怎么自测验证</div><ul class="d-list">'+verifyHtml+'</ul></div>'+metricHtml+'</div></div>';
 
     if(canCheck){
       el.querySelector('[data-act="check"]').addEventListener('click',(function(task,etask,el2){return function(e){e.stopPropagation();tryCheck(task,el2);};})(t,ti,el));
@@ -733,7 +732,7 @@ function renderYearly(y){
 }
 
 function shouldShowOnboard(){try{return!localStorage.getItem(ONBOARD_KEY);}catch(e){return true;}}
-var ONBOARD_STEPS=[{icon:'🎯',title:'欢迎来到英核',desc:'每天三项英语训练：背单词、精听、开口练。打卡记录你的成长，用数据看进步。'},{icon:'🗺️',title:'阶段路线图',desc:'顶部显示完整训练路线。当前阶段可打卡，过去阶段可回顾，未来阶段锁定。一步步来。'},{icon:'📊',title:'填入数字才能打卡',desc:'每项任务展开填今天的指标数（正确率/遍数/延迟），再点圆圈打卡。'},{icon:'📈',title:'数据自己会说话',desc:'填的数自动画成折线图，还有日历热力图、月度对比、年度总览。'}];
+var ONBOARD_STEPS=[{icon:"🎯",title:"欢迎来到英核",desc:"每天三项英语训练：背单词、精听、开口练。打卡记录你的成长，用数据看进步。"},{icon:"🗺️",title:"阶段路线图",desc:"顶部显示完整训练路线。当前阶段可打卡，过去阶段可回顾，未来阶段锁定。一步步来。"},{icon:"📊",title:"填入数字才能打卡",desc:"每项任务展开填今天的指标数（正确率/遍数/延迟），再点圆圈打卡。"},{icon:"📈",title:"数据自己会说话",desc:"填的数自动画成折线图，还有日历热力图、月度对比、年度总览。"}];
 var onboardStep=0;
 function showOnboard(){document.getElementById('onboardOverlay').className='onboard-overlay show';onboardStep=0;renderOnboardStep();}
 function renderOnboardStep(){var s=ONBOARD_STEPS[onboardStep];document.getElementById('onboardIcon').textContent=s.icon;document.getElementById('onboardTitle').textContent=s.title;document.getElementById('onboardDesc').textContent=s.desc;document.getElementById('onboardBtn').textContent=onboardStep<ONBOARD_STEPS.length-1?'下一步':'开始训练';var html='';for(var i=0;i<ONBOARD_STEPS.length;i++)html+='<div class="onboard-dot'+(i===onboardStep?' active':'')+'"></div>';document.getElementById('onboardDots').innerHTML=html;}
