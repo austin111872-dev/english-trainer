@@ -1,0 +1,904 @@
+[
+  {
+    "id": 1,
+    "en": "Hello, how are you?",
+    "cn": "你好，你好吗？",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 2,
+    "en": "My name is Tom.",
+    "cn": "我叫汤姆。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 3,
+    "en": "Nice to meet you.",
+    "cn": "很高兴认识你。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 4,
+    "en": "Where are you from?",
+    "cn": "你从哪里来？",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 5,
+    "en": "I am from China.",
+    "cn": "我来自中国。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 6,
+    "en": "What time is it?",
+    "cn": "几点了？",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 7,
+    "en": "It's three o'clock.",
+    "cn": "现在三点钟。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 8,
+    "en": "What day is today?",
+    "cn": "今天星期几？",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 9,
+    "en": "Today is Monday.",
+    "cn": "今天是星期一。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 10,
+    "en": "How much is this?",
+    "cn": "这个多少钱？",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 11,
+    "en": "Can I help you?",
+    "cn": "我能帮你吗？",
+    "level": "beginner",
+    "tags": [
+      "service"
+    ]
+  },
+  {
+    "id": 12,
+    "en": "I would like some water.",
+    "cn": "我想要点水。",
+    "level": "beginner",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": 13,
+    "en": "Please sit down.",
+    "cn": "请坐。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 14,
+    "en": "Thank you very much.",
+    "cn": "非常感谢你。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 15,
+    "en": "You are welcome.",
+    "cn": "不客气。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 16,
+    "en": "I don't understand.",
+    "cn": "我不明白。",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 17,
+    "en": "Could you speak slowly?",
+    "cn": "你能说慢点吗？",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 18,
+    "en": "What does this word mean?",
+    "cn": "这个词什么意思？",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 19,
+    "en": "How do you spell it?",
+    "cn": "怎么拼写？",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 20,
+    "en": "I am learning English.",
+    "cn": "我正在学英语。",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 21,
+    "en": "Do you speak Chinese?",
+    "cn": "你会说中文吗？",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 22,
+    "en": "I speak a little English.",
+    "cn": "我会说一点英语。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 23,
+    "en": "What is your job?",
+    "cn": "你的工作是什么？",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 24,
+    "en": "I am a student.",
+    "cn": "我是学生。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 25,
+    "en": "I work in a company.",
+    "cn": "我在一家公司工作。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 26,
+    "en": "I like reading books.",
+    "cn": "我喜欢读书。",
+    "level": "beginner",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 27,
+    "en": "She is a teacher.",
+    "cn": "她是一名老师。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 28,
+    "en": "He is very friendly.",
+    "cn": "他很友好。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 29,
+    "en": "The weather is nice today.",
+    "cn": "今天天气很好。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 30,
+    "en": "It is raining outside.",
+    "cn": "外面在下雨。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 31,
+    "en": "Open the door, please.",
+    "cn": "请开门。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 32,
+    "en": "Close the window.",
+    "cn": "关上窗户。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 33,
+    "en": "Turn on the light.",
+    "cn": "打开灯。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 34,
+    "en": "I go to school by bus.",
+    "cn": "我坐公交车上学。",
+    "level": "beginner",
+    "tags": [
+      "daily",
+      "travel"
+    ]
+  },
+  {
+    "id": 35,
+    "en": "She goes to work at 8am.",
+    "cn": "她早上八点去上班。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 36,
+    "en": "I have breakfast at home.",
+    "cn": "我在家吃早餐。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 37,
+    "en": "What would you like to eat?",
+    "cn": "你想吃什么？",
+    "level": "beginner",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": 38,
+    "en": "I want a cup of coffee.",
+    "cn": "我想要一杯咖啡。",
+    "level": "beginner",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": 39,
+    "en": "The food is delicious.",
+    "cn": "食物很美味。",
+    "level": "beginner",
+    "tags": [
+      "restaurant"
+    ]
+  },
+  {
+    "id": 40,
+    "en": "I am full now.",
+    "cn": "我现在饱了。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 41,
+    "en": "Where is the restroom?",
+    "cn": "洗手间在哪里？",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 42,
+    "en": "Go straight and turn left.",
+    "cn": "直走然后左转。",
+    "level": "beginner",
+    "tags": [
+      "direction"
+    ]
+  },
+  {
+    "id": 43,
+    "en": "The supermarket is near here.",
+    "cn": "超市在这附近。",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 44,
+    "en": "How can I get to the station?",
+    "cn": "我怎么去车站？",
+    "level": "beginner",
+    "tags": [
+      "direction"
+    ]
+  },
+  {
+    "id": 45,
+    "en": "Take the No.2 bus.",
+    "cn": "坐2路公交车。",
+    "level": "beginner",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 46,
+    "en": "It's about ten minutes' walk.",
+    "cn": "步行大约十分钟。",
+    "level": "beginner",
+    "tags": [
+      "direction"
+    ]
+  },
+  {
+    "id": 47,
+    "en": "I usually get up at 7am.",
+    "cn": "我通常七点起床。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 48,
+    "en": "I go to bed at 11pm.",
+    "cn": "我晚上十一点睡觉。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 49,
+    "en": "I like watching movies.",
+    "cn": "我喜欢看电影。",
+    "level": "beginner",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 50,
+    "en": "I often listen to music.",
+    "cn": "我经常听音乐。",
+    "level": "beginner",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 51,
+    "en": "Can I try this on?",
+    "cn": "我能试穿这个吗？",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 52,
+    "en": "This is too expensive.",
+    "cn": "这个太贵了。",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 53,
+    "en": "Is there a discount?",
+    "cn": "有折扣吗？",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 54,
+    "en": "I'll take this one.",
+    "cn": "我要这个。",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 55,
+    "en": "Do you accept credit cards?",
+    "cn": "你们接受信用卡吗？",
+    "level": "beginner",
+    "tags": [
+      "shopping"
+    ]
+  },
+  {
+    "id": 56,
+    "en": "I need to make a phone call.",
+    "cn": "我需要打个电话。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 57,
+    "en": "What's your phone number?",
+    "cn": "你的电话号码是多少？",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 58,
+    "en": "I'll call you tomorrow.",
+    "cn": "我明天给你打电话。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 59,
+    "en": "See you later.",
+    "cn": "回头见。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 60,
+    "en": "Have a nice day!",
+    "cn": "祝你有美好的一天！",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 61,
+    "en": "I'm sorry.",
+    "cn": "对不起。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 62,
+    "en": "Excuse me.",
+    "cn": "打扰一下。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 63,
+    "en": "That's all right.",
+    "cn": "没关系。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 64,
+    "en": "Happy birthday!",
+    "cn": "生日快乐！",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 65,
+    "en": "Congratulations!",
+    "cn": "恭喜！",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 66,
+    "en": "Good luck!",
+    "cn": "祝你好运！",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 67,
+    "en": "I feel tired.",
+    "cn": "我感到累。",
+    "level": "beginner",
+    "tags": [
+      "feeling"
+    ]
+  },
+  {
+    "id": 68,
+    "en": "I have a headache.",
+    "cn": "我头痛。",
+    "level": "beginner",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 69,
+    "en": "You should see a doctor.",
+    "cn": "你应该去看医生。",
+    "level": "beginner",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 70,
+    "en": "Take this medicine twice a day.",
+    "cn": "这个药一天吃两次。",
+    "level": "beginner",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 71,
+    "en": "I have been learning English for three years.",
+    "cn": "我学英语已经三年了。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 72,
+    "en": "Practice makes perfect.",
+    "cn": "熟能生巧。",
+    "level": "intermediate",
+    "tags": [
+      "motivation"
+    ]
+  },
+  {
+    "id": 73,
+    "en": "The key to success is hard work.",
+    "cn": "成功的关键是努力工作。",
+    "level": "intermediate",
+    "tags": [
+      "motivation"
+    ]
+  },
+  {
+    "id": 74,
+    "en": "I would like to apply for this job.",
+    "cn": "我想申请这份工作。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 75,
+    "en": "Could you tell me more about the position?",
+    "cn": "你能多告诉我一些关于这个职位的信息吗？",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 76,
+    "en": "I graduated from university in 2020.",
+    "cn": "我2020年大学毕业。",
+    "level": "intermediate",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 77,
+    "en": "I majored in computer science.",
+    "cn": "我主修计算机科学。",
+    "level": "intermediate",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 78,
+    "en": "I have three years of work experience.",
+    "cn": "我有三年的工作经验。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 79,
+    "en": "I am responsible for product design.",
+    "cn": "我负责产品设计。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 80,
+    "en": "We need to finish the project by Friday.",
+    "cn": "我们需要在周五前完成项目。",
+    "level": "intermediate",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": 81,
+    "en": "Let's schedule a meeting for next week.",
+    "cn": "我们安排下周开个会。",
+    "level": "intermediate",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": 82,
+    "en": "I will send you the report by email.",
+    "cn": "我会通过邮件把报告发给你。",
+    "level": "intermediate",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": 83,
+    "en": "The traffic is heavy during rush hour.",
+    "cn": "高峰时间交通很拥挤。",
+    "level": "intermediate",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 84,
+    "en": "I prefer to travel by train rather than by plane.",
+    "cn": "我更喜欢坐火车而不是飞机旅行。",
+    "level": "intermediate",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 85,
+    "en": "Could you recommend a good restaurant near here?",
+    "cn": "你能推荐附近一家好的餐厅吗？",
+    "level": "intermediate",
+    "tags": [
+      "dining"
+    ]
+  },
+  {
+    "id": 86,
+    "en": "The service at this hotel is excellent.",
+    "cn": "这家酒店的服务很好。",
+    "level": "intermediate",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 87,
+    "en": "I'd like to book a double room for two nights.",
+    "cn": "我想预订一个双人房住两晚。",
+    "level": "intermediate",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 88,
+    "en": "What's the weather forecast for tomorrow?",
+    "cn": "明天的天气预报怎么说？",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 89,
+    "en": "It's important to stay healthy.",
+    "cn": "保持健康很重要。",
+    "level": "intermediate",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 90,
+    "en": "I go jogging every morning.",
+    "cn": "我每天早上慢跑。",
+    "level": "intermediate",
+    "tags": [
+      "health",
+      "hobby"
+    ]
+  },
+  {
+    "id": 91,
+    "en": "A balanced diet is essential for good health.",
+    "cn": "均衡饮食对健康至关重要。",
+    "level": "intermediate",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 92,
+    "en": "Social media has changed the way we communicate.",
+    "cn": "社交媒体改变了我们的沟通方式。",
+    "level": "intermediate",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 93,
+    "en": "Artificial intelligence is developing rapidly.",
+    "cn": "人工智能正在快速发展。",
+    "level": "intermediate",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 94,
+    "en": "I enjoy spending time with my family.",
+    "cn": "我喜欢和家人在一起。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 95,
+    "en": "We should protect the environment for future generations.",
+    "cn": "我们应该为子孙后代保护环境。",
+    "level": "intermediate",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "id": 96,
+    "en": "Reading books broadens your horizons.",
+    "cn": "读书开阔眼界。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 97,
+    "en": "I find it difficult to remember new words.",
+    "cn": "我发现记新词很难。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 98,
+    "en": "The more you read, the better your vocabulary will become.",
+    "cn": "你读得越多，词汇量就会越好。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 99,
+    "en": "Could you please explain this grammar rule again?",
+    "cn": "你能再解释一下这个语法规则吗？",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 100,
+    "en": "I made a lot of progress in my English studies this year.",
+    "cn": "今年我的英语学习进步很大。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  }
+]

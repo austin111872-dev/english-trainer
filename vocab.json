@@ -1,0 +1,2690 @@
+[
+  {
+    "word": "abandon",
+    "phonetic": "/əˈbændən/",
+    "meaning": "v.放弃，遗弃",
+    "level": "CET4",
+    "example_en": "He had to abandon his plan.",
+    "example_cn": "他不得不放弃计划。"
+  },
+  {
+    "word": "ability",
+    "phonetic": "/əˈbɪləti/",
+    "meaning": "n.能力，才能",
+    "level": "CET4",
+    "example_en": "She has the ability to succeed.",
+    "example_cn": "她有成功的能力。"
+  },
+  {
+    "word": "abroad",
+    "phonetic": "/əˈbrɔːd/",
+    "meaning": "adv.在国外",
+    "level": "CET4",
+    "example_en": "He wants to study abroad.",
+    "example_cn": "他想出国留学。"
+  },
+  {
+    "word": "absence",
+    "phonetic": "/ˈæbsəns/",
+    "meaning": "n.缺席，不在",
+    "level": "CET4",
+    "example_en": "Please explain your absence.",
+    "example_cn": "请解释你缺席的原因。"
+  },
+  {
+    "word": "absolute",
+    "phonetic": "/ˈæbsəluːt/",
+    "meaning": "adj.绝对的，完全的",
+    "level": "CET4",
+    "example_en": "That is an absolute lie.",
+    "example_cn": "那完全是谎言。"
+  },
+  {
+    "word": "absorb",
+    "phonetic": "/əbˈzɔːrb/",
+    "meaning": "v.吸收；吸引",
+    "level": "CET4",
+    "example_en": "The material absorbs water.",
+    "example_cn": "这种材料吸水。"
+  },
+  {
+    "word": "abstract",
+    "phonetic": "/ˈæbstrækt/",
+    "meaning": "adj.抽象的 n.摘要",
+    "level": "CET6",
+    "example_en": "The idea is too abstract.",
+    "example_cn": "这个想法太抽象了。"
+  },
+  {
+    "word": "abundant",
+    "phonetic": "/əˈbʌndənt/",
+    "meaning": "adj.丰富的，充裕的",
+    "level": "CET4",
+    "example_en": "The region has abundant resources.",
+    "example_cn": "该地区资源丰富。"
+  },
+  {
+    "word": "abuse",
+    "phonetic": "/əˈbjuːs/",
+    "meaning": "n./v.滥用；虐待",
+    "level": "CET4",
+    "example_en": "Don't abuse your power.",
+    "example_cn": "不要滥用你的权力。"
+  },
+  {
+    "word": "academic",
+    "phonetic": "/ˌækəˈdemɪk/",
+    "meaning": "adj.学术的",
+    "level": "CET4",
+    "example_en": "She has a strong academic background.",
+    "example_cn": "她有很强的学术背景。"
+  },
+  {
+    "word": "accelerate",
+    "phonetic": "/əkˈseləreɪt/",
+    "meaning": "v.加速",
+    "level": "CET6",
+    "example_en": "The car accelerated quickly.",
+    "example_cn": "汽车迅速加速。"
+  },
+  {
+    "word": "access",
+    "phonetic": "/ˈækses/",
+    "meaning": "n.通道；使用权 v.访问",
+    "level": "CET4",
+    "example_en": "You need a password to access the system.",
+    "example_cn": "你需要密码才能访问系统。"
+  },
+  {
+    "word": "accident",
+    "phonetic": "/ˈæksɪdənt/",
+    "meaning": "n.事故；意外",
+    "level": "CET4",
+    "example_en": "There was a car accident on the highway.",
+    "example_cn": "高速公路上发生了一起车祸。"
+  },
+  {
+    "word": "accompany",
+    "phonetic": "/əˈkʌmpəni/",
+    "meaning": "v.陪伴；伴随",
+    "level": "CET4",
+    "example_en": "May I accompany you?",
+    "example_cn": "我可以陪你吗？"
+  },
+  {
+    "word": "accomplish",
+    "phonetic": "/əˈkɑːmplɪʃ/",
+    "meaning": "v.完成，实现",
+    "level": "CET4",
+    "example_en": "We accomplished our goal.",
+    "example_cn": "我们完成了目标。"
+  },
+  {
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "meaning": "adj.准确的，精确的",
+    "level": "CET4",
+    "example_en": "The data is accurate.",
+    "example_cn": "数据是准确的。"
+  },
+  {
+    "word": "accuse",
+    "phonetic": "/əˈkjuːz/",
+    "meaning": "v.指控，指责",
+    "level": "CET4",
+    "example_en": "They accused him of lying.",
+    "example_cn": "他们指责他撒谎。"
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "meaning": "v.达到，取得",
+    "level": "CET4",
+    "example_en": "She achieved her dream.",
+    "example_cn": "她实现了她的梦想。"
+  },
+  {
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɒlɪdʒ/",
+    "meaning": "v.承认；感谢",
+    "level": "CET4",
+    "example_en": "He acknowledged his mistake.",
+    "example_cn": "他承认了自己的错误。"
+  },
+  {
+    "word": "acquire",
+    "phonetic": "/əˈkwaɪər/",
+    "meaning": "v.获得，学到",
+    "level": "CET4",
+    "example_en": "She acquired a new skill.",
+    "example_cn": "她学会了一项新技能。"
+  },
+  {
+    "word": "adapt",
+    "phonetic": "/əˈdæpt/",
+    "meaning": "v.适应；改编",
+    "level": "CET4",
+    "example_en": "You need to adapt to the new environment.",
+    "example_cn": "你需要适应新环境。"
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "meaning": "adj.充足的，适当的",
+    "level": "CET4",
+    "example_en": "We have adequate supplies.",
+    "example_cn": "我们有充足的补给。"
+  },
+  {
+    "word": "adjust",
+    "phonetic": "/əˈdʒʌst/",
+    "meaning": "v.调整，适应",
+    "level": "CET4",
+    "example_en": "Please adjust the volume.",
+    "example_cn": "请调整音量。"
+  },
+  {
+    "word": "admire",
+    "phonetic": "/ədˈmaɪər/",
+    "meaning": "v.钦佩，欣赏",
+    "level": "CET4",
+    "example_en": "I admire your courage.",
+    "example_cn": "我钦佩你的勇气。"
+  },
+  {
+    "word": "admit",
+    "phonetic": "/ədˈmɪt/",
+    "meaning": "v.承认；准许进入",
+    "level": "CET4",
+    "example_en": "He admitted he was wrong.",
+    "example_cn": "他承认他错了。"
+  },
+  {
+    "word": "adopt",
+    "phonetic": "/əˈdɒpt/",
+    "meaning": "v.采用；收养",
+    "level": "CET4",
+    "example_en": "They adopted a new approach.",
+    "example_cn": "他们采用了一种新方法。"
+  },
+  {
+    "word": "advance",
+    "phonetic": "/ədˈvæns/",
+    "meaning": "v./n.前进，进步",
+    "level": "CET4",
+    "example_en": "Technology has advanced rapidly.",
+    "example_cn": "技术发展迅速。"
+  },
+  {
+    "word": "advantage",
+    "phonetic": "/ədˈvæntɪdʒ/",
+    "meaning": "n.优势，有利条件",
+    "level": "CET4",
+    "example_en": "Being bilingual is an advantage.",
+    "example_cn": "会双语是一个优势。"
+  },
+  {
+    "word": "advertise",
+    "phonetic": "/ˈædvərtaɪz/",
+    "meaning": "v.做广告",
+    "level": "CET4",
+    "example_en": "They advertise on social media.",
+    "example_cn": "他们在社交媒体上做广告。"
+  },
+  {
+    "word": "affair",
+    "phonetic": "/əˈfer/",
+    "meaning": "n.事情；事务",
+    "level": "CET4",
+    "example_en": "Mind your own affairs.",
+    "example_cn": "管好你自己的事。"
+  },
+  {
+    "word": "affect",
+    "phonetic": "/əˈfekt/",
+    "meaning": "v.影响；感动",
+    "level": "CET4",
+    "example_en": "The weather affects my mood.",
+    "example_cn": "天气影响我的心情。"
+  },
+  {
+    "word": "afford",
+    "phonetic": "/əˈfɔːrd/",
+    "meaning": "v.负担得起",
+    "level": "CET4",
+    "example_en": "I can't afford that car.",
+    "example_cn": "我买不起那辆车。"
+  },
+  {
+    "word": "aggressive",
+    "phonetic": "/əˈɡresɪv/",
+    "meaning": "adj.侵略的；有进取心的",
+    "level": "CET4",
+    "example_en": "He is an aggressive businessman.",
+    "example_cn": "他是一个有进取心的商人。"
+  },
+  {
+    "word": "agree",
+    "phonetic": "/əˈɡriː/",
+    "meaning": "v.同意，赞同",
+    "level": "CET4",
+    "example_en": "I agree with your opinion.",
+    "example_cn": "我同意你的看法。"
+  },
+  {
+    "word": "agriculture",
+    "phonetic": "/ˈæɡrɪkʌltʃər/",
+    "meaning": "n.农业",
+    "level": "CET4",
+    "example_en": "Agriculture is the foundation of the economy.",
+    "example_cn": "农业是经济的基础。"
+  },
+  {
+    "word": "alcohol",
+    "phonetic": "/ˈælkəhɒl/",
+    "meaning": "n.酒精，酒",
+    "level": "CET4",
+    "example_en": "He doesn't drink alcohol.",
+    "example_cn": "他不喝酒。"
+  },
+  {
+    "word": "allow",
+    "phonetic": "/əˈlaʊ/",
+    "meaning": "v.允许，准许",
+    "level": "CET4",
+    "example_en": "Smoking is not allowed here.",
+    "example_cn": "这里禁止吸烟。"
+  },
+  {
+    "word": "although",
+    "phonetic": "/ɔːlˈðoʊ/",
+    "meaning": "conj.虽然，尽管",
+    "level": "CET4",
+    "example_en": "Although it rained, we went out.",
+    "example_cn": "虽然下雨了，我们还是出去了。"
+  },
+  {
+    "word": "ambition",
+    "phonetic": "/æmˈbɪʃn/",
+    "meaning": "n.雄心，野心",
+    "level": "CET4",
+    "example_en": "She has great ambition.",
+    "example_cn": "她有很大的雄心。"
+  },
+  {
+    "word": "amount",
+    "phonetic": "/əˈmaʊnt/",
+    "meaning": "n.数量 v.总计",
+    "level": "CET4",
+    "example_en": "A large amount of money was spent.",
+    "example_cn": "花了大量的钱。"
+  },
+  {
+    "word": "amuse",
+    "phonetic": "/əˈmjuːz/",
+    "meaning": "v.逗乐，使发笑",
+    "level": "CET4",
+    "example_en": "The joke amused everyone.",
+    "example_cn": "这个笑话逗乐了大家。"
+  },
+  {
+    "word": "analyse",
+    "phonetic": "/ˈænəlaɪz/",
+    "meaning": "v.分析",
+    "level": "CET4",
+    "example_en": "We need to analyse the data.",
+    "example_cn": "我们需要分析数据。"
+  },
+  {
+    "word": "ancestor",
+    "phonetic": "/ˈænsestər/",
+    "meaning": "n.祖先",
+    "level": "CET4",
+    "example_en": "My ancestors came from China.",
+    "example_cn": "我的祖先来自中国。"
+  },
+  {
+    "word": "ancient",
+    "phonetic": "/ˈeɪnʃənt/",
+    "meaning": "adj.古代的，古老的",
+    "level": "CET4",
+    "example_en": "They visited an ancient temple.",
+    "example_cn": "他们参观了一座古老的寺庙。"
+  },
+  {
+    "word": "announce",
+    "phonetic": "/əˈnaʊns/",
+    "meaning": "v.宣布，通告",
+    "level": "CET4",
+    "example_en": "The president announced his resignation.",
+    "example_cn": "总统宣布辞职。"
+  },
+  {
+    "word": "annual",
+    "phonetic": "/ˈænjuəl/",
+    "meaning": "adj.每年的，年度的",
+    "level": "CET4",
+    "example_en": "The annual meeting is in March.",
+    "example_cn": "年会在三月举行。"
+  },
+  {
+    "word": "anxiety",
+    "phonetic": "/æŋˈzaɪəti/",
+    "meaning": "n.焦虑，忧虑",
+    "level": "CET4",
+    "example_en": "He felt anxiety before the exam.",
+    "example_cn": "考试前他感到焦虑。"
+  },
+  {
+    "word": "apparent",
+    "phonetic": "/əˈpærənt/",
+    "meaning": "adj.明显的；表面上的",
+    "level": "CET4",
+    "example_en": "It was apparent that he was lying.",
+    "example_cn": "很明显他在撒谎。"
+  },
+  {
+    "word": "appeal",
+    "phonetic": "/əˈpiːl/",
+    "meaning": "v./n.呼吁；吸引；上诉",
+    "level": "CET4",
+    "example_en": "The idea appeals to young people.",
+    "example_cn": "这个想法吸引年轻人。"
+  },
+  {
+    "word": "appetite",
+    "phonetic": "/ˈæpɪtaɪt/",
+    "meaning": "n.食欲，胃口",
+    "level": "CET4",
+    "example_en": "I have a good appetite today.",
+    "example_cn": "我今天胃口很好。"
+  },
+  {
+    "word": "appliance",
+    "phonetic": "/əˈplaɪəns/",
+    "meaning": "n.电器，器具",
+    "level": "CET4",
+    "example_en": "Kitchen appliances are on sale.",
+    "example_cn": "厨房电器在打折。"
+  },
+  {
+    "word": "apply",
+    "phonetic": "/əˈplaɪ/",
+    "meaning": "v.申请；应用",
+    "level": "CET4",
+    "example_en": "I applied for a job.",
+    "example_cn": "我申请了一份工作。"
+  },
+  {
+    "word": "appoint",
+    "phonetic": "/əˈpɔɪnt/",
+    "meaning": "v.任命；约定",
+    "level": "CET4",
+    "example_en": "They appointed a new manager.",
+    "example_cn": "他们任命了一位新经理。"
+  },
+  {
+    "word": "appreciate",
+    "phonetic": "/əˈpriːʃieɪt/",
+    "meaning": "v.感激；欣赏",
+    "level": "CET4",
+    "example_en": "I appreciate your help.",
+    "example_cn": "我很感激你的帮助。"
+  },
+  {
+    "word": "approach",
+    "phonetic": "/əˈproʊtʃ/",
+    "meaning": "v.接近 n.方法",
+    "level": "CET4",
+    "example_en": "We need a new approach.",
+    "example_cn": "我们需要一种新方法。"
+  },
+  {
+    "word": "appropriate",
+    "phonetic": "/əˈproʊpriət/",
+    "meaning": "adj.适当的",
+    "level": "CET4",
+    "example_en": "Choose the appropriate word.",
+    "example_cn": "选择适当的词。"
+  },
+  {
+    "word": "approve",
+    "phonetic": "/əˈpruːv/",
+    "meaning": "v.批准；赞成",
+    "level": "CET4",
+    "example_en": "The plan was approved.",
+    "example_cn": "计划被批准了。"
+  },
+  {
+    "word": "arise",
+    "phonetic": "/əˈraɪz/",
+    "meaning": "v.出现，发生",
+    "level": "CET4",
+    "example_en": "A problem has arisen.",
+    "example_cn": "出现了一个问题。"
+  },
+  {
+    "word": "arrange",
+    "phonetic": "/əˈreɪndʒ/",
+    "meaning": "v.安排，整理",
+    "level": "CET4",
+    "example_en": "I'll arrange a meeting.",
+    "example_cn": "我来安排一个会议。"
+  },
+  {
+    "word": "arrest",
+    "phonetic": "/əˈrest/",
+    "meaning": "v./n.逮捕，拘留",
+    "level": "CET4",
+    "example_en": "The thief was arrested.",
+    "example_cn": "小偷被逮捕了。"
+  },
+  {
+    "word": "artificial",
+    "phonetic": "/ˌɑːrtɪˈfɪʃl/",
+    "meaning": "adj.人工的，人造的",
+    "level": "CET4",
+    "example_en": "This is artificial leather.",
+    "example_cn": "这是人造革。"
+  },
+  {
+    "word": "aspect",
+    "phonetic": "/ˈæspekt/",
+    "meaning": "n.方面；面貌",
+    "level": "CET4",
+    "example_en": "Every aspect of the plan was considered.",
+    "example_cn": "计划的每个方面都考虑到了。"
+  },
+  {
+    "word": "assemble",
+    "phonetic": "/əˈsembl/",
+    "meaning": "v.集合；组装",
+    "level": "CET4",
+    "example_en": "The students assembled in the hall.",
+    "example_cn": "学生们在大厅集合。"
+  },
+  {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "meaning": "v.评估，评定",
+    "level": "CET4",
+    "example_en": "We need to assess the damage.",
+    "example_cn": "我们需要评估损失。"
+  },
+  {
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "meaning": "v.分配；指派",
+    "level": "CET4",
+    "example_en": "Each student was assigned a task.",
+    "example_cn": "每个学生都被分配了一项任务。"
+  },
+  {
+    "word": "assist",
+    "phonetic": "/əˈsɪst/",
+    "meaning": "v.帮助，协助",
+    "level": "CET4",
+    "example_en": "Can I assist you?",
+    "example_cn": "我能帮你吗？"
+  },
+  {
+    "word": "associate",
+    "phonetic": "/əˈsoʊʃieɪt/",
+    "meaning": "v.联系，关联",
+    "level": "CET4",
+    "example_en": "I associate summer with holidays.",
+    "example_cn": "我把夏天和假期联系起来。"
+  },
+  {
+    "word": "assume",
+    "phonetic": "/əˈsuːm/",
+    "meaning": "v.假设；承担",
+    "level": "CET4",
+    "example_en": "I assume you're right.",
+    "example_cn": "我假设你是对的。"
+  },
+  {
+    "word": "assure",
+    "phonetic": "/əˈʃʊr/",
+    "meaning": "v.使确信，保证",
+    "level": "CET4",
+    "example_en": "I assure you it's safe.",
+    "example_cn": "我向你保证这是安全的。"
+  },
+  {
+    "word": "atmosphere",
+    "phonetic": "/ˈætməsfɪr/",
+    "meaning": "n.气氛；大气层",
+    "level": "CET4",
+    "example_en": "The restaurant has a cozy atmosphere.",
+    "example_cn": "这家餐厅氛围很舒适。"
+  },
+  {
+    "word": "attach",
+    "phonetic": "/əˈtætʃ/",
+    "meaning": "v.附上；贴上；使依恋",
+    "level": "CET4",
+    "example_en": "Please attach the file.",
+    "example_cn": "请附上文件。"
+  },
+  {
+    "word": "attempt",
+    "phonetic": "/əˈtempt/",
+    "meaning": "v./n.尝试，企图",
+    "level": "CET4",
+    "example_en": "She attempted to solve the problem.",
+    "example_cn": "她试图解决这个问题。"
+  },
+  {
+    "word": "attend",
+    "phonetic": "/əˈtend/",
+    "meaning": "v.参加；照顾",
+    "level": "CET4",
+    "example_en": "I need to attend a meeting.",
+    "example_cn": "我需要参加一个会议。"
+  },
+  {
+    "word": "attitude",
+    "phonetic": "/ˈætɪtuːd/",
+    "meaning": "n.态度，看法",
+    "level": "CET4",
+    "example_en": "She has a positive attitude.",
+    "example_cn": "她有积极的态度。"
+  },
+  {
+    "word": "attract",
+    "phonetic": "/əˈtrækt/",
+    "meaning": "v.吸引",
+    "level": "CET4",
+    "example_en": "The museum attracts many visitors.",
+    "example_cn": "博物馆吸引了许多游客。"
+  },
+  {
+    "word": "authority",
+    "phonetic": "/əˈθɔːrəti/",
+    "meaning": "n.权威；当局",
+    "level": "CET4",
+    "example_en": "You need authority to make this decision.",
+    "example_cn": "你需要权力来做这个决定。"
+  },
+  {
+    "word": "automatic",
+    "phonetic": "/ˌɔːtəˈmætɪk/",
+    "meaning": "adj.自动的",
+    "level": "CET4",
+    "example_en": "The door opens automatically.",
+    "example_cn": "门会自动打开。"
+  },
+  {
+    "word": "available",
+    "phonetic": "/əˈveɪləbl/",
+    "meaning": "adj.可用的，有效的",
+    "level": "CET4",
+    "example_en": "Is this seat available?",
+    "example_cn": "这个座位有人吗？"
+  },
+  {
+    "word": "average",
+    "phonetic": "/ˈævərɪdʒ/",
+    "meaning": "n.平均 adj.平均的",
+    "level": "CET4",
+    "example_en": "The average temperature is 20 degrees.",
+    "example_cn": "平均温度是20度。"
+  },
+  {
+    "word": "avoid",
+    "phonetic": "/əˈvɔɪd/",
+    "meaning": "v.避免，回避",
+    "level": "CET4",
+    "example_en": "Try to avoid mistakes.",
+    "example_cn": "尽量避免错误。"
+  },
+  {
+    "word": "aware",
+    "phonetic": "/əˈwer/",
+    "meaning": "adj.意识到的，知道的",
+    "level": "CET4",
+    "example_en": "Are you aware of the risks?",
+    "example_cn": "你知道风险吗？"
+  },
+  {
+    "word": "balance",
+    "phonetic": "/ˈbæləns/",
+    "meaning": "n.平衡 v.使平衡",
+    "level": "CET4",
+    "example_en": "Keep a balance between work and life.",
+    "example_cn": "保持工作和生活的平衡。"
+  },
+  {
+    "word": "barely",
+    "phonetic": "/ˈberli/",
+    "meaning": "adv.几乎不",
+    "level": "CET4",
+    "example_en": "I barely know him.",
+    "example_cn": "我几乎不认识他。"
+  },
+  {
+    "word": "barrier",
+    "phonetic": "/ˈbæriər/",
+    "meaning": "n.障碍，屏障",
+    "level": "CET4",
+    "example_en": "Language can be a barrier.",
+    "example_cn": "语言可能是一个障碍。"
+  },
+  {
+    "word": "behalf",
+    "phonetic": "/bɪˈhæf/",
+    "meaning": "n.代表，利益",
+    "level": "CET4",
+    "example_en": "I'm writing on behalf of my company.",
+    "example_cn": "我代表公司写信。"
+  },
+  {
+    "word": "behavior",
+    "phonetic": "/bɪˈheɪvjər/",
+    "meaning": "n.行为，举止",
+    "level": "CET4",
+    "example_en": "Good behavior is expected.",
+    "example_cn": "良好的行为是预期的。"
+  },
+  {
+    "word": "belief",
+    "phonetic": "/bɪˈliːf/",
+    "meaning": "n.信念，信仰",
+    "level": "CET4",
+    "example_en": "It's my belief that honesty pays.",
+    "example_cn": "我相信诚实是有回报的。"
+  },
+  {
+    "word": "belong",
+    "phonetic": "/bɪˈlɔːŋ/",
+    "meaning": "v.属于",
+    "level": "CET4",
+    "example_en": "This book belongs to me.",
+    "example_cn": "这本书属于我。"
+  },
+  {
+    "word": "beneath",
+    "phonetic": "/bɪˈniːθ/",
+    "meaning": "prep.在...之下",
+    "level": "CET4",
+    "example_en": "The cat hid beneath the table.",
+    "example_cn": "猫藏在桌子下面。"
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "meaning": "n.益处 v.受益",
+    "level": "CET4",
+    "example_en": "Exercise benefits your health.",
+    "example_cn": "锻炼有益健康。"
+  },
+  {
+    "word": "besides",
+    "phonetic": "/bɪˈsaɪdz/",
+    "meaning": "prep.除...之外 adv.而且",
+    "level": "CET4",
+    "example_en": "Besides English, he speaks French.",
+    "example_cn": "除了英语，他还说法语。"
+  },
+  {
+    "word": "blame",
+    "phonetic": "/bleɪm/",
+    "meaning": "v./n.责备，归咎",
+    "level": "CET4",
+    "example_en": "Don't blame others.",
+    "example_cn": "不要责怪别人。"
+  },
+  {
+    "word": "bother",
+    "phonetic": "/ˈbɒðər/",
+    "meaning": "v.打扰，烦恼",
+    "level": "CET4",
+    "example_en": "Sorry to bother you.",
+    "example_cn": "抱歉打扰你。"
+  },
+  {
+    "word": "boundary",
+    "phonetic": "/ˈbaʊndəri/",
+    "meaning": "n.边界，界限",
+    "level": "CET4",
+    "example_en": "The river forms a natural boundary.",
+    "example_cn": "这条河形成了一道天然边界。"
+  },
+  {
+    "word": "brilliant",
+    "phonetic": "/ˈbrɪliənt/",
+    "meaning": "adj.灿烂的；杰出的",
+    "level": "CET4",
+    "example_en": "She had a brilliant idea.",
+    "example_cn": "她有一个绝妙的主意。"
+  },
+  {
+    "word": "budget",
+    "phonetic": "/ˈbʌdʒɪt/",
+    "meaning": "n.预算 v.做预算",
+    "level": "CET4",
+    "example_en": "We need to stay within budget.",
+    "example_cn": "我们需要控制在预算内。"
+  },
+  {
+    "word": "burden",
+    "phonetic": "/ˈbɜːrdn/",
+    "meaning": "n.负担 v.使负重",
+    "level": "CET4",
+    "example_en": "Financial burden is heavy.",
+    "example_cn": "经济负担很重。"
+  },
+  {
+    "word": "calculate",
+    "phonetic": "/ˈkælkjuleɪt/",
+    "meaning": "v.计算",
+    "level": "CET4",
+    "example_en": "Calculate the total cost.",
+    "example_cn": "计算总成本。"
+  },
+  {
+    "word": "campaign",
+    "phonetic": "/kæmˈpeɪn/",
+    "meaning": "n.运动；战役",
+    "level": "CET4",
+    "example_en": "They launched a marketing campaign.",
+    "example_cn": "他们发起了一场营销活动。"
+  },
+  {
+    "word": "capable",
+    "phonetic": "/ˈkeɪpəbl/",
+    "meaning": "adj.有能力的",
+    "level": "CET4",
+    "example_en": "She is capable of doing it.",
+    "example_cn": "她有能力做这件事。"
+  },
+  {
+    "word": "capacity",
+    "phonetic": "/kəˈpæsəti/",
+    "meaning": "n.容量；能力",
+    "level": "CET4",
+    "example_en": "The hall has a capacity of 500 people.",
+    "example_cn": "大厅可容纳500人。"
+  },
+  {
+    "word": "capture",
+    "phonetic": "/ˈkæptʃər/",
+    "meaning": "v.捕获；夺取",
+    "level": "CET4",
+    "example_en": "The photo captured the moment perfectly.",
+    "example_cn": "这张照片完美地捕捉到了那个时刻。"
+  },
+  {
+    "word": "career",
+    "phonetic": "/kəˈrɪr/",
+    "meaning": "n.职业，生涯",
+    "level": "CET4",
+    "example_en": "She has a successful career.",
+    "example_cn": "她有成功的事业。"
+  },
+  {
+    "word": "catalog",
+    "phonetic": "/ˈkætəlɔːɡ/",
+    "meaning": "n.目录 v.编目录",
+    "level": "CET4",
+    "example_en": "Check the online catalog.",
+    "example_cn": "查看在线目录。"
+  },
+  {
+    "word": "category",
+    "phonetic": "/ˈkætəɡɔːri/",
+    "meaning": "n.类别，种类",
+    "level": "CET4",
+    "example_en": "This falls into a different category.",
+    "example_cn": "这属于不同的类别。"
+  },
+  {
+    "word": "celebrate",
+    "phonetic": "/ˈselɪbreɪt/",
+    "meaning": "v.庆祝",
+    "level": "CET4",
+    "example_en": "We celebrated her birthday.",
+    "example_cn": "我们庆祝了她的生日。"
+  },
+  {
+    "word": "ceremony",
+    "phonetic": "/ˈserɪmoʊni/",
+    "meaning": "n.仪式，典礼",
+    "level": "CET4",
+    "example_en": "The opening ceremony was grand.",
+    "example_cn": "开幕式很盛大。"
+  },
+  {
+    "word": "certificate",
+    "phonetic": "/sərˈtɪfɪkət/",
+    "meaning": "n.证书，证明",
+    "level": "CET4",
+    "example_en": "You need a birth certificate.",
+    "example_cn": "你需要出生证明。"
+  },
+  {
+    "word": "challenge",
+    "phonetic": "/ˈtʃælɪndʒ/",
+    "meaning": "n./v.挑战",
+    "level": "CET4",
+    "example_en": "This is a real challenge.",
+    "example_cn": "这是一个真正的挑战。"
+  },
+  {
+    "word": "character",
+    "phonetic": "/ˈkærəktər/",
+    "meaning": "n.性格；角色；字符",
+    "level": "CET4",
+    "example_en": "He has a strong character.",
+    "example_cn": "他有坚强的性格。"
+  },
+  {
+    "word": "charity",
+    "phonetic": "/ˈtʃærəti/",
+    "meaning": "n.慈善，仁慈",
+    "level": "CET4",
+    "example_en": "They donate to charity.",
+    "example_cn": "他们向慈善机构捐款。"
+  },
+  {
+    "word": "cheat",
+    "phonetic": "/tʃiːt/",
+    "meaning": "v.欺骗，作弊",
+    "level": "CET4",
+    "example_en": "Don't cheat on exams.",
+    "example_cn": "考试不要作弊。"
+  },
+  {
+    "word": "chemical",
+    "phonetic": "/ˈkemɪkl/",
+    "meaning": "adj.化学的 n.化学物质",
+    "level": "CET4",
+    "example_en": "Chemical reactions occur.",
+    "example_cn": "化学反应发生了。"
+  },
+  {
+    "word": "circumstance",
+    "phonetic": "/ˈsɜːrkəmstæns/",
+    "meaning": "n.环境；情况",
+    "level": "CET4",
+    "example_en": "Under no circumstances should you lie.",
+    "example_cn": "在任何情况下你都不应该撒谎。"
+  },
+  {
+    "word": "citizen",
+    "phonetic": "/ˈsɪtɪzn/",
+    "meaning": "n.公民，市民",
+    "level": "CET4",
+    "example_en": "She is a Chinese citizen.",
+    "example_cn": "她是中国公民。"
+  },
+  {
+    "word": "civilization",
+    "phonetic": "/ˌsɪvələˈzeɪʃn/",
+    "meaning": "n.文明",
+    "level": "CET4",
+    "example_en": "Ancient civilization is fascinating.",
+    "example_cn": "古代文明令人着迷。"
+  },
+  {
+    "word": "claim",
+    "phonetic": "/kleɪm/",
+    "meaning": "v./n.声称；要求",
+    "level": "CET4",
+    "example_en": "She claimed she was innocent.",
+    "example_cn": "她声称自己是无辜的。"
+  },
+  {
+    "word": "classic",
+    "phonetic": "/ˈklæsɪk/",
+    "meaning": "adj.经典的 n.经典作品",
+    "level": "CET4",
+    "example_en": "This is a classic novel.",
+    "example_cn": "这是一部经典小说。"
+  },
+  {
+    "word": "climate",
+    "phonetic": "/ˈklaɪmət/",
+    "meaning": "n.气候",
+    "level": "CET4",
+    "example_en": "The climate is changing.",
+    "example_cn": "气候正在变化。"
+  },
+  {
+    "word": "collapse",
+    "phonetic": "/kəˈlæps/",
+    "meaning": "v./n.倒塌；崩溃",
+    "level": "CET4",
+    "example_en": "The building collapsed.",
+    "example_cn": "建筑物倒塌了。"
+  },
+  {
+    "word": "colleague",
+    "phonetic": "/ˈkɑːliːɡ/",
+    "meaning": "n.同事",
+    "level": "CET4",
+    "example_en": "I discussed it with my colleague.",
+    "example_cn": "我和同事讨论过。"
+  },
+  {
+    "word": "command",
+    "phonetic": "/kəˈmænd/",
+    "meaning": "v./n.命令；掌握",
+    "level": "CET4",
+    "example_en": "He commands respect.",
+    "example_cn": "他赢得了尊重。"
+  },
+  {
+    "word": "comment",
+    "phonetic": "/ˈkɒment/",
+    "meaning": "n./v.评论",
+    "level": "CET4",
+    "example_en": "Leave a comment below.",
+    "example_cn": "在下面留言。"
+  },
+  {
+    "word": "commit",
+    "phonetic": "/kəˈmɪt/",
+    "meaning": "v.犯（罪）；承诺",
+    "level": "CET4",
+    "example_en": "He committed a mistake.",
+    "example_cn": "他犯了一个错误。"
+  },
+  {
+    "word": "communicate",
+    "phonetic": "/kəˈmjuːnɪkeɪt/",
+    "meaning": "v.交流，沟通",
+    "level": "CET4",
+    "example_en": "We need to communicate better.",
+    "example_cn": "我们需要更好地沟通。"
+  },
+  {
+    "word": "community",
+    "phonetic": "/kəˈmjuːnəti/",
+    "meaning": "n.社区，团体",
+    "level": "CET4",
+    "example_en": "The local community supports us.",
+    "example_cn": "当地社区支持我们。"
+  },
+  {
+    "word": "companion",
+    "phonetic": "/kəmˈpæniən/",
+    "meaning": "n.同伴，伙伴",
+    "level": "CET4",
+    "example_en": "Dogs are loyal companions.",
+    "example_cn": "狗是忠诚的伙伴。"
+  },
+  {
+    "word": "compare",
+    "phonetic": "/kəmˈper/",
+    "meaning": "v.比较",
+    "level": "CET4",
+    "example_en": "Compare these two options.",
+    "example_cn": "比较这两个选项。"
+  },
+  {
+    "word": "compete",
+    "phonetic": "/kəmˈpiːt/",
+    "meaning": "v.竞争，比赛",
+    "level": "CET4",
+    "example_en": "Companies compete for market share.",
+    "example_cn": "公司竞争市场份额。"
+  },
+  {
+    "word": "complain",
+    "phonetic": "/kəmˈpleɪn/",
+    "meaning": "v.抱怨，投诉",
+    "level": "CET4",
+    "example_en": "Customers complained about the service.",
+    "example_cn": "顾客抱怨服务质量。"
+  },
+  {
+    "word": "complete",
+    "phonetic": "/kəmˈpliːt/",
+    "meaning": "adj.完整的 v.完成",
+    "level": "CET4",
+    "example_en": "The project is complete.",
+    "example_cn": "项目完成了。"
+  },
+  {
+    "word": "complex",
+    "phonetic": "/kəmˈpleks/",
+    "meaning": "adj.复杂的",
+    "level": "CET4",
+    "example_en": "The problem is very complex.",
+    "example_cn": "问题很复杂。"
+  },
+  {
+    "word": "complicate",
+    "phonetic": "/ˈkɒmplɪkeɪt/",
+    "meaning": "v.使复杂化",
+    "level": "CET4",
+    "example_en": "Don't complicate things.",
+    "example_cn": "不要把事情复杂化。"
+  },
+  {
+    "word": "component",
+    "phonetic": "/kəmˈpoʊnənt/",
+    "meaning": "n.成分，组件",
+    "level": "CET4",
+    "example_en": "Each component is important.",
+    "example_cn": "每个部件都很重要。"
+  },
+  {
+    "word": "compose",
+    "phonetic": "/kəmˈpoʊz/",
+    "meaning": "v.组成；创作",
+    "level": "CET4",
+    "example_en": "Water is composed of hydrogen and oxygen.",
+    "example_cn": "水由氢和氧组成。"
+  },
+  {
+    "word": "comprehension",
+    "phonetic": "/ˌkɒmprɪˈhenʃn/",
+    "meaning": "n.理解，理解力",
+    "level": "CET4",
+    "example_en": "Reading comprehension is key.",
+    "example_cn": "阅读理解是关键。"
+  },
+  {
+    "word": "concentrate",
+    "phonetic": "/ˈkɒnsntreɪt/",
+    "meaning": "v.集中；专注",
+    "level": "CET4",
+    "example_en": "I need to concentrate on my work.",
+    "example_cn": "我需要集中精力工作。"
+  },
+  {
+    "word": "concept",
+    "phonetic": "/ˈkɒnsept/",
+    "meaning": "n.概念，观念",
+    "level": "CET4",
+    "example_en": "This is a basic concept.",
+    "example_cn": "这是一个基本概念。"
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "meaning": "n.关心 v.涉及；担心",
+    "level": "CET4",
+    "example_en": "This concerns everyone.",
+    "example_cn": "这关系到每个人。"
+  },
+  {
+    "word": "conclude",
+    "phonetic": "/kənˈkluːd/",
+    "meaning": "v.结束；得出结论",
+    "level": "CET4",
+    "example_en": "What do you conclude from this?",
+    "example_cn": "你从中得出什么结论？"
+  },
+  {
+    "word": "condition",
+    "phonetic": "/kənˈdɪʃn/",
+    "meaning": "n.条件；状况",
+    "level": "CET4",
+    "example_en": "The car is in good condition.",
+    "example_cn": "车况良好。"
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/kənˈdʌkt/",
+    "meaning": "v.引导；进行 n.行为",
+    "level": "CET4",
+    "example_en": "The experiment was conducted properly.",
+    "example_cn": "实验进行得很顺利。"
+  },
+  {
+    "word": "conference",
+    "phonetic": "/ˈkɒnfərəns/",
+    "meaning": "n.会议",
+    "level": "CET4",
+    "example_en": "I have a conference call at 3pm.",
+    "example_cn": "我下午三点有个电话会议。"
+  },
+  {
+    "word": "confident",
+    "phonetic": "/ˈkɒnfɪdənt/",
+    "meaning": "adj.自信的",
+    "level": "CET4",
+    "example_en": "She is confident about passing.",
+    "example_cn": "她对通过很有信心。"
+  },
+  {
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːrm/",
+    "meaning": "v.确认，证实",
+    "level": "CET4",
+    "example_en": "Please confirm your reservation.",
+    "example_cn": "请确认你的预订。"
+  },
+  {
+    "word": "conflict",
+    "phonetic": "/ˈkɒnflɪkt/",
+    "meaning": "n./v.冲突，矛盾",
+    "level": "CET4",
+    "example_en": "They tried to avoid conflict.",
+    "example_cn": "他们试图避免冲突。"
+  },
+  {
+    "word": "confuse",
+    "phonetic": "/kənˈfjuːz/",
+    "meaning": "v.使困惑",
+    "level": "CET4",
+    "example_en": "The instructions confused me.",
+    "example_cn": "说明把我搞糊涂了。"
+  },
+  {
+    "word": "connect",
+    "phonetic": "/kəˈnekt/",
+    "meaning": "v.连接",
+    "level": "CET4",
+    "example_en": "Connect the device to WiFi.",
+    "example_cn": "把设备连接到WiFi。"
+  },
+  {
+    "word": "conscious",
+    "phonetic": "/ˈkɒnʃəs/",
+    "meaning": "adj.有意识的；自觉的",
+    "level": "CET4",
+    "example_en": "He was conscious of the danger.",
+    "example_cn": "他意识到了危险。"
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɒnsɪkwens/",
+    "meaning": "n.结果，后果",
+    "level": "CET4",
+    "example_en": "Every action has consequences.",
+    "example_cn": "每个行动都有后果。"
+  },
+  {
+    "word": "conservative",
+    "phonetic": "/kənˈsɜːrvətɪv/",
+    "meaning": "adj.保守的",
+    "level": "CET4",
+    "example_en": "He has conservative views.",
+    "example_cn": "他有保守的观点。"
+  },
+  {
+    "word": "consider",
+    "phonetic": "/kənˈsɪdər/",
+    "meaning": "v.考虑，认为",
+    "level": "CET4",
+    "example_en": "Please consider my proposal.",
+    "example_cn": "请考虑我的提议。"
+  },
+  {
+    "word": "consistent",
+    "phonetic": "/kənˈsɪstənt/",
+    "meaning": "adj.一致的，始终如一的",
+    "level": "CET4",
+    "example_en": "His story is consistent with the facts.",
+    "example_cn": "他的陈述与事实一致。"
+  },
+  {
+    "word": "constant",
+    "phonetic": "/ˈkɒnstənt/",
+    "meaning": "adj.不断的；不变的",
+    "level": "CET4",
+    "example_en": "The machine runs at a constant speed.",
+    "example_cn": "机器以恒定速度运行。"
+  },
+  {
+    "word": "construct",
+    "phonetic": "/kənˈstrʌkt/",
+    "meaning": "v.建造，构建",
+    "level": "CET4",
+    "example_en": "They constructed a new bridge.",
+    "example_cn": "他们建造了一座新桥。"
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "meaning": "v.消费；消耗",
+    "level": "CET4",
+    "example_en": "This consumes a lot of energy.",
+    "example_cn": "这消耗大量能源。"
+  },
+  {
+    "word": "contact",
+    "phonetic": "/ˈkɒntækt/",
+    "meaning": "n./v.接触，联系",
+    "level": "CET4",
+    "example_en": "Keep in contact with me.",
+    "example_cn": "保持联系。"
+  },
+  {
+    "word": "contain",
+    "phonetic": "/kənˈteɪn/",
+    "meaning": "v.包含，容纳",
+    "level": "CET4",
+    "example_en": "The box contains books.",
+    "example_cn": "盒子里装有书。"
+  },
+  {
+    "word": "contemporary",
+    "phonetic": "/kənˈtempəreri/",
+    "meaning": "adj.当代的",
+    "level": "CET4",
+    "example_en": "Contemporary art is diverse.",
+    "example_cn": "当代艺术是多样化的。"
+  },
+  {
+    "word": "content",
+    "phonetic": "/ˈkɒntent/",
+    "meaning": "n.内容 adj.满足的",
+    "level": "CET4",
+    "example_en": "The table of contents is on page 1.",
+    "example_cn": "目录在第一页。"
+  },
+  {
+    "word": "contest",
+    "phonetic": "/ˈkɒntest/",
+    "meaning": "n.比赛 v.竞争",
+    "level": "CET4",
+    "example_en": "She won the speech contest.",
+    "example_cn": "她赢了演讲比赛。"
+  },
+  {
+    "word": "context",
+    "phonetic": "/ˈkɒntekst/",
+    "meaning": "n.上下文；背景",
+    "level": "CET4",
+    "example_en": "Understand the context first.",
+    "example_cn": "先理解上下文。"
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "meaning": "v.贡献，捐助",
+    "level": "CET4",
+    "example_en": "Everyone should contribute to the team.",
+    "example_cn": "每个人都应该为团队做贡献。"
+  },
+  {
+    "word": "convenient",
+    "phonetic": "/kənˈviːniənt/",
+    "meaning": "adj.方便的",
+    "level": "CET4",
+    "example_en": "This location is very convenient.",
+    "example_cn": "这个位置非常方便。"
+  },
+  {
+    "word": "convince",
+    "phonetic": "/kənˈvɪns/",
+    "meaning": "v.说服，使相信",
+    "level": "CET4",
+    "example_en": "I convinced him to join us.",
+    "example_cn": "我说服了他加入我们。"
+  },
+  {
+    "word": "cooperate",
+    "phonetic": "/koʊˈɒpəreɪt/",
+    "meaning": "v.合作，协作",
+    "level": "CET4",
+    "example_en": "Let's cooperate on this project.",
+    "example_cn": "让我们在这个项目上合作。"
+  },
+  {
+    "word": "coordinate",
+    "phonetic": "/koʊˈɔːrdɪneɪt/",
+    "meaning": "v.协调",
+    "level": "CET4",
+    "example_en": "We need to coordinate our efforts.",
+    "example_cn": "我们需要协调我们的努力。"
+  },
+  {
+    "word": "cope",
+    "phonetic": "/koʊp/",
+    "meaning": "v.应对，处理",
+    "level": "CET4",
+    "example_en": "She coped with the pressure well.",
+    "example_cn": "她很好地应对了压力。"
+  },
+  {
+    "word": "core",
+    "phonetic": "/kɔːr/",
+    "meaning": "n.核心",
+    "level": "CET4",
+    "example_en": "This is the core issue.",
+    "example_cn": "这是核心问题。"
+  },
+  {
+    "word": "corporate",
+    "phonetic": "/ˈkɔːrpərət/",
+    "meaning": "adj.公司的；团体的",
+    "level": "CET4",
+    "example_en": "Corporate culture matters.",
+    "example_cn": "企业文化很重要。"
+  },
+  {
+    "word": "correspond",
+    "phonetic": "/ˌkɒrəˈspɒnd/",
+    "meaning": "v.对应；通信",
+    "level": "CET4",
+    "example_en": "These numbers correspond to different items.",
+    "example_cn": "这些数字对应不同的项目。"
+  },
+  {
+    "word": "counsel",
+    "phonetic": "/ˈkaʊnsl/",
+    "meaning": "v.建议 n.法律顾问",
+    "level": "CET4",
+    "example_en": "She counseled me to be patient.",
+    "example_cn": "她建议我耐心点。"
+  },
+  {
+    "word": "count",
+    "phonetic": "/kaʊnt/",
+    "meaning": "v.数；计算 n.总数",
+    "level": "CET4",
+    "example_en": "Count from 1 to 10.",
+    "example_cn": "从1数到10。"
+  },
+  {
+    "word": "counter",
+    "phonetic": "/ˈkaʊntər/",
+    "meaning": "n.柜台 v.反对",
+    "level": "CET4",
+    "example_en": "Please pay at the counter.",
+    "example_cn": "请在柜台付款。"
+  },
+  {
+    "word": "courage",
+    "phonetic": "/ˈkɜːrɪdʒ/",
+    "meaning": "n.勇气",
+    "level": "CET4",
+    "example_en": "It takes courage to admit mistakes.",
+    "example_cn": "承认错误需要勇气。"
+  },
+  {
+    "word": "crash",
+    "phonetic": "/kræʃ/",
+    "meaning": "v./n.撞碎；崩溃",
+    "level": "CET4",
+    "example_en": "The computer crashed.",
+    "example_cn": "电脑崩溃了。"
+  },
+  {
+    "word": "create",
+    "phonetic": "/kriˈeɪt/",
+    "meaning": "v.创造，创作",
+    "level": "CET4",
+    "example_en": "She created a beautiful painting.",
+    "example_cn": "她创作了一幅美丽的画。"
+  },
+  {
+    "word": "creative",
+    "phonetic": "/kriˈeɪtɪv/",
+    "meaning": "adj.有创造力的",
+    "level": "CET4",
+    "example_en": "Think outside the box and be creative.",
+    "example_cn": "跳出框框，发挥创造力。"
+  },
+  {
+    "word": "crime",
+    "phonetic": "/kraɪm/",
+    "meaning": "n.犯罪，罪行",
+    "level": "CET4",
+    "example_en": "Crime rates are decreasing.",
+    "example_cn": "犯罪率正在下降。"
+  },
+  {
+    "word": "crisis",
+    "phonetic": "/ˈkraɪsɪs/",
+    "meaning": "n.危机",
+    "level": "CET4",
+    "example_en": "The economic crisis affected everyone.",
+    "example_cn": "经济危机影响了每个人。"
+  },
+  {
+    "word": "criteria",
+    "phonetic": "/kraɪˈtɪriə/",
+    "meaning": "n.标准，准则",
+    "level": "CET4",
+    "example_en": "What are the selection criteria?",
+    "example_cn": "选拔标准是什么？"
+  },
+  {
+    "word": "critical",
+    "phonetic": "/ˈkrɪtɪkl/",
+    "meaning": "adj.批评的；关键的",
+    "level": "CET4",
+    "example_en": "This is a critical moment.",
+    "example_cn": "这是一个关键时刻。"
+  },
+  {
+    "word": "cultivate",
+    "phonetic": "/ˈkʌltɪveɪt/",
+    "meaning": "v.培养；种植",
+    "level": "CET4",
+    "example_en": "Cultivate good habits.",
+    "example_cn": "培养好习惯。"
+  },
+  {
+    "word": "curiosity",
+    "phonetic": "/ˌkjʊriˈɒsəti/",
+    "meaning": "n.好奇心",
+    "level": "CET4",
+    "example_en": "Children have natural curiosity.",
+    "example_cn": "孩子有天然的好奇心。"
+  },
+  {
+    "word": "current",
+    "phonetic": "/ˈkɜːrənt/",
+    "meaning": "adj.当前的 n.水流",
+    "level": "CET4",
+    "example_en": "The current situation is stable.",
+    "example_cn": "当前局势稳定。"
+  },
+  {
+    "word": "database",
+    "phonetic": "/ˈdeɪtəbeɪs/",
+    "meaning": "n.数据库",
+    "level": "CET4",
+    "example_en": "The data is stored in a database.",
+    "example_cn": "数据存储在数据库中。"
+  },
+  {
+    "word": "debate",
+    "phonetic": "/dɪˈbeɪt/",
+    "meaning": "n./v.辩论，讨论",
+    "level": "CET4",
+    "example_en": "There was a heated debate.",
+    "example_cn": "进行了一场激烈的辩论。"
+  },
+  {
+    "word": "debt",
+    "phonetic": "/det/",
+    "meaning": "n.债务，欠款",
+    "level": "CET4",
+    "example_en": "He is in debt.",
+    "example_cn": "他负债了。"
+  },
+  {
+    "word": "decade",
+    "phonetic": "/ˈdekeɪd/",
+    "meaning": "n.十年",
+    "level": "CET4",
+    "example_en": "Over the past decade, technology has changed.",
+    "example_cn": "在过去的十年里，技术变了。"
+  },
+  {
+    "word": "declare",
+    "phonetic": "/dɪˈkler/",
+    "meaning": "v.宣布，声明",
+    "level": "CET4",
+    "example_en": "I declare the meeting open.",
+    "example_cn": "我宣布会议开始。"
+  },
+  {
+    "word": "decline",
+    "phonetic": "/dɪˈklaɪn/",
+    "meaning": "v./n.下降；拒绝",
+    "level": "CET4",
+    "example_en": "The population is declining.",
+    "example_cn": "人口在下降。"
+  },
+  {
+    "word": "decorate",
+    "phonetic": "/ˈdekəreɪt/",
+    "meaning": "v.装饰",
+    "level": "CET4",
+    "example_en": "They decorated the room for Christmas.",
+    "example_cn": "他们为圣诞节装饰了房间。"
+  },
+  {
+    "word": "decrease",
+    "phonetic": "/dɪˈkriːs/",
+    "meaning": "v./n.减少",
+    "level": "CET4",
+    "example_en": "The price decreased by 10%.",
+    "example_cn": "价格下降了10%。"
+  },
+  {
+    "word": "defeat",
+    "phonetic": "/dɪˈfiːt/",
+    "meaning": "v./n.击败，战胜",
+    "level": "CET4",
+    "example_en": "They defeated the enemy.",
+    "example_cn": "他们击败了敌人。"
+  },
+  {
+    "word": "defend",
+    "phonetic": "/dɪˈfend/",
+    "meaning": "v.防御；辩护",
+    "level": "CET4",
+    "example_en": "He defended his decision.",
+    "example_cn": "他为自己的决定辩护。"
+  },
+  {
+    "word": "define",
+    "phonetic": "/dɪˈfaɪn/",
+    "meaning": "v.定义，界定",
+    "level": "CET4",
+    "example_en": "How do you define success?",
+    "example_cn": "你如何定义成功？"
+  },
+  {
+    "word": "definition",
+    "phonetic": "/ˌdefɪˈnɪʃn/",
+    "meaning": "n.定义",
+    "level": "CET4",
+    "example_en": "Look up the definition in a dictionary.",
+    "example_cn": "在字典里查定义。"
+  },
+  {
+    "word": "delivery",
+    "phonetic": "/dɪˈlɪvəri/",
+    "meaning": "n.递送；交付",
+    "level": "CET4",
+    "example_en": "The delivery is free.",
+    "example_cn": "送货是免费的。"
+  },
+  {
+    "word": "demand",
+    "phonetic": "/dɪˈmænd/",
+    "meaning": "n./v.要求；需求",
+    "level": "CET4",
+    "example_en": "Supply and demand affect prices.",
+    "example_cn": "供求关系影响价格。"
+  },
+  {
+    "word": "demonstrate",
+    "phonetic": "/ˈdemənstreɪt/",
+    "meaning": "v.证明；示范",
+    "level": "CET4",
+    "example_en": "The experiment demonstrates the theory.",
+    "example_cn": "实验证明了该理论。"
+  },
+  {
+    "word": "deny",
+    "phonetic": "/dɪˈnaɪ/",
+    "meaning": "v.否认；拒绝",
+    "level": "CET4",
+    "example_en": "He denied the accusation.",
+    "example_cn": "他否认了指控。"
+  },
+  {
+    "word": "department",
+    "phonetic": "/dɪˈpɑːrtmənt/",
+    "meaning": "n.部门，系",
+    "level": "CET4",
+    "example_en": "She works in the marketing department.",
+    "example_cn": "她在市场部工作。"
+  },
+  {
+    "word": "departure",
+    "phonetic": "/dɪˈpɑːrtʃər/",
+    "meaning": "n.离开，出发",
+    "level": "CET4",
+    "example_en": "The departure time is 9am.",
+    "example_cn": "出发时间是上午9点。"
+  },
+  {
+    "word": "depend",
+    "phonetic": "/dɪˈpend/",
+    "meaning": "v.依赖；取决于",
+    "level": "CET4",
+    "example_en": "It depends on the weather.",
+    "example_cn": "这取决于天气。"
+  },
+  {
+    "word": "deposit",
+    "phonetic": "/dɪˈpɒzɪt/",
+    "meaning": "n.押金 v.存放",
+    "level": "CET4",
+    "example_en": "You need to pay a deposit.",
+    "example_cn": "你需要付押金。"
+  },
+  {
+    "word": "depress",
+    "phonetic": "/dɪˈpres/",
+    "meaning": "v.使沮丧；使萧条",
+    "level": "CET4",
+    "example_en": "The bad news depressed him.",
+    "example_cn": "坏消息让他沮丧。"
+  },
+  {
+    "word": "derive",
+    "phonetic": "/dɪˈraɪv/",
+    "meaning": "v.源自；获得",
+    "level": "CET4",
+    "example_en": "This word derives from Latin.",
+    "example_cn": "这个词源自拉丁语。"
+  },
+  {
+    "word": "deserve",
+    "phonetic": "/dɪˈzɜːrv/",
+    "meaning": "v.应得，值得",
+    "level": "CET4",
+    "example_en": "You deserve a break.",
+    "example_cn": "你值得休息一下。"
+  },
+  {
+    "word": "desire",
+    "phonetic": "/dɪˈzaɪər/",
+    "meaning": "n./v.渴望，欲望",
+    "level": "CET4",
+    "example_en": "She has a strong desire to learn.",
+    "example_cn": "她有强烈的学习欲望。"
+  },
+  {
+    "word": "desperate",
+    "phonetic": "/ˈdespərət/",
+    "meaning": "adj.绝望的；拼命的",
+    "level": "CET4",
+    "example_en": "He made a desperate attempt.",
+    "example_cn": "他做了一次拼命的尝试。"
+  },
+  {
+    "word": "despite",
+    "phonetic": "/dɪˈspaɪt/",
+    "meaning": "prep.尽管，不管",
+    "level": "CET4",
+    "example_en": "Despite the rain, we continued.",
+    "example_cn": "尽管下雨，我们还是继续。"
+  },
+  {
+    "word": "destination",
+    "phonetic": "/ˌdestɪˈneɪʃn/",
+    "meaning": "n.目的地",
+    "level": "CET4",
+    "example_en": "We arrived at our destination.",
+    "example_cn": "我们到达了目的地。"
+  },
+  {
+    "word": "destruction",
+    "phonetic": "/dɪˈstrʌkʃn/",
+    "meaning": "n.破坏，毁灭",
+    "level": "CET4",
+    "example_en": "The storm caused widespread destruction.",
+    "example_cn": "风暴造成了广泛的破坏。"
+  },
+  {
+    "word": "detail",
+    "phonetic": "/ˈdiːteɪl/",
+    "meaning": "n.细节 v.详述",
+    "level": "CET4",
+    "example_en": "Please provide more details.",
+    "example_cn": "请提供更多细节。"
+  },
+  {
+    "word": "detect",
+    "phonetic": "/dɪˈtekt/",
+    "meaning": "v.察觉，发现",
+    "level": "CET4",
+    "example_en": "The system detects errors.",
+    "example_cn": "系统检测错误。"
+  },
+  {
+    "word": "determine",
+    "phonetic": "/dɪˈtɜːrmɪn/",
+    "meaning": "v.决定；确定",
+    "level": "CET4",
+    "example_en": "We need to determine the cause.",
+    "example_cn": "我们需要确定原因。"
+  },
+  {
+    "word": "develop",
+    "phonetic": "/dɪˈveləp/",
+    "meaning": "v.发展；开发",
+    "level": "CET4",
+    "example_en": "The company developed new software.",
+    "example_cn": "公司开发了新软件。"
+  },
+  {
+    "word": "device",
+    "phonetic": "/dɪˈvaɪs/",
+    "meaning": "n.设备，装置",
+    "level": "CET4",
+    "example_en": "Electronic devices should be turned off.",
+    "example_cn": "电子设备应该关掉。"
+  },
+  {
+    "word": "devote",
+    "phonetic": "/dɪˈvoʊt/",
+    "meaning": "v.致力于，奉献",
+    "level": "CET4",
+    "example_en": "She devoted her life to teaching.",
+    "example_cn": "她毕生致力于教学。"
+  },
+  {
+    "word": "diagram",
+    "phonetic": "/ˈdaɪəɡræm/",
+    "meaning": "n.图表，示意图",
+    "level": "CET4",
+    "example_en": "The diagram explains the process.",
+    "example_cn": "图表解释了流程。"
+  },
+  {
+    "word": "dignity",
+    "phonetic": "/ˈdɪɡnəti/",
+    "meaning": "n.尊严",
+    "level": "CET4",
+    "example_en": "Everyone deserves dignity.",
+    "example_cn": "每个人都应享有尊严。"
+  },
+  {
+    "word": "dilemma",
+    "phonetic": "/dɪˈlemə/",
+    "meaning": "n.困境，两难",
+    "level": "CET4",
+    "example_en": "She was in a dilemma.",
+    "example_cn": "她处于两难境地。"
+  },
+  {
+    "word": "dimension",
+    "phonetic": "/daɪˈmenʃn/",
+    "meaning": "n.维度；方面",
+    "level": "CET4",
+    "example_en": "Add a new dimension to your thinking.",
+    "example_cn": "给你的思维增加一个新的维度。"
+  },
+  {
+    "word": "diplomatic",
+    "phonetic": "/ˌdɪpləˈmætɪk/",
+    "meaning": "adj.外交的；老练的",
+    "level": "CET4",
+    "example_en": "She handled it diplomatically.",
+    "example_cn": "她处理得很老练。"
+  },
+  {
+    "word": "direct",
+    "phonetic": "/dəˈrekt/",
+    "meaning": "adj.直接的 v.指导",
+    "level": "CET4",
+    "example_en": "Go straight and you'll find it.",
+    "example_cn": "直走你就会找到。"
+  },
+  {
+    "word": "disappear",
+    "phonetic": "/ˌdɪsəˈpɪr/",
+    "meaning": "v.消失",
+    "level": "CET4",
+    "example_en": "The sun disappeared behind clouds.",
+    "example_cn": "太阳消失在云层后面。"
+  },
+  {
+    "word": "discipline",
+    "phonetic": "/ˈdɪsəplɪn/",
+    "meaning": "n.纪律；学科",
+    "level": "CET4",
+    "example_en": "Learning requires discipline.",
+    "example_cn": "学习需要自律。"
+  },
+  {
+    "word": "discover",
+    "phonetic": "/dɪˈskʌvər/",
+    "meaning": "v.发现",
+    "level": "CET4",
+    "example_en": "She discovered a new species.",
+    "example_cn": "她发现了一个新物种。"
+  },
+  {
+    "word": "discrimination",
+    "phonetic": "/dɪˌskrɪmɪˈneɪʃn/",
+    "meaning": "n.歧视；辨别",
+    "level": "CET4",
+    "example_en": "Racial discrimination is wrong.",
+    "example_cn": "种族歧视是错误的。"
+  },
+  {
+    "word": "discuss",
+    "phonetic": "/dɪˈskʌs/",
+    "meaning": "v.讨论",
+    "level": "CET4",
+    "example_en": "Let's discuss the plan.",
+    "example_cn": "我们来讨论这个计划。"
+  },
+  {
+    "word": "disease",
+    "phonetic": "/dɪˈziːz/",
+    "meaning": "n.疾病",
+    "level": "CET4",
+    "example_en": "The disease spreads quickly.",
+    "example_cn": "这种疾病传播很快。"
+  },
+  {
+    "word": "display",
+    "phonetic": "/dɪˈspleɪ/",
+    "meaning": "v./n.展示，陈列",
+    "level": "CET4",
+    "example_en": "The museum displays ancient artifacts.",
+    "example_cn": "博物馆展示古代文物。"
+  },
+  {
+    "word": "dispute",
+    "phonetic": "/dɪˈspjuːt/",
+    "meaning": "n./v.争论，纠纷",
+    "level": "CET4",
+    "example_en": "They settled the dispute.",
+    "example_cn": "他们解决了纠纷。"
+  },
+  {
+    "word": "distance",
+    "phonetic": "/ˈdɪstəns/",
+    "meaning": "n.距离",
+    "level": "CET4",
+    "example_en": "Keep a safe distance.",
+    "example_cn": "保持安全距离。"
+  },
+  {
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "meaning": "v.区分，辨别",
+    "level": "CET4",
+    "example_en": "Can you distinguish the difference?",
+    "example_cn": "你能区分差别吗？"
+  },
+  {
+    "word": "distribute",
+    "phonetic": "/dɪˈstrɪbjuːt/",
+    "meaning": "v.分配，分发",
+    "level": "CET4",
+    "example_en": "Food was distributed to the homeless.",
+    "example_cn": "食物被分发给无家可归的人。"
+  },
+  {
+    "word": "district",
+    "phonetic": "/ˈdɪstrɪkt/",
+    "meaning": "n.地区，区域",
+    "level": "CET4",
+    "example_en": "She lives in a quiet district.",
+    "example_cn": "她住在一个安静的地区。"
+  },
+  {
+    "word": "diverse",
+    "phonetic": "/daɪˈvɜːrs/",
+    "meaning": "adj.不同的，多样化的",
+    "level": "CET4",
+    "example_en": "The city has a diverse culture.",
+    "example_cn": "这个城市有多元文化。"
+  },
+  {
+    "word": "document",
+    "phonetic": "/ˈdɒkjumənt/",
+    "meaning": "n.文件 v.记录",
+    "level": "CET4",
+    "example_en": "Please sign the document.",
+    "example_cn": "请签署文件。"
+  },
+  {
+    "word": "domestic",
+    "phonetic": "/dəˈmestɪk/",
+    "meaning": "adj.国内的；家庭的",
+    "level": "CET4",
+    "example_en": "Domestic flights are popular.",
+    "example_cn": "国内航班很受欢迎。"
+  },
+  {
+    "word": "dominate",
+    "phonetic": "/ˈdɒmɪneɪt/",
+    "meaning": "v.支配，主宰",
+    "level": "CET4",
+    "example_en": "The company dominates the market.",
+    "example_cn": "这家公司主导市场。"
+  },
+  {
+    "word": "draft",
+    "phonetic": "/dræft/",
+    "meaning": "n.草稿 v.起草",
+    "level": "CET4",
+    "example_en": "I need to write a draft first.",
+    "example_cn": "我需要先写个草稿。"
+  },
+  {
+    "word": "drama",
+    "phonetic": "/ˈdrɑːmə/",
+    "meaning": "n.戏剧；戏剧性事件",
+    "level": "CET4",
+    "example_en": "She loves watching dramas.",
+    "example_cn": "她喜欢看戏剧。"
+  },
+  {
+    "word": "dramatic",
+    "phonetic": "/drəˈmætɪk/",
+    "meaning": "adj.戏剧性的；巨大的",
+    "level": "CET4",
+    "example_en": "There was a dramatic change.",
+    "example_cn": "发生了巨大的变化。"
+  },
+  {
+    "word": "drastic",
+    "phonetic": "/ˈdræstɪk/",
+    "meaning": "adj.激烈的，极端的",
+    "level": "CET4",
+    "example_en": "We need drastic measures.",
+    "example_cn": "我们需要激烈的措施。"
+  },
+  {
+    "word": "durable",
+    "phonetic": "/ˈdʊrəbl/",
+    "meaning": "adj.耐用的，持久的",
+    "level": "CET4",
+    "example_en": "This material is very durable.",
+    "example_cn": "这种材料非常耐用。"
+  },
+  {
+    "word": "dynamic",
+    "phonetic": "/daɪˈnæmɪk/",
+    "meaning": "adj.动态的；有活力的",
+    "level": "CET4",
+    "example_en": "The team is very dynamic.",
+    "example_cn": "团队非常有活力。"
+  },
+  {
+    "word": "economy",
+    "phonetic": "/ɪˈkɒnəmi/",
+    "meaning": "n.经济",
+    "level": "CET4",
+    "example_en": "The economy is growing.",
+    "example_cn": "经济正在增长。"
+  },
+  {
+    "word": "edition",
+    "phonetic": "/ɪˈdɪʃn/",
+    "meaning": "n.版本",
+    "level": "CET4",
+    "example_en": "This is the latest edition.",
+    "example_cn": "这是最新版本。"
+  },
+  {
+    "word": "effective",
+    "phonetic": "/ɪˈfektɪv/",
+    "meaning": "adj.有效的",
+    "level": "CET4",
+    "example_en": "This medicine is effective.",
+    "example_cn": "这药很有效。"
+  },
+  {
+    "word": "efficiency",
+    "phonetic": "/ɪˈfɪʃnsi/",
+    "meaning": "n.效率",
+    "level": "CET4",
+    "example_en": "We need to improve efficiency.",
+    "example_cn": "我们需要提高效率。"
+  },
+  {
+    "word": "elaborate",
+    "phonetic": "/ɪˈlæbərət/",
+    "meaning": "adj.精心制作的 v.详述",
+    "level": "CET4",
+    "example_en": "Could you elaborate on that?",
+    "example_cn": "你能详细说明一下吗？"
+  },
+  {
+    "word": "election",
+    "phonetic": "/ɪˈlekʃn/",
+    "meaning": "n.选举",
+    "level": "CET4",
+    "example_en": "The election is next month.",
+    "example_cn": "选举在下个月。"
+  },
+  {
+    "word": "element",
+    "phonetic": "/ˈelɪmənt/",
+    "meaning": "n.元素；要素",
+    "level": "CET4",
+    "example_en": "Honesty is a key element.",
+    "example_cn": "诚实是一个关键要素。"
+  },
+  {
+    "word": "eliminate",
+    "phonetic": "/ɪˈlɪmɪneɪt/",
+    "meaning": "v.消除，淘汰",
+    "level": "CET4",
+    "example_en": "We need to eliminate errors.",
+    "example_cn": "我们需要消除错误。"
+  },
+  {
+    "word": "embrace",
+    "phonetic": "/ɪmˈbreɪs/",
+    "meaning": "v.拥抱；包含",
+    "level": "CET4",
+    "example_en": "Embrace new challenges.",
+    "example_cn": "拥抱新的挑战。"
+  },
+  {
+    "word": "emerge",
+    "phonetic": "/iˈmɜːrdʒ/",
+    "meaning": "v.出现，浮现",
+    "level": "CET4",
+    "example_en": "New evidence emerged.",
+    "example_cn": "新证据出现了。"
+  },
+  {
+    "word": "emergency",
+    "phonetic": "/iˈmɜːrdʒənsi/",
+    "meaning": "n.紧急情况",
+    "level": "CET4",
+    "example_en": "In case of emergency, call 911.",
+    "example_cn": "紧急情况下拨打911。"
+  },
+  {
+    "word": "emotion",
+    "phonetic": "/ɪˈmoʊʃn/",
+    "meaning": "n.情感，情绪",
+    "level": "CET4",
+    "example_en": "She expressed her emotions freely.",
+    "example_cn": "她自由地表达情感。"
+  },
+  {
+    "word": "emphasis",
+    "phonetic": "/ˈemfəsɪs/",
+    "meaning": "n.强调，重点",
+    "level": "CET4",
+    "example_en": "Put emphasis on quality.",
+    "example_cn": "把重点放在质量上。"
+  },
+  {
+    "word": "employ",
+    "phonetic": "/ɪmˈplɔɪ/",
+    "meaning": "v.雇用；使用",
+    "level": "CET4",
+    "example_en": "The company employs 500 people.",
+    "example_cn": "公司雇用了500人。"
+  },
+  {
+    "word": "enable",
+    "phonetic": "/ɪˈneɪbl/",
+    "meaning": "v.使能够",
+    "level": "CET4",
+    "example_en": "This app enables you to learn anytime.",
+    "example_cn": "这个应用让你随时学习。"
+  },
+  {
+    "word": "encounter",
+    "phonetic": "/ɪnˈkaʊntər/",
+    "meaning": "v./n.遭遇，偶遇",
+    "level": "CET4",
+    "example_en": "I encountered an old friend.",
+    "example_cn": "我偶遇了一个老朋友。"
+  },
+  {
+    "word": "encourage",
+    "phonetic": "/ɪnˈkɜːrɪdʒ/",
+    "meaning": "v.鼓励",
+    "level": "CET4",
+    "example_en": "Teachers should encourage students.",
+    "example_cn": "老师应该鼓励学生。"
+  },
+  {
+    "word": "engage",
+    "phonetic": "/ɪnˈɡeɪdʒ/",
+    "meaning": "v.参与；吸引",
+    "level": "CET4",
+    "example_en": "The book engaged my attention.",
+    "example_cn": "这本书吸引了我的注意力。"
+  },
+  {
+    "word": "engine",
+    "phonetic": "/ˈendʒɪn/",
+    "meaning": "n.引擎，发动机",
+    "level": "CET4",
+    "example_en": "The engine needs repair.",
+    "example_cn": "发动机需要修理。"
+  },
+  {
+    "word": "enhance",
+    "phonetic": "/ɪnˈhæns/",
+    "meaning": "v.提高，增强",
+    "level": "CET4",
+    "example_en": "This will enhance your skills.",
+    "example_cn": "这会增强你的技能。"
+  },
+  {
+    "word": "enormous",
+    "phonetic": "/ɪˈnɔːrməs/",
+    "meaning": "adj.巨大的",
+    "level": "CET4",
+    "example_en": "An enormous amount of data.",
+    "example_cn": "大量的数据。"
+  },
+  {
+    "word": "ensure",
+    "phonetic": "/ɪnˈʃʊr/",
+    "meaning": "v.确保，保证",
+    "level": "CET4",
+    "example_en": "Ensure the door is locked.",
+    "example_cn": "确保门锁好了。"
+  },
+  {
+    "word": "enterprise",
+    "phonetic": "/ˈentərpraɪz/",
+    "meaning": "n.企业；事业",
+    "level": "CET4",
+    "example_en": "This is a successful enterprise.",
+    "example_cn": "这是一个成功的企业。"
+  },
+  {
+    "word": "entertain",
+    "phonetic": "/ˌentərˈteɪn/",
+    "meaning": "v.娱乐；款待",
+    "level": "CET4",
+    "example_en": "The show entertained the audience.",
+    "example_cn": "节目娱乐了观众。"
+  },
+  {
+    "word": "enthusiasm",
+    "phonetic": "/ɪnˈθuːziæzəm/",
+    "meaning": "n.热情，热心",
+    "level": "CET4",
+    "example_en": "She showed great enthusiasm.",
+    "example_cn": "她表现出了极大的热情。"
+  },
+  {
+    "word": "entire",
+    "phonetic": "/ɪnˈtaɪər/",
+    "meaning": "adj.整个的，全部的",
+    "level": "CET4",
+    "example_en": "I read the entire book.",
+    "example_cn": "我读了整本书。"
+  },
+  {
+    "word": "entitle",
+    "phonetic": "/ɪnˈtaɪtl/",
+    "meaning": "v.给...权利；命名",
+    "level": "CET4",
+    "example_en": "You are entitled to a refund.",
+    "example_cn": "你有权获得退款。"
+  },
+  {
+    "word": "environment",
+    "phonetic": "/ɪnˈvaɪrənmənt/",
+    "meaning": "n.环境",
+    "level": "CET4",
+    "example_en": "We must protect the environment.",
+    "example_cn": "我们必须保护环境。"
+  },
+  {
+    "word": "equipment",
+    "phonetic": "/ɪˈkwɪpmənt/",
+    "meaning": "n.设备，装备",
+    "level": "CET4",
+    "example_en": "The lab has advanced equipment.",
+    "example_cn": "实验室有先进的设备。"
+  },
+  {
+    "word": "equivalent",
+    "phonetic": "/ɪˈkwɪvələnt/",
+    "meaning": "adj.相等的 n.等价物",
+    "level": "CET4",
+    "example_en": "One dollar is equivalent to about 7 yuan.",
+    "example_cn": "一美元大约相当于七元人民币。"
+  },
+  {
+    "word": "escape",
+    "phonetic": "/ɪˈskeɪp/",
+    "meaning": "v./n.逃跑；逃避",
+    "level": "CET4",
+    "example_en": "He escaped from prison.",
+    "example_cn": "他从监狱逃跑了。"
+  },
+  {
+    "word": "essential",
+    "phonetic": "/ɪˈsenʃl/",
+    "meaning": "adj.基本的；必要的",
+    "level": "CET4",
+    "example_en": "Water is essential for life.",
+    "example_cn": "水对生命是必不可少的。"
+  },
+  {
+    "word": "establish",
+    "phonetic": "/ɪˈstæblɪʃ/",
+    "meaning": "v.建立，设立",
+    "level": "CET4",
+    "example_en": "The company was established in 2000.",
+    "example_cn": "公司成立于2000年。"
+  },
+  {
+    "word": "estimate",
+    "phonetic": "/ˈestɪmeɪt/",
+    "meaning": "v./n.估计，估价",
+    "level": "CET4",
+    "example_en": "The cost is estimated at $1000.",
+    "example_cn": "费用估计为1000美元。"
+  },
+  {
+    "word": "evaluate",
+    "phonetic": "/ɪˈvæljueɪt/",
+    "meaning": "v.评估，评价",
+    "level": "CET4",
+    "example_en": "We need to evaluate the results.",
+    "example_cn": "我们需要评估结果。"
+  },
+  {
+    "word": "evidence",
+    "phonetic": "/ˈevɪdəns/",
+    "meaning": "n.证据",
+    "level": "CET4",
+    "example_en": "There is no evidence of fraud.",
+    "example_cn": "没有欺诈的证据。"
+  },
+  {
+    "word": "evolution",
+    "phonetic": "/ˌevəˈluːʃn/",
+    "meaning": "n.进化；演变",
+    "level": "CET4",
+    "example_en": "Darwin's theory of evolution.",
+    "example_cn": "达尔文的进化论。"
+  },
+  {
+    "word": "exact",
+    "phonetic": "/ɪɡˈzækt/",
+    "meaning": "adj.精确的，确切的",
+    "level": "CET4",
+    "example_en": "What's the exact time?",
+    "example_cn": "确切时间是几点？"
+  },
+  {
+    "word": "examine",
+    "phonetic": "/ɪɡˈzæmɪn/",
+    "meaning": "v.检查；考试",
+    "level": "CET4",
+    "example_en": "The doctor examined the patient.",
+    "example_cn": "医生检查了病人。"
+  },
+  {
+    "word": "exchange",
+    "phonetic": "/ɪksˈtʃeɪndʒ/",
+    "meaning": "v./n.交换，兑换",
+    "level": "CET4",
+    "example_en": "Where can I exchange money?",
+    "example_cn": "我在哪里可以兑换钱？"
+  },
+  {
+    "word": "exclude",
+    "phonetic": "/ɪkˈskluːd/",
+    "meaning": "v.排除，排斥",
+    "level": "CET4",
+    "example_en": "The price excludes tax.",
+    "example_cn": "价格不含税。"
+  },
+  {
+    "word": "execute",
+    "phonetic": "/ˈeksɪkjuːt/",
+    "meaning": "v.执行，实施",
+    "level": "CET4",
+    "example_en": "The plan was executed perfectly.",
+    "example_cn": "计划执行得很完美。"
+  },
+  {
+    "word": "exhibit",
+    "phonetic": "/ɪɡˈzɪbɪt/",
+    "meaning": "v.展出 n.展览品",
+    "level": "CET4",
+    "example_en": "The museum exhibits modern art.",
+    "example_cn": "博物馆展出当代艺术。"
+  },
+  {
+    "word": "expand",
+    "phonetic": "/ɪkˈspænd/",
+    "meaning": "v.扩大，膨胀",
+    "level": "CET4",
+    "example_en": "The company is expanding rapidly.",
+    "example_cn": "公司正在迅速扩张。"
+  },
+  {
+    "word": "expect",
+    "phonetic": "/ɪkˈspekt/",
+    "meaning": "v.期望，预期",
+    "level": "CET4",
+    "example_en": "I expect good results.",
+    "example_cn": "我期待好结果。"
+  },
+  {
+    "word": "expense",
+    "phonetic": "/ɪkˈspens/",
+    "meaning": "n.花费，代价",
+    "level": "CET4",
+    "example_en": "Living expenses are high in big cities.",
+    "example_cn": "大城市的生活费用很高。"
+  },
+  {
+    "word": "experiment",
+    "phonetic": "/ɪkˈsperɪmənt/",
+    "meaning": "n.实验 v.做实验",
+    "level": "CET4",
+    "example_en": "The experiment produced interesting results.",
+    "example_cn": "实验产生了有趣的结果。"
+  },
+  {
+    "word": "expert",
+    "phonetic": "/ˈekspɜːrt/",
+    "meaning": "n.专家 adj.熟练的",
+    "level": "CET4",
+    "example_en": "She is an expert in this field.",
+    "example_cn": "她是这个领域的专家。"
+  },
+  {
+    "word": "explode",
+    "phonetic": "/ɪkˈsploʊd/",
+    "meaning": "v.爆炸",
+    "level": "CET4",
+    "example_en": "The bomb exploded.",
+    "example_cn": "炸弹爆炸了。"
+  },
+  {
+    "word": "explore",
+    "phonetic": "/ɪkˈsplɔːr/",
+    "meaning": "v.探索，探究",
+    "level": "CET4",
+    "example_en": "We explored the old town.",
+    "example_cn": "我们探索了老城区。"
+  },
+  {
+    "word": "export",
+    "phonetic": "/ˈekspɔːrt/",
+    "meaning": "v./n.出口",
+    "level": "CET4",
+    "example_en": "China exports many products.",
+    "example_cn": "中国出口很多产品。"
+  },
+  {
+    "word": "expose",
+    "phonetic": "/ɪkˈspoʊz/",
+    "meaning": "v.暴露，接触",
+    "level": "CET4",
+    "example_en": "Don't expose it to sunlight.",
+    "example_cn": "不要暴露在阳光下。"
+  },
+  {
+    "word": "extend",
+    "phonetic": "/ɪkˈstend/",
+    "meaning": "v.延伸，扩展",
+    "level": "CET4",
+    "example_en": "Can you extend the deadline?",
+    "example_cn": "你能延长期限吗？"
+  },
+  {
+    "word": "extensive",
+    "phonetic": "/ɪkˈstensɪv/",
+    "meaning": "adj.广泛的，大量的",
+    "level": "CET4",
+    "example_en": "She has extensive experience.",
+    "example_cn": "她有丰富的经验。"
+  },
+  {
+    "word": "external",
+    "phonetic": "/ɪkˈstɜːrnl/",
+    "meaning": "adj.外部的",
+    "level": "CET4",
+    "example_en": "External factors affect the result.",
+    "example_cn": "外部因素影响结果。"
+  },
+  {
+    "word": "extraordinary",
+    "phonetic": "/ɪkˈstrɔːrdəneri/",
+    "meaning": "adj.非凡的，杰出的",
+    "level": "CET4",
+    "example_en": "She has extraordinary talent.",
+    "example_cn": "她有非凡的才华。"
+  },
+  {
+    "word": "extreme",
+    "phonetic": "/ɪkˈstriːm/",
+    "meaning": "adj.极端的，极度的",
+    "level": "CET4",
+    "example_en": "Extreme weather is becoming common.",
+    "example_cn": "极端天气越来越常见。"
+  },
+  {
+    "word": "facility",
+    "phonetic": "/fəˈsɪləti/",
+    "meaning": "n.设施，设备",
+    "level": "CET4",
+    "example_en": "The hotel has excellent facilities.",
+    "example_cn": "酒店设施一流。"
+  },
+  {
+    "word": "factor",
+    "phonetic": "/ˈfæktər/",
+    "meaning": "n.因素，要素",
+    "level": "CET4",
+    "example_en": "Cost is an important factor.",
+    "example_cn": "成本是一个重要因素。"
+  },
+  {
+    "word": "faculty",
+    "phonetic": "/ˈfæklti/",
+    "meaning": "n.才能；全体教职员工",
+    "level": "CET4",
+    "example_en": "She has a great faculty for learning.",
+    "example_cn": "她有很强的学习能力。"
+  },
+  {
+    "word": "fade",
+    "phonetic": "/feɪd/",
+    "meaning": "v.褪色；逐渐消失",
+    "level": "CET4",
+    "example_en": "The color faded over time.",
+    "example_cn": "颜色随着时间褪去了。"
+  },
+  {
+    "word": "failure",
+    "phonetic": "/ˈfeɪljər/",
+    "meaning": "n.失败",
+    "level": "CET4",
+    "example_en": "Failure is the mother of success.",
+    "example_cn": "失败是成功之母。"
+  },
+  {
+    "word": "faith",
+    "phonetic": "/feɪθ/",
+    "meaning": "n.信任，信念",
+    "level": "CET4",
+    "example_en": "I have faith in you.",
+    "example_cn": "我对你有信心。"
+  },
+  {
+    "word": "fashion",
+    "phonetic": "/ˈfæʃn/",
+    "meaning": "n.时尚，流行",
+    "level": "CET4",
+    "example_en": "Fashion changes quickly.",
+    "example_cn": "时尚变化很快。"
+  },
+  {
+    "word": "fatal",
+    "phonetic": "/ˈfeɪtl/",
+    "meaning": "adj.致命的",
+    "level": "CET4",
+    "example_en": "The accident was fatal.",
+    "example_cn": "事故是致命的。"
+  },
+  {
+    "word": "favorable",
+    "phonetic": "/ˈfeɪvərəbl/",
+    "meaning": "adj.有利的；赞成的",
+    "level": "CET4",
+    "example_en": "The weather is favorable.",
+    "example_cn": "天气很有利。"
+  },
+  {
+    "word": "feature",
+    "phonetic": "/ˈfiːtʃər/",
+    "meaning": "n.特征 v.以...为特色",
+    "level": "CET4",
+    "example_en": "This phone has many features.",
+    "example_cn": "这款手机有很多功能。"
+  },
+  {
+    "word": "federal",
+    "phonetic": "/ˈfedərəl/",
+    "meaning": "adj.联邦的",
+    "level": "CET4",
+    "example_en": "The federal government made a decision.",
+    "example_cn": "联邦政府做出了决定。"
+  },
+  {
+    "word": "fierce",
+    "phonetic": "/fɪrs/",
+    "meaning": "adj.凶猛的；激烈的",
+    "level": "CET4",
+    "example_en": "Competition is fierce.",
+    "example_cn": "竞争很激烈。"
+  },
+  {
+    "word": "finance",
+    "phonetic": "/ˈfaɪnæns/",
+    "meaning": "n.财务 v.资助",
+    "level": "CET4",
+    "example_en": "He works in finance.",
+    "example_cn": "他从事金融工作。"
+  },
+  {
+    "word": "flexible",
+    "phonetic": "/ˈfleksəbl/",
+    "meaning": "adj.灵活的",
+    "level": "CET4",
+    "example_en": "We need a flexible schedule.",
+    "example_cn": "我们需要灵活的时间表。"
+  },
+  {
+    "word": "forecast",
+    "phonetic": "/ˈfɔːrkæst/",
+    "meaning": "v./n.预测，预报",
+    "level": "CET4",
+    "example_en": "The weather forecast says it will rain.",
+    "example_cn": "天气预报说会下雨。"
+  },
+  {
+    "word": "former",
+    "phonetic": "/ˈfɔːrmər/",
+    "meaning": "adj.从前的，前任的",
+    "level": "CET4",
+    "example_en": "He is my former boss.",
+    "example_cn": "他是我以前的老板。"
+  },
+  {
+    "word": "fortune",
+    "phonetic": "/ˈfɔːrtʃən/",
+    "meaning": "n.财富，运气",
+    "level": "CET4",
+    "example_en": "Fortune favors the brave.",
+    "example_cn": "好运眷顾勇敢者。"
+  },
+  {
+    "word": "foundation",
+    "phonetic": "/faʊnˈdeɪʃn/",
+    "meaning": "n.基础；基金会",
+    "level": "CET4",
+    "example_en": "The foundation of a good education is reading.",
+    "example_cn": "良好教育的基础是阅读。"
+  },
+  {
+    "word": "fragment",
+    "phonetic": "/ˈfræɡmənt/",
+    "meaning": "n.碎片，片段",
+    "level": "CET4",
+    "example_en": "I remember only fragments of the dream.",
+    "example_cn": "我只记得梦的片段。"
+  },
+  {
+    "word": "frame",
+    "phonetic": "/freɪm/",
+    "meaning": "n.框架 v.制定",
+    "level": "CET4",
+    "example_en": "The frame of the house is made of wood.",
+    "example_cn": "房子的框架是木制的。"
+  },
+  {
+    "word": "frequent",
+    "phonetic": "/ˈfriːkwənt/",
+    "meaning": "adj.频繁的",
+    "level": "CET4",
+    "example_en": "She makes frequent trips abroad.",
+    "example_cn": "她频繁出国。"
+  },
+  {
+    "word": "friction",
+    "phonetic": "/ˈfrɪkʃn/",
+    "meaning": "n.摩擦",
+    "level": "CET4",
+    "example_en": "Friction causes heat.",
+    "example_cn": "摩擦产生热量。"
+  },
+  {
+    "word": "frontier",
+    "phonetic": "/frʌnˈtɪr/",
+    "meaning": "n.边疆；前沿",
+    "level": "CET4",
+    "example_en": "Space is the final frontier.",
+    "example_cn": "太空是最后的边疆。"
+  },
+  {
+    "word": "fruitful",
+    "phonetic": "/ˈfruːtfl/",
+    "meaning": "adj.富有成效的",
+    "level": "CET4",
+    "example_en": "The meeting was fruitful.",
+    "example_cn": "会议很有成效。"
+  },
+  {
+    "word": "fund",
+    "phonetic": "/fʌnd/",
+    "meaning": "n.基金 v.资助",
+    "level": "CET4",
+    "example_en": "The project needs more funds.",
+    "example_cn": "项目需要更多资金。"
+  },
+  {
+    "word": "fundamental",
+    "phonetic": "/ˌfʌndəˈmentl/",
+    "meaning": "adj.基本的，根本的",
+    "level": "CET4",
+    "example_en": "This is a fundamental principle.",
+    "example_cn": "这是一个基本原则。"
+  },
+  {
+    "word": "furthermore",
+    "phonetic": "/ˈfɜːrðərmɔːr/",
+    "meaning": "adv.此外，而且",
+    "level": "CET4",
+    "example_en": "The price is reasonable. Furthermore, the quality is good.",
+    "example_cn": "价格合理，而且质量很好。"
+  },
+  {
+    "word": "generous",
+    "phonetic": "/ˈdʒenərəs/",
+    "meaning": "adj.慷慨的，大方的",
+    "level": "CET4",
+    "example_en": "She is very generous with her time.",
+    "example_cn": "她非常慷慨地付出时间。"
+  },
+  {
+    "word": "genius",
+    "phonetic": "/ˈdʒiːniəs/",
+    "meaning": "n.天才",
+    "level": "CET4",
+    "example_en": "Einstein was a genius.",
+    "example_cn": "爱因斯坦是个天才。"
+  },
+  {
+    "word": "genuine",
+    "phonetic": "/ˈdʒenjuɪn/",
+    "meaning": "adj.真正的，真诚的",
+    "level": "CET4",
+    "example_en": "She showed genuine concern.",
+    "example_cn": "她表现出真诚的关心。"
+  },
+  {
+    "word": "gesture",
+    "phonetic": "/ˈdʒestʃər/",
+    "meaning": "n.手势 v.做手势",
+    "level": "CET4",
+    "example_en": "He made a gesture of apology.",
+    "example_cn": "他做了个道歉的手势。"
+  },
+  {
+    "word": "giant",
+    "phonetic": "/ˈdʒaɪənt/",
+    "meaning": "adj.巨大的 n.巨人",
+    "level": "CET4",
+    "example_en": "A giant step forward.",
+    "example_cn": "向前迈出的一大步。"
+  }
+]
