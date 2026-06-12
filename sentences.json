@@ -900,5 +900,815 @@
     "tags": [
       "learning"
     ]
+  },
+  {
+    "id": 101,
+    "en": "Good morning.",
+    "cn": "早上好。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 102,
+    "en": "Good afternoon.",
+    "cn": "下午好。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 103,
+    "en": "Good evening.",
+    "cn": "晚上好。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 104,
+    "en": "How are you today?",
+    "cn": "你今天好吗？",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 105,
+    "en": "I am fine, thank you.",
+    "cn": "我很好，谢谢。",
+    "level": "beginner",
+    "tags": [
+      "greeting"
+    ]
+  },
+  {
+    "id": 106,
+    "en": "What is your name?",
+    "cn": "你叫什么名字？",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 107,
+    "en": "How old are you?",
+    "cn": "你多大了？",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 108,
+    "en": "I am 25 years old.",
+    "cn": "我25岁。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 109,
+    "en": "Where do you live?",
+    "cn": "你住在哪里？",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 110,
+    "en": "I live in Beijing.",
+    "cn": "我住在北京。",
+    "level": "beginner",
+    "tags": [
+      "self-intro"
+    ]
+  },
+  {
+    "id": 111,
+    "en": "I love my family.",
+    "cn": "我爱我的家人。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 112,
+    "en": "She is my sister.",
+    "cn": "她是我的妹妹。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 113,
+    "en": "He is my brother.",
+    "cn": "他是我的哥哥。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 114,
+    "en": "We are good friends.",
+    "cn": "我们是好朋友。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 115,
+    "en": "The cat is on the table.",
+    "cn": "猫在桌子上。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 116,
+    "en": "I have a book.",
+    "cn": "我有一本书。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 117,
+    "en": "This is a pen.",
+    "cn": "这是一支笔。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 118,
+    "en": "I can swim.",
+    "cn": "我会游泳。",
+    "level": "beginner",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 119,
+    "en": "She can dance.",
+    "cn": "她会跳舞。",
+    "level": "beginner",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 120,
+    "en": "I like apples.",
+    "cn": "我喜欢苹果。",
+    "level": "beginner",
+    "tags": [
+      "food"
+    ]
+  },
+  {
+    "id": 121,
+    "en": "The water is cold.",
+    "cn": "水是冷的。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 122,
+    "en": "It is very hot today.",
+    "cn": "今天很热。",
+    "level": "beginner",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": 123,
+    "en": "Let's go for a walk.",
+    "cn": "我们去散步吧。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 124,
+    "en": "Please help me.",
+    "cn": "请帮帮我。",
+    "level": "beginner",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 125,
+    "en": "I need some water.",
+    "cn": "我需要一些水。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 126,
+    "en": "The book is on the desk.",
+    "cn": "书在桌子上。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 127,
+    "en": "I study English every day.",
+    "cn": "我每天学英语。",
+    "level": "beginner",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 128,
+    "en": "She reads newspapers in the morning.",
+    "cn": "她早上看报纸。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 129,
+    "en": "We eat lunch at 12 o'clock.",
+    "cn": "我们12点吃午餐。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 130,
+    "en": "He drinks coffee every morning.",
+    "cn": "他每天早上喝咖啡。",
+    "level": "beginner",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 131,
+    "en": "I usually take a shower before breakfast.",
+    "cn": "我通常在早餐前洗澡。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 132,
+    "en": "She is very good at playing the piano.",
+    "cn": "她非常擅长弹钢琴。",
+    "level": "intermediate",
+    "tags": [
+      "hobby"
+    ]
+  },
+  {
+    "id": 133,
+    "en": "We are looking forward to the holiday.",
+    "cn": "我们期待着假期。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 134,
+    "en": "I have been studying English for two years.",
+    "cn": "我学英语已经两年了。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 135,
+    "en": "The movie was more interesting than I expected.",
+    "cn": "这部电影比我想象的更有趣。",
+    "level": "intermediate",
+    "tags": [
+      "entertainment"
+    ]
+  },
+  {
+    "id": 136,
+    "en": "Can you tell me the way to the museum?",
+    "cn": "你能告诉我去博物馆的路吗？",
+    "level": "intermediate",
+    "tags": [
+      "direction"
+    ]
+  },
+  {
+    "id": 137,
+    "en": "I would like to make a reservation for two.",
+    "cn": "我想预订两个人的位置。",
+    "level": "intermediate",
+    "tags": [
+      "dining"
+    ]
+  },
+  {
+    "id": 138,
+    "en": "The weather is getting colder and colder.",
+    "cn": "天气越来越冷了。",
+    "level": "intermediate",
+    "tags": [
+      "weather"
+    ]
+  },
+  {
+    "id": 139,
+    "en": "She speaks English as fluently as a native speaker.",
+    "cn": "她英语说得和母语者一样流利。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 140,
+    "en": "I'm thinking about changing my job.",
+    "cn": "我在考虑换工作。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 141,
+    "en": "We need to come up with a better solution.",
+    "cn": "我们需要想出更好的解决方案。",
+    "level": "intermediate",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": 142,
+    "en": "The research shows that exercise improves memory.",
+    "cn": "研究表明锻炼能改善记忆。",
+    "level": "intermediate",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 143,
+    "en": "I came across an interesting article yesterday.",
+    "cn": "我昨天偶然发现了一篇有趣的文章。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 144,
+    "en": "It is essential to get enough sleep every night.",
+    "cn": "每晚获得足够睡眠是至关重要的。",
+    "level": "intermediate",
+    "tags": [
+      "health"
+    ]
+  },
+  {
+    "id": 145,
+    "en": "The company is looking for experienced engineers.",
+    "cn": "公司正在寻找有经验的工程师。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 146,
+    "en": "I prefer tea over coffee.",
+    "cn": "比起咖啡我更喜欢茶。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 147,
+    "en": "Could you please turn down the music?",
+    "cn": "你能把音乐关小一点吗？",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 148,
+    "en": "We had a wonderful time at the party.",
+    "cn": "我们在派对上玩得很开心。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 149,
+    "en": "I'm used to getting up early in the morning.",
+    "cn": "我习惯早起了。",
+    "level": "intermediate",
+    "tags": [
+      "daily"
+    ]
+  },
+  {
+    "id": 150,
+    "en": "The traffic jam made me late for work.",
+    "cn": "交通堵塞让我上班迟到了。",
+    "level": "intermediate",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "id": 151,
+    "en": "I look forward to hearing from you.",
+    "cn": "我期待你的回复。",
+    "level": "intermediate",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 152,
+    "en": "Please don't hesitate to contact me.",
+    "cn": "请随时联系我。",
+    "level": "intermediate",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 153,
+    "en": "We apologize for any inconvenience caused.",
+    "cn": "对造成的不便我们深表歉意。",
+    "level": "intermediate",
+    "tags": [
+      "polite"
+    ]
+  },
+  {
+    "id": 154,
+    "en": "I would like to apply for the position of manager.",
+    "cn": "我想申请经理的职位。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 155,
+    "en": "The interview went very well.",
+    "cn": "面试进行得很顺利。",
+    "level": "intermediate",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "id": 156,
+    "en": "I need to improve my communication skills.",
+    "cn": "我需要提高我的沟通能力。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 157,
+    "en": "Reading English books helps expand your vocabulary.",
+    "cn": "读英语书有助于扩大词汇量。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 158,
+    "en": "She achieved her goal through hard work.",
+    "cn": "她通过努力实现了目标。",
+    "level": "intermediate",
+    "tags": [
+      "motivation"
+    ]
+  },
+  {
+    "id": 159,
+    "en": "The more you practice, the more confident you become.",
+    "cn": "你练习得越多，就会越自信。",
+    "level": "intermediate",
+    "tags": [
+      "motivation"
+    ]
+  },
+  {
+    "id": 160,
+    "en": "I'm considering studying abroad next year.",
+    "cn": "我在考虑明年出国留学。",
+    "level": "intermediate",
+    "tags": [
+      "learning"
+    ]
+  },
+  {
+    "id": 161,
+    "en": "The government should take measures to protect the environment.",
+    "cn": "政府应该采取措施保护环境。",
+    "level": "advanced",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "id": 162,
+    "en": "Technological innovation has transformed the way we communicate.",
+    "cn": "技术创新改变了我们的沟通方式。",
+    "level": "advanced",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 163,
+    "en": "There is a growing concern about climate change among the public.",
+    "cn": "公众对气候变化的担忧日益增加。",
+    "level": "advanced",
+    "tags": [
+      "environment"
+    ]
+  },
+  {
+    "id": 164,
+    "en": "The results of the experiment were statistically significant.",
+    "cn": "实验结果在统计上是显著的。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 165,
+    "en": "It is widely acknowledged that education plays a crucial role in society.",
+    "cn": "人们普遍认为教育在社会中起着至关重要的作用。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 166,
+    "en": "The economist predicted a recession in the near future.",
+    "cn": "经济学家预测不久的将来会出现经济衰退。",
+    "level": "advanced",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "id": 167,
+    "en": "The novel provides a profound insight into human nature.",
+    "cn": "这部小说对人性的洞察非常深刻。",
+    "level": "advanced",
+    "tags": [
+      "literature"
+    ]
+  },
+  {
+    "id": 168,
+    "en": "The dispute was eventually resolved through diplomatic channels.",
+    "cn": "争端最终通过外交渠道解决了。",
+    "level": "advanced",
+    "tags": [
+      "politics"
+    ]
+  },
+  {
+    "id": 169,
+    "en": "Globalization has both advantages and disadvantages.",
+    "cn": "全球化既有优点也有缺点。",
+    "level": "advanced",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "id": 170,
+    "en": "The article presents a compelling argument for educational reform.",
+    "cn": "这篇文章为教育改革提出了有力的论据。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 171,
+    "en": "It is imperative that we take immediate action to address this issue.",
+    "cn": "我们必须立即采取行动解决这个问题。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 172,
+    "en": "The correlation between the two variables was very strong.",
+    "cn": "这两个变量之间的相关性非常强。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 173,
+    "en": "The data was collected from a sample of over 1000 participants.",
+    "cn": "数据来自超过1000名参与者的样本。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 174,
+    "en": "The phenomenon can be attributed to a combination of factors.",
+    "cn": "这种现象可以归因于多种因素的组合。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 175,
+    "en": "The author's perspective on the issue is quite unique.",
+    "cn": "作者对这个问题的看法相当独特。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 176,
+    "en": "The proposal was met with widespread opposition.",
+    "cn": "该提议遭到了广泛的反对。",
+    "level": "advanced",
+    "tags": [
+      "politics"
+    ]
+  },
+  {
+    "id": 177,
+    "en": "The organization is committed to promoting human rights.",
+    "cn": "该组织致力于促进人权。",
+    "level": "advanced",
+    "tags": [
+      "society"
+    ]
+  },
+  {
+    "id": 178,
+    "en": "The new policy will come into effect next month.",
+    "cn": "新政策将于下个月生效。",
+    "level": "advanced",
+    "tags": [
+      "politics"
+    ]
+  },
+  {
+    "id": 179,
+    "en": "There is no scientific evidence to support this claim.",
+    "cn": "没有科学证据支持这种说法。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 180,
+    "en": "The committee reached a consensus after lengthy discussions.",
+    "cn": "委员会经过长时间的讨论达成了共识。",
+    "level": "advanced",
+    "tags": [
+      "work"
+    ]
+  },
+  {
+    "id": 181,
+    "en": "Artificial intelligence is revolutionizing various industries.",
+    "cn": "人工智能正在彻底改变各个行业。",
+    "level": "advanced",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 182,
+    "en": "The algorithm was designed to optimize performance.",
+    "cn": "该算法旨在优化性能。",
+    "level": "advanced",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 183,
+    "en": "Cybersecurity has become a major concern for businesses.",
+    "cn": "网络安全已成为企业的主要关注点。",
+    "level": "advanced",
+    "tags": [
+      "tech"
+    ]
+  },
+  {
+    "id": 184,
+    "en": "The startup secured funding from several investors.",
+    "cn": "这家初创公司从几位投资者那里获得了资金。",
+    "level": "advanced",
+    "tags": [
+      "business"
+    ]
+  },
+  {
+    "id": 185,
+    "en": "The supply chain was disrupted by the pandemic.",
+    "cn": "供应链被疫情打乱了。",
+    "level": "advanced",
+    "tags": [
+      "economy"
+    ]
+  },
+  {
+    "id": 186,
+    "en": "The consequences of the decision were far-reaching.",
+    "cn": "这个决定的影响是深远的。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 187,
+    "en": "The hypothesis was confirmed by subsequent experiments.",
+    "cn": "这个假设被后续实验证实了。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 188,
+    "en": "The phenomenon is not well understood yet.",
+    "cn": "这种现象还没有被很好地理解。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 189,
+    "en": "The report highlights the need for further research.",
+    "cn": "报告强调了进一步研究的必要性。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
+  },
+  {
+    "id": 190,
+    "en": "The implications of this discovery are enormous.",
+    "cn": "这一发现的影响是巨大的。",
+    "level": "advanced",
+    "tags": [
+      "academic"
+    ]
   }
 ]
